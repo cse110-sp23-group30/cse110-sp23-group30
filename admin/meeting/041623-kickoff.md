@@ -1,4 +1,20 @@
 # Meeting 1 - Kickoff
 ## 04/16/2023 at 8:00 PM
 
-We talked about meeting logistics and created our group organization and repo. We then proceeded to do our bonding assignment and played scribble. We also planned about the group video and just hungout to get to know eachother better.
+### Attendance List
+- Pratyush Chand
+- Georgio Feghali
+- Zihan Peng
+- Jaemin Ko
+- Ryan Wong
+- Richard Xu
+- Chris Wang
+- Zhicheng Wang
+- Peter Lu
+
+We talked about meeting logistics and created our group organization and repo. We also planned about the group video and just hungout to get to know each other better.
+
+### To-Do
+- Group Video Assignment
+- Branding Assignment
+- Team Contract
