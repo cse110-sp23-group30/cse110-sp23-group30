@@ -8,3 +8,4 @@
 
 # Our Roster: 
 - [Pratyush Chand](https://pratyush1718.github.io/cse110Proj/): 2nd-year CS Major, Sixth College. Loves to play the drums, box, and repeatedly watch the office.
+- [Peter Lu](https://pthaha.github.io/CSE110/): 3rd-year CS Major, Revelle College. Loves bouldering and video games. I make decent beef noodle soup.
