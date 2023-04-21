@@ -1,7 +1,7 @@
 # Team Page
 
 ## Team Name: Blue Moon 30-ers
-![Team Logo Here]()
+![Team Logo Here](./branding/team-logo.png)
 
 ## Our Core Values
 - Know when to work hard and when to hardly work.

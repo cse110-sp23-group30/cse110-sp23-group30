@@ -1,2 +1,2 @@
 # This is a short description of a project
-[team file](admin/team.md)
+[Team Page](admin/team.md)
