@@ -18,3 +18,4 @@
 - [Georgio Feghali](https://georgiofe.github.io/cse110-software-engineering/): 3rd year CE major. Loves to play basketball and to watch Formula 1. Quadrilingual Mediterranean Prodigy.
 - [Ryan Wong](https://github.com/ry4nwong): 3rd year CS Major in Revelle College by day, EDM/house DJ by night! Former baseball player that enjoys physical fitness and lifting.
 - [Zihan Peng](https://p-z-h.github.io/CSE-110-Lab/): 3rd-year CS Major in Warren College. Loves reading and playing video games.
+- [Chris Wang](https://idmkris.github.io/cse110/): 2nd-year Math-CS major. Plays weird amount of basketball.
