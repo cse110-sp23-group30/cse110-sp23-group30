@@ -16,3 +16,4 @@
 - [Eric Dong](https://e81786.github.io/User-Page/): 3rd-year Cog Sci Major - ML Spec, Sixth College. Likes swimming and playing the cello and guitar.
 - [Jaemin Ko](https://jaemin-capslock.github.io/cse_110_lab1/): 2nd-year CE Major, ERC. Wannabe trilingual, pianist, bartender and cook. Has subtle grandpa/parisian aesthetic. Loves Bobcats.
 - [Georgio Feghali](https://georgiofe.github.io/cse110-software-engineering/): 3rd year CE major. Loves to play basketball and to watch Formula 1. Quadrilingual Mediterranean Prodigy.
+- [Ryan Wong] (https://github.com/ry4nwong): 3rd year CS Major in Revelle College by day, EDM/house DJ by night! Former baseball player that enjoys physical fitness and lifting.
