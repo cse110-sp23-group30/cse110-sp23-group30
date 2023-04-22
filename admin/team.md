@@ -19,3 +19,4 @@
 - [Ryan Wong](https://github.com/ry4nwong): 3rd year CS Major in Revelle College by day, EDM/house DJ by night! Former baseball player that enjoys physical fitness and lifting.
 - [Zihan Peng](https://p-z-h.github.io/CSE-110-Lab/): 3rd-year CS Major in Warren College. Loves reading and playing video games.
 - [Chris Wang](https://idmkris.github.io/cse110/): 2nd-year Math-CS major. Plays weird amount of basketball.
+- [Richard Xu](https://github.com/RichardCanXu/CSE110_Lab1): 4th year MathCS, Warren College. When I am not sleeping I am playing video games and working out.
