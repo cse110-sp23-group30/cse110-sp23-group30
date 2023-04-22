@@ -20,4 +20,4 @@
 - [Zihan Peng](https://p-z-h.github.io/CSE-110-Lab/): 3rd-year CS Major in Warren College. Loves reading and playing video games.
 - [Chris Wang](https://idmkris.github.io/cse110/): 2nd-year Math-CS major. Plays weird amount of basketball.
 - [Richard Xu](https://github.com/RichardCanXu/CSE110_Lab1): 4th year MathCS, Warren College. When I am not sleeping I am playing video games and working out.
-- [Zhicheng Wang](https://github.com/Zhicheng-wan/CSE110): 2nd-year Math-CS student in Sixth College. Sleeps all day, code all night.
+- [Zhicheng Wang](https://zhicheng-wan.github.io/CSE110/): 2nd-year Math-CS student in Sixth College. Sleeps all day, code all night.
