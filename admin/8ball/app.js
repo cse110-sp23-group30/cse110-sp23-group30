@@ -27,6 +27,7 @@ const messages = [
   shakeBtn.addEventListener('click', () => {
     // Remove any animation classes
     magic8Ball.classList.remove('shake');
+    magic8BallMessage.classList.remove('hologram');
 
     // Clear message before shaking 
     magic8BallMessage.textContent = '';
@@ -35,7 +36,9 @@ const messages = [
     void magic8Ball.offsetWidth;
   
     // Add the animation class to the ball
+    // as well to the text
     magic8Ball.classList.add('shake');
+    magic8BallMessage.classList.add('hologram');
   
     // Wait for the animation to end (2s) before displaying a message
     // was 1 seconds now changed to 2 second
@@ -45,4 +48,3 @@ const messages = [
       magic8BallMessage.textContent = randomMessage;
     }, 2000);
   });
-  
