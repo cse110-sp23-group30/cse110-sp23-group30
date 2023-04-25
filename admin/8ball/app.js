@@ -48,4 +48,3 @@ const messages = [
       magic8BallMessage.textContent = randomMessage;
     }, 2000);
   });
-  
