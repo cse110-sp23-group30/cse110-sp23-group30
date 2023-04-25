@@ -4,17 +4,21 @@
   padding: 0;
 }
 
+/*background image added*/
 body {
   font-family: "Arial", sans-serif;
-  background-color: #070808;
+  /*background-color: #070808;*/
+  background-image: url("image1.png");
 }
 
+/*font style changed*/
 h1 {
-  font-size: 36px;
+  font-size: 50px;
   font-weight: bold;
   text-align: center;
-  color: #fff;
-  margin-top: 50px;
+  color: #f6f6f6;
+  margin-top: 36px;
+  font-family: 'Lobster', cursive;
 }
 
 .magic-8-ball {
@@ -54,6 +58,22 @@ h1 {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.input-container{
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input{
+  font-size: 24px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 300px;
 }
 
 button {
@@ -97,7 +117,7 @@ button:active {
   justify-content: center;
   align-items: center;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-  animation: hologram 2s linear infinite;
+  /*animation: hologram 2s linear infinite;*/
 }
 
 #shake-btn{
@@ -118,4 +138,27 @@ button:active {
   100% {
     transform: translate(-50%, -50%)
   }
+}
+
+@keyframes shake {
+  0% { transform: translate(-5px, 0) rotate(0); }
+  10% { transform: translate(10px, 0) rotate(-5deg); }
+  20% { transform: translate(-10px, 0) rotate(5deg); }
+  30% { transform: translate(10px, 0) rotate(-5deg); }
+  40% { transform: translate(-10px, 0) rotate(5deg); }
+  50% { transform: translate(10px, 0) rotate(-5deg); }
+  60% { transform: translate(-10px, 0) rotate(5deg); }
+  70% { transform: translate(10px, 0) rotate(-5deg); }
+  80% { transform: translate(-10px, 0) rotate(5deg); }
+  90% { transform: translate(10px, 0) rotate(-5deg); }
+  100% { transform: translate(-5px, 0) rotate(0); }
+}
+
+.shake {
+  animation: shake 0.1s cubic-bezier(.36,.07,.19,.97) 20;
+}
+
+/*stop the animation after 3 rotations*/
+.hologram {
+  animation: hologram 2s ease-out 3;
 }

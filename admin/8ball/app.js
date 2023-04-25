@@ -26,19 +26,26 @@ const messages = [
   
   shakeBtn.addEventListener('click', () => {
     // Remove any animation classes
-    magic8Ball.classList.remove('shake-animation');
+    magic8Ball.classList.remove('shake');
+    magic8BallMessage.classList.remove('hologram');
+
+    // Clear message before shaking 
+    magic8BallMessage.textContent = '';
   
     // Trigger a reflow (flush the CSS changes and restart the animation)
     void magic8Ball.offsetWidth;
   
     // Add the animation class to the ball
-    magic8Ball.classList.add('shake-animation');
+    // as well to the text
+    magic8Ball.classList.add('shake');
+    magic8BallMessage.classList.add('hologram');
   
-    // Wait for the animation to end (1s) before displaying a message
+    // Wait for the animation to end (2s) before displaying a message
+    // was 1 seconds now changed to 2 second
     setTimeout(() => {
       const randomIndex = Math.floor(Math.random() * messages.length);
       const randomMessage = messages[randomIndex];
       magic8BallMessage.textContent = randomMessage;
-    }, 1000);
+    }, 2000);
   });
   
