@@ -56,6 +56,22 @@ h1 {
   }
 }
 
+.input-container{
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input{
+  font-size: 24px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 300px;
+}
+
 button {
   background-color: #333;
   color: #fff;
@@ -118,4 +134,22 @@ button:active {
   100% {
     transform: translate(-50%, -50%)
   }
+}
+
+@keyframes shake {
+  0% { transform: translate(-5px, 0) rotate(0); }
+  10% { transform: translate(10px, 0) rotate(-5deg); }
+  20% { transform: translate(-10px, 0) rotate(5deg); }
+  30% { transform: translate(10px, 0) rotate(-5deg); }
+  40% { transform: translate(-10px, 0) rotate(5deg); }
+  50% { transform: translate(10px, 0) rotate(-5deg); }
+  60% { transform: translate(-10px, 0) rotate(5deg); }
+  70% { transform: translate(10px, 0) rotate(-5deg); }
+  80% { transform: translate(-10px, 0) rotate(5deg); }
+  90% { transform: translate(10px, 0) rotate(-5deg); }
+  100% { transform: translate(-5px, 0) rotate(0); }
+}
+
+.shake {
+  animation: shake 0.1s cubic-bezier(.36,.07,.19,.97) 20;
 }
