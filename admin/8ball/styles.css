@@ -1,14 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Marcellus&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+html,
+body {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
 /*background image added*/
 body {
   font-family: "Arial", sans-serif;
-  /*background-color: #070808;*/
-  background-image: url("media/magic8-image1.png");
+  /*
+  background: rgb(68, 67, 78);
+  background: radial-gradient(
+    circle,
+    rgba(68, 67, 78, 1) 0%,
+    rgba(38, 38, 38, 1) 35%,
+    rgba(0, 0, 0, 1) 100%
+  );*/
+  background: url("media/magic8.png") no-repeat center center fixed;
+
+  /* An alternate background:
+  background: url("media/smoke.jpeg") no-repeat center center fixed; */
+
+  background-size: cover;
 }
 
 /*font style changed*/
@@ -18,7 +39,42 @@ h1 {
   text-align: center;
   color: #f6f6f6;
   margin-top: 36px;
-  font-family: 'Lobster', cursive;
+  font-family: "Marcellus", serif;
+  cursor: default;
+}
+
+.gradient {
+  background: linear-gradient(
+    99.6deg,
+    rgb(112, 128, 152) 10.6%,
+    rgb(242, 227, 234) 32.9%,
+    rgb(234, 202, 213) 52.7%,
+    rgb(220, 227, 239) 72.8%,
+    rgb(185, 205, 227) 81.1%,
+    rgb(154, 180, 212) 102.4%
+  );
+  background-size: 200% 200%;
+  animation: gray-scale 2s ease-in-out infinite;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: #f6f6f6;
+  transition: color 0.2s ease-in-out;
+}
+
+.gradient:hover {
+  color: rgba(0, 0, 0, 0);
+}
+
+@keyframes gray-scale {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
 }
 
 .magic-8-ball {
@@ -39,7 +95,13 @@ h1 {
   left: -20px;
   right: -20px;
   bottom: -20px;
-  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.6) 70%, rgba(255, 255, 255, 0.9) 100%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.6) 70%,
+    rgba(255, 255, 255, 0.9) 100%
+  );
   opacity: 0.3;
   border-radius: 50%;
   z-index: -1;
@@ -47,7 +109,13 @@ h1 {
 }
 
 .magic-8-ball::after {
-  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.6) 70%, rgba(255, 255, 255, 0.9) 100%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.6) 70%,
+    rgba(255, 255, 255, 0.9) 100%
+  );
   animation-delay: -2.5s;
 }
 
@@ -60,15 +128,15 @@ h1 {
   }
 }
 
-.input-container{
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.input-container {
+  margin-top: 4%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-input{
-  font-size: 24px;
+#question-input {
+  font-size: 20px;
   padding: 10px;
   border-radius: 5px;
   border: none;
@@ -76,28 +144,69 @@ input{
   width: 300px;
 }
 
-button {
-  background-color: #333;
-  color: #fff;
+#gradient-btn {
+  background-size: 300% 100%;
+  background-color: #fff;
+  background-image: linear-gradient(45deg, #fff 50%, #333 50%);
+  background-size: 270%;
+  background-repeat: repeat;
+  background-position: top right;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  animation: btn-animation 0.65s 0.15s ease-out forwards;
+}
+
+.shake-btn {
   font-size: 24px;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(45deg, #333 50%, #eee 50%);
+  background-size: 270%;
+  background-repeat: repeat;
+  background-position: top right;
+  animation: btn-animation 0.65s 0.15s ease-out forwards;
   transition: all 0.3s ease;
   display: block;
   margin: 0 auto;
 }
 
-button:hover {
-  background-color: #444;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+.shake-btn:hover,
+.shake-btn:hover #gradient-btn {
+  animation: btn-animation-rev 0.65s ease-out forwards;
 }
 
-button:active {
-  transform: translateY(2px);
+.shake-btn:hover {
+  background-color: #444;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+}
+
+.shake-btn:active {
+  transform: translateY(3.5px);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes btn-animation {
+  0% {
+    background-position: top right;
+  }
+  100% {
+    background-position: top left;
+  }
+}
+
+@keyframes btn-animation-rev {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
 }
 
 .magic-8-ball-answer {
@@ -120,12 +229,6 @@ button:active {
   /*animation: hologram 2s linear infinite;*/
 }
 
-#shake-btn{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 @keyframes hologram {
   0% {
     transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg);
@@ -136,26 +239,48 @@ button:active {
     box-shadow: 0 0 40px 40px rgba(255, 255, 255, 0.5);
   }
   100% {
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
   }
 }
 
 @keyframes shake {
-  0% { transform: translate(-5px, 0) rotate(0); }
-  10% { transform: translate(10px, 0) rotate(-5deg); }
-  20% { transform: translate(-10px, 0) rotate(5deg); }
-  30% { transform: translate(10px, 0) rotate(-5deg); }
-  40% { transform: translate(-10px, 0) rotate(5deg); }
-  50% { transform: translate(10px, 0) rotate(-5deg); }
-  60% { transform: translate(-10px, 0) rotate(5deg); }
-  70% { transform: translate(10px, 0) rotate(-5deg); }
-  80% { transform: translate(-10px, 0) rotate(5deg); }
-  90% { transform: translate(10px, 0) rotate(-5deg); }
-  100% { transform: translate(-5px, 0) rotate(0); }
+  0% {
+    transform: translate(-5px, 0) rotate(0);
+  }
+  10% {
+    transform: translate(10px, 0) rotate(-5deg);
+  }
+  20% {
+    transform: translate(-10px, 0) rotate(5deg);
+  }
+  30% {
+    transform: translate(10px, 0) rotate(-5deg);
+  }
+  40% {
+    transform: translate(-10px, 0) rotate(5deg);
+  }
+  50% {
+    transform: translate(10px, 0) rotate(-5deg);
+  }
+  60% {
+    transform: translate(-10px, 0) rotate(5deg);
+  }
+  70% {
+    transform: translate(10px, 0) rotate(-5deg);
+  }
+  80% {
+    transform: translate(-10px, 0) rotate(5deg);
+  }
+  90% {
+    transform: translate(10px, 0) rotate(-5deg);
+  }
+  100% {
+    transform: translate(-5px, 0) rotate(0);
+  }
 }
 
 .shake {
-  animation: shake 0.1s cubic-bezier(.36,.07,.19,.97) 20;
+  animation: shake 0.1s cubic-bezier(0.36, 0.07, 0.19, 0.97) 20;
 }
 
 /*stop the animation after 3 rotations*/
