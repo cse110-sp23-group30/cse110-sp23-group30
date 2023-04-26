@@ -35,6 +35,9 @@ const input = document.getElementById("question-input");
 var overrideY = false;
 var overrideN = false;
 
+//counter
+var counter = 0;
+
 //called when left or right of screen is clicked
 function overrideYes() {
   overrideY = true;
@@ -47,6 +50,10 @@ function overrideNo() {
 
 //main event
 shakeBtn.addEventListener("click", () => {
+  //increment counter
+  counter = counter + 1;
+  //Update the counter to website
+  document.getElementById("counter").innerHTML= "Times Shaken: " + counter;
   // Remove any animation classes
   magic8Ball.classList.remove("shake");
   magic8BallMessage.classList.remove("hologram");
