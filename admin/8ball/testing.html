@@ -9,10 +9,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Lato:wght@300&family=Lobster&display=swap"
     rel="stylesheet">
 </head>
+
 <body>
   <!-- invisible buttons -->
-  <button class="button-left" id="secret-yes"></button>
-  <button class="button-right" id="secret-no"></button>
+  <button id="secret-yes"></button>
+  <button id="secret-no"></button>
   <div class="magic-8-ball-container">
     <h1><span class="gradient">Magic 8 Ball</span></h1>
     <div class="magic-8-ball" id="magic-8-ball">
@@ -21,6 +22,7 @@
     <button class="shake-btn" id="shake-btn"><span id="gradient-btn">Shake</span></button>
     //Text for counter
     <h1 id = "counter"></h1>
+    <div id="click-counter">Shake count: 0</div>
     <div class="input-container">
       <input type="text" id="question-input" placeholder="Ask a question...">
     </div>

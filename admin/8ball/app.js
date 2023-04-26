@@ -22,14 +22,36 @@ const messages = [
 
 //overdide msgs, feel free to modify
 //all no msg
-const secretN = ["No", "Nah", "Nope", "Not at all", "Negative", "Absolutely not", "Uh-uh", "No way", "I don't think so"];
+const secretN = [
+  "No",
+  "Nah",
+  "Nope",
+  "Not at all",
+  "Negative",
+  "Absolutely not",
+  "Uh-uh",
+  "No way",
+  "I don't think so",
+];
 //all yes msg
-const secretY = ["Yuh", "Hell yeah", "Yup", "Sure", "Absolutely", "Indeed", "You bet", "Definitely", "Affirmative"];
+const secretY = [
+  "Yuh",
+  "Hell yeah",
+  "Yup",
+  "Sure",
+  "Absolutely",
+  "Indeed",
+  "You bet",
+  "Definitely",
+  "Affirmative",
+];
 
 const magic8Ball = document.querySelector("#magic-8-ball");
 const magic8BallMessage = document.querySelector("#magic-8-ball-message");
 const shakeBtn = document.querySelector("#shake-btn");
 const input = document.getElementById("question-input");
+const clickCounter = document.getElementById("click-counter");
+let shakeCount = 0;
 
 //overrides if true
 var overrideY = false;
@@ -49,15 +71,21 @@ function overrideNo() {
 }
 
 //main event
+<<<<<<< HEAD
 shakeBtn.addEventListener("click", () => {
   //increment counter
   counter = counter + 1;
   //Update the counter to website
   document.getElementById("counter").innerHTML= "Times Shaken: " + counter;
+=======
+function clicked() {
+>>>>>>> cf56bd5448596a0ec70d86776d41bbaff0f7f7d5
   // Remove any animation classes
+  magic8BallMessage.style.opacity = '0';
   magic8Ball.classList.remove("shake");
   magic8BallMessage.classList.remove("hologram");
-
+  shakeCount++;
+  clickCounter.textContent = `Shake count: ${shakeCount}`;
   // Clear message before shaking
   magic8BallMessage.textContent = "";
 
@@ -74,8 +102,9 @@ shakeBtn.addEventListener("click", () => {
   setTimeout(() => {
     var randomIndex = Math.floor(Math.random() * messages.length);
     let randomMessage = "";
+
     //case: no input
-    if (input.value == null || input.value == "") {
+    if (input.value == null || input.value === "") {
       randomMessage = "There was no question";
     } else {
       //checks whether to override messages with all yes or all no answers
@@ -92,7 +121,8 @@ shakeBtn.addEventListener("click", () => {
       }
     }
     magic8BallMessage.textContent = randomMessage;
+    magic8BallMessage.style.opacity = '1';
   }, 2000);
-});
+}
 
-
+shakeBtn.addEventListener("click", clicked);
