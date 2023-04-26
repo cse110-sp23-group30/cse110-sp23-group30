@@ -73,8 +73,20 @@ function clicked() {
   magic8BallMessage.style.opacity = '0';
   magic8Ball.classList.remove("shake");
   magic8BallMessage.classList.remove("hologram");
-  shakeCount++;
-  clickCounter.textContent = `Shake count: ${shakeCount}`;
+  if (input.value != null && input.value !== "") {
+    shakeCount+=10;
+    if(shakeCount == 100){
+      let secretIcon = document.createElement('span');
+      secretIcon.innerText = 'Congratulations! You have accumulated enough points to see the secret: Clicking the left side of the screen always gives a positive answer while clicking the right side of the screen always gives a negative answer!';
+      secretIcon.id = 'secret-icon';
+      document.getElementById('secret').appendChild(secretIcon);
+      secretIcon.style.display = 'inline';
+    }
+    
+
+  } 
+  
+  clickCounter.textContent = `Shake Points: ${shakeCount}`;
   // Clear message before shaking
   magic8BallMessage.textContent = "";
 

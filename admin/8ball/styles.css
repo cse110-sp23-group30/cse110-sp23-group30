@@ -245,6 +245,18 @@ div {
   }
 }
 
+#secret-icon {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 2%;
+  font-weight: bold;
+  color: #f5f2f2;
+  font-size: 14px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 5px 5px 5px;
+}
+
 #click-counter {
   color: #ffffff;
   margin-top: 20px;
