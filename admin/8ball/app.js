@@ -24,12 +24,16 @@ const magic8Ball = document.querySelector("#magic-8-ball");
 const magic8BallMessage = document.querySelector("#magic-8-ball-message");
 const shakeBtn = document.querySelector("#shake-btn");
 const input = document.getElementById("question-input");
+const clickCounter = document.getElementById("click-counter");
+let shakeCount = 0;
 
 shakeBtn.addEventListener("click", () => {
   // Remove any animation classes
+  magic8BallMessage.style.opacity = '0';
   magic8Ball.classList.remove("shake");
   magic8BallMessage.classList.remove("hologram");
-
+  shakeCount++;
+  clickCounter.textContent = `Shake count: ${shakeCount}`;
   // Clear message before shaking
   magic8BallMessage.textContent = "";
 

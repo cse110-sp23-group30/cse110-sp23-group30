@@ -209,6 +209,15 @@ h1 {
   }
 }
 
+#click-counter {
+  color: #ffffff;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+
+
 .magic-8-ball-answer {
   width: 80%;
   height: 80%;
