@@ -22,9 +22,29 @@ const messages = [
 
 //overdide msgs, feel free to modify
 //all no msg
-const secretN = ["No", "Nah", "Nope", "Not at all", "Negative", "Absolutely not", "Uh-uh", "No way", "I don't think so"];
+const secretN = [
+  "No",
+  "Nah",
+  "Nope",
+  "Not at all",
+  "Negative",
+  "Absolutely not",
+  "Uh-uh",
+  "No way",
+  "I don't think so",
+];
 //all yes msg
-const secretY = ["Yuh", "Hell yeah", "Yup", "Sure", "Absolutely", "Indeed", "You bet", "Definitely", "Affirmative"];
+const secretY = [
+  "Yuh",
+  "Hell yeah",
+  "Yup",
+  "Sure",
+  "Absolutely",
+  "Indeed",
+  "You bet",
+  "Definitely",
+  "Affirmative",
+];
 
 const magic8Ball = document.querySelector("#magic-8-ball");
 const magic8BallMessage = document.querySelector("#magic-8-ball-message");
@@ -48,7 +68,7 @@ function overrideNo() {
 }
 
 //main event
-shakeBtn.addEventListener("click", () => {
+function clicked() {
   // Remove any animation classes
   magic8BallMessage.style.opacity = '0';
   magic8Ball.classList.remove("shake");
@@ -92,6 +112,6 @@ shakeBtn.addEventListener("click", () => {
     magic8BallMessage.textContent = randomMessage;
     magic8BallMessage.style.opacity = '1';
   }, 2000);
-});
+}
 
-
+shakeBtn.addEventListener("click", clicked);
