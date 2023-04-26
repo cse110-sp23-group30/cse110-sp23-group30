@@ -296,7 +296,7 @@ div {
 }
 
 
-/* invisible buttons, cover left and right half of screen */
+/* invisible buttons */
 .button-left, .button-right {
   position: fixed;
   top: 0;
@@ -307,6 +307,7 @@ div {
   border: none;
 }
 
+/* covers left and right half of screen */
 .button-left {
   left: 0;
 }

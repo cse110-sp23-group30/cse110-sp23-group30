@@ -10,6 +10,7 @@
     rel="stylesheet">
 </head>
 <body>
+  <!-- invisible buttons -->
   <button class="button-left" id="secret-yes"></button>
   <button class="button-right" id="secret-no"></button>
   <div class="magic-8-ball-container">
@@ -24,6 +25,7 @@
   </div>
   <script src="app.js"></script>
   <script>
+    // calls override functions if invisible buttons r clicked
     document.getElementById("secret-yes").addEventListener("click", overrideYes);
     document.getElementById("secret-no").addEventListener("click", overrideNo);
   </script>
