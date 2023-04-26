@@ -20,6 +20,12 @@ const messages = [
   "Very doubtful",
 ];
 
+//overdide msgs, feel free to modify
+//all no msg
+const secretN = ["No", "Nah", "Nope", "Not at all", "Negative", "Absolutely not", "Uh-uh", "No way", "I don't think so"];
+//all yes msg
+const secretY = ["Yuh", "Hell yeah", "Yup", "Sure", "Absolutely", "Indeed", "You bet", "Definitely", "Affirmative"];
+
 const magic8Ball = document.querySelector("#magic-8-ball");
 const magic8BallMessage = document.querySelector("#magic-8-ball-message");
 const shakeBtn = document.querySelector("#shake-btn");
@@ -27,6 +33,21 @@ const input = document.getElementById("question-input");
 const clickCounter = document.getElementById("click-counter");
 let shakeCount = 0;
 
+//overrides if true
+var overrideY = false;
+var overrideN = false;
+
+//called when left or right of screen is clicked
+function overrideYes() {
+  overrideY = true;
+  overrideN = false;
+}
+function overrideNo() {
+  overrideN = true;
+  overrideY = false;
+}
+
+//main event
 shakeBtn.addEventListener("click", () => {
   // Remove any animation classes
   magic8BallMessage.style.opacity = '0';
@@ -48,12 +69,25 @@ shakeBtn.addEventListener("click", () => {
   // Wait for the animation to end (2s) before displaying a message
   // was 1 seconds now changed to 2 second
   setTimeout(() => {
-    const randomIndex = Math.floor(Math.random() * messages.length);
+    var randomIndex = Math.floor(Math.random() * messages.length);
     let randomMessage = "";
+
+    //case: no input
     if (input.value == null || input.value === "") {
       randomMessage = "There was no question";
     } else {
-      randomMessage = messages[randomIndex];
+      //checks whether to override messages with all yes or all no answers
+      if (overrideY) {
+        randomIndex = Math.floor(Math.random() * secretY.length);
+        randomMessage = secretY[randomIndex];
+        overrideY = false;
+      } else if (overrideN) {
+        randomIndex = Math.floor(Math.random() * secretN.length);
+        randomMessage = secretN[randomIndex];
+        overrideN = false;
+      } else {
+        randomMessage = messages[randomIndex];
+      }
     }
     magic8BallMessage.textContent = randomMessage;
     magic8BallMessage.style.opacity = '1';
@@ -61,3 +95,5 @@ shakeBtn.addEventListener("click", () => {
     //magic8BallMessage.animationDuration = '1s';
   }, 2000);
 });
+
+
