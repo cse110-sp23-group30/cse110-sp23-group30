@@ -57,6 +57,9 @@ let shakeCount = 0;
 var overrideY = false;
 var overrideN = false;
 
+//counter
+var counter = 0;
+
 //called when left or right of screen is clicked
 function overrideYes() {
   overrideY = true;

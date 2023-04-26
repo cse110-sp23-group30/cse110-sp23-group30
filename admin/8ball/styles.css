@@ -25,9 +25,6 @@ body {
     rgba(0, 0, 0, 1) 100%
   );*/
   background: url("media/magic8.png") no-repeat center center fixed;
-
-  /* An alternate background:
-  background: url("media/smoke.jpeg") no-repeat center center fixed; */
   z-index: -300;
   background-size: cover;
 }
@@ -344,4 +341,25 @@ div {
 /*stop the animation after 3 rotations*/
 .hologram {
   animation: hologram 2s ease-out 3;
+}
+
+
+/* invisible buttons */
+.button-left, .button-right {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  z-index: 0;
+  background: transparent;
+  border: none;
+}
+
+/* covers left and right half of screen */
+.button-left {
+  left: 0;
+}
+
+.button-right {
+  right: 0;
 }
