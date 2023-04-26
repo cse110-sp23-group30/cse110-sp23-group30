@@ -25,9 +25,6 @@ body {
     rgba(0, 0, 0, 1) 100%
   );*/
   background: url("media/magic8.png") no-repeat center center fixed;
-
-  /* An alternate background:
-  background: url("media/smoke.jpeg") no-repeat center center fixed; */
   z-index: -300;
   background-size: cover;
 }
