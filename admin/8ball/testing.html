@@ -8,8 +8,10 @@
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Lato:wght@300&family=Lobster&display=swap"
     rel="stylesheet">
-
+</head>
 <body>
+  <button class="button-left" id="secret-yes"></button>
+  <button class="button-right" id="secret-no"></button>
   <div class="magic-8-ball-container">
     <h1><span class="gradient">Magic 8 Ball</span></h1>
     <div class="magic-8-ball" id="magic-8-ball">
@@ -21,6 +23,10 @@
     </div>
   </div>
   <script src="app.js"></script>
+  <script>
+    document.getElementById("secret-yes").addEventListener("click", overrideYes);
+    document.getElementById("secret-no").addEventListener("click", overrideNo);
+  </script>
 </body>
 
 </html>
