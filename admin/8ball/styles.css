@@ -139,7 +139,6 @@ div {
 }
 
 .input-container {
-  margin-top: 4%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -254,7 +253,6 @@ div {
   text-align: center;
 }
 
-
 .magic-8-ball-answer {
   width: 80%;
   height: 80%;
@@ -291,7 +289,6 @@ div {
   }
 }
 
-
 @keyframes shake {
   0% {
     transform: translate(-5px, 0) rotate(0);
@@ -327,9 +324,6 @@ div {
     transform: translate(-5px, 0) rotate(0);
   }
 }
-
-
-
 
 .shake {
   animation: shake 0.1s cubic-bezier(0.36, 0.07, 0.19, 0.97) 20;
