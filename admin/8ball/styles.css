@@ -41,6 +41,7 @@ h1 {
   margin-top: 36px;
   font-family: "Marcellus", serif;
   cursor: default;
+  z-index: 1;
 }
 
 div {
@@ -82,10 +83,16 @@ div {
 }
 
 .magic-8-ball {
-  width: 200px;
-  height: 200px;
+  width: 230px;
+  height: 230px;
   border-radius: 50%;
-  background-color: #fff;
+  background: rgb(74, 73, 79);
+  background: radial-gradient(
+    circle,
+    rgba(68, 67, 78, 1) 0%,
+    rgba(38, 38, 38, 1) 35%,
+    rgba(0, 0, 0, 1) 100%
+  );
   position: relative;
   margin: 50px auto;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -140,7 +147,7 @@ div {
 
 #question-input {
   position: relative;
-  z-index: 1;
+  z-index: 5;
   font-size: 20px;
   padding: 10px;
   border-radius: 5px;
@@ -161,6 +168,29 @@ div {
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
   animation: btn-animation 0.65s 0.15s ease-out forwards;
+}
+
+/* invisible buttons */
+#secret-yes,
+#secret-no {
+  position: fixed;
+  top: 15%;
+  bottom: 0;
+  width: 43%;
+  height: 100%;
+  z-index: 2;
+  background: transparent;
+  border: none;
+  cursor: default;
+}
+
+/* covers left and right part of screen */
+#secret-yes {
+  left: 0;
+}
+
+#secret-no {
+  right: 0;
 }
 
 .shake-btn {
@@ -221,7 +251,7 @@ div {
   height: 80%;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
-  color: #2b5f98;
+  color: #f6f6f6;
   font-size: 24px;
   font-weight: bold;
   text-align: center;
@@ -232,7 +262,7 @@ div {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
   /*animation: hologram 2s linear infinite;*/
 }
 
@@ -293,25 +323,4 @@ div {
 /*stop the animation after 3 rotations*/
 .hologram {
   animation: hologram 2s ease-out 3;
-}
-
-
-/* invisible buttons */
-.button-left, .button-right {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  width: 50%;
-  z-index: 0;
-  background: transparent;
-  border: none;
-}
-
-/* covers left and right half of screen */
-.button-left {
-  left: 0;
-}
-
-.button-right {
-  right: 0;
 }
