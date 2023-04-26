@@ -20,10 +20,26 @@ const messages = [
   "Very doubtful",
 ];
 
+//overdide msgs, feel free to modify
+//all no msg
+const secretN = ["No", "Nah", "Nope", "Not at all", "Negative", "Absolutely not", "Uh-uh", "No way", "I don't think so"];
+//all yes msg
+const secretY = ["Yuh", "Hell yeah", "Yup", "Sure", "Absolutely", "Indeed", "You bet", "Definitely", "Affirmative"];
+
 const magic8Ball = document.querySelector("#magic-8-ball");
 const magic8BallMessage = document.querySelector("#magic-8-ball-message");
 const shakeBtn = document.querySelector("#shake-btn");
 const input = document.getElementById("question-input");
+
+var overrideY = false;
+var overrideN = false;
+
+function overrideYes() {
+  overrideY = true;
+}
+function overrideNo() {
+  overrideN = true;
+}
 
 shakeBtn.addEventListener("click", () => {
   // Remove any animation classes
@@ -44,13 +60,25 @@ shakeBtn.addEventListener("click", () => {
   // Wait for the animation to end (2s) before displaying a message
   // was 1 seconds now changed to 2 second
   setTimeout(() => {
-    const randomIndex = Math.floor(Math.random() * messages.length);
+    var randomIndex = Math.floor(Math.random() * messages.length);
     let randomMessage = "";
     if (input.value == null || input.value == "") {
       randomMessage = "There was no question";
     } else {
-      randomMessage = messages[randomIndex];
+      if (overrideY) {
+        randomIndex = Math.floor(Math.random() * secretY.length);
+        randomMessage = secretY[randomIndex];
+        overrideY = false;
+      } else if (overrideN) {
+        randomIndex = Math.floor(Math.random() * secretN.length);
+        randomMessage = secretN[randomIndex];
+        overrideN = false;
+      } else {
+        randomMessage = messages[randomIndex];
+      }
     }
     magic8BallMessage.textContent = randomMessage;
   }, 2000);
 });
+
+
