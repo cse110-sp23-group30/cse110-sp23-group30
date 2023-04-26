@@ -36,9 +36,11 @@ var overrideN = false;
 
 function overrideYes() {
   overrideY = true;
+  overrideN = false;
 }
 function overrideNo() {
   overrideN = true;
+  overrideY = false;
 }
 
 shakeBtn.addEventListener("click", () => {
