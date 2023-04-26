@@ -31,9 +31,11 @@ const magic8BallMessage = document.querySelector("#magic-8-ball-message");
 const shakeBtn = document.querySelector("#shake-btn");
 const input = document.getElementById("question-input");
 
+//overrides if true
 var overrideY = false;
 var overrideN = false;
 
+//called when left or right of screen is clicked
 function overrideYes() {
   overrideY = true;
   overrideN = false;
@@ -43,6 +45,7 @@ function overrideNo() {
   overrideY = false;
 }
 
+//main event
 shakeBtn.addEventListener("click", () => {
   // Remove any animation classes
   magic8Ball.classList.remove("shake");
@@ -64,9 +67,11 @@ shakeBtn.addEventListener("click", () => {
   setTimeout(() => {
     var randomIndex = Math.floor(Math.random() * messages.length);
     let randomMessage = "";
+    //case: no input
     if (input.value == null || input.value == "") {
       randomMessage = "There was no question";
     } else {
+      //checks whether to override messages with all yes or all no answers
       if (overrideY) {
         randomIndex = Math.floor(Math.random() * secretY.length);
         randomMessage = secretY[randomIndex];
