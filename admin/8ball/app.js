@@ -91,8 +91,6 @@ shakeBtn.addEventListener("click", () => {
     }
     magic8BallMessage.textContent = randomMessage;
     magic8BallMessage.style.opacity = '1';
-    //magic8BallMessage.animationName = 'fadeIn';
-    //magic8BallMessage.animationDuration = '1s';
   }, 2000);
 });
 
