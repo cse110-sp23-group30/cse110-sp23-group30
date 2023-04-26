@@ -46,11 +46,14 @@ shakeBtn.addEventListener("click", () => {
   setTimeout(() => {
     const randomIndex = Math.floor(Math.random() * messages.length);
     let randomMessage = "";
-    if (input.value == null || input.value == "") {
+    if (input.value == null || input.value === "") {
       randomMessage = "There was no question";
     } else {
       randomMessage = messages[randomIndex];
     }
     magic8BallMessage.textContent = randomMessage;
+    magic8BallMessage.style.opacity = '1';
+    //magic8BallMessage.animationName = 'fadeIn';
+    //magic8BallMessage.animationDuration = '1s';
   }, 2000);
 });
