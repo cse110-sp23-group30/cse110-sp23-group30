@@ -30,6 +30,8 @@ const magic8Ball = document.querySelector("#magic-8-ball");
 const magic8BallMessage = document.querySelector("#magic-8-ball-message");
 const shakeBtn = document.querySelector("#shake-btn");
 const input = document.getElementById("question-input");
+const clickCounter = document.getElementById("click-counter");
+let shakeCount = 0;
 
 //overrides if true
 var overrideY = false;
@@ -48,9 +50,11 @@ function overrideNo() {
 //main event
 shakeBtn.addEventListener("click", () => {
   // Remove any animation classes
+  magic8BallMessage.style.opacity = '0';
   magic8Ball.classList.remove("shake");
   magic8BallMessage.classList.remove("hologram");
-
+  shakeCount++;
+  clickCounter.textContent = `Shake count: ${shakeCount}`;
   // Clear message before shaking
   magic8BallMessage.textContent = "";
 
@@ -67,8 +71,9 @@ shakeBtn.addEventListener("click", () => {
   setTimeout(() => {
     var randomIndex = Math.floor(Math.random() * messages.length);
     let randomMessage = "";
+
     //case: no input
-    if (input.value == null || input.value == "") {
+    if (input.value == null || input.value === "") {
       randomMessage = "There was no question";
     } else {
       //checks whether to override messages with all yes or all no answers
@@ -85,6 +90,9 @@ shakeBtn.addEventListener("click", () => {
       }
     }
     magic8BallMessage.textContent = randomMessage;
+    magic8BallMessage.style.opacity = '1';
+    //magic8BallMessage.animationName = 'fadeIn';
+    //magic8BallMessage.animationDuration = '1s';
   }, 2000);
 });
 
