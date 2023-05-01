@@ -1,4 +1,4 @@
-# Meeting 1 - Brainstorm
+# Meeting 2 - Brainstorm
 ## 04/30/2023 at 4:00 PM
 
 ### Attendance List
