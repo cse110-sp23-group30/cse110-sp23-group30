@@ -9,6 +9,7 @@
 - Chris Wang
 - Zhicheng Wang
 - Peter Lu
+- Eric Dong
 
 We talked about possible topics for the project:
  - Coffee Cup Fortune Telling
