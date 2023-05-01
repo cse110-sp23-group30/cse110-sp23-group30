@@ -19,6 +19,7 @@ We talked about possible topics for the project:
  - Ouija boards
  - cootie catcher
  - sticks
+
 We also found some fortue telling websites and apps realated to our topics.
 We currently planed to ask the user to cook their own Fortune cookies.
 Some possible features:
