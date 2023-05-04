@@ -1,5 +1,6 @@
-# Meeting 2 - Brainstorm
-## 04/30/2023 at 4:00 PM
+# Meeting 2 - Brainstorm 1
+## Date/Time: 04/30/2023 at 4:00 PM
+## Location: Zoom
 
 ### Attendance List
 - Pratyush Chand
