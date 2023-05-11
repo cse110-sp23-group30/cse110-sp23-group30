@@ -10,6 +10,7 @@ Once we have the fortune cookie, how do we make the user to crack the cookie to 
 * Drag to throw the cookie to use gravity to crack
 * Multiple click
 * Facial recognition - the angrier the face the more the cookie cracks
+* Voice recognition - the louder the user shouts *OPEN SESAME* the more the cookie cracks
 
 ## Decision Outcome
 
