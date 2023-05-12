@@ -20,4 +20,10 @@ For linting and code style enforcement, we plan on using npm lint– a command-l
 
 ## documentation generation via automation (ex. JSDocs)
 
-- Georgio
+One way to generate automation in JavaScript is through the use of code generation techniques, such as JSDocs. JSDoc is a popular documentation tool that allows developers to add structured comments to their code, enabling the generation of automated documentation. However, JSDocs can also be leveraged beyond just documentation generation. By utilizing JSDoc annotations effectively, developers can generate code or perform automated tasks.
+
+To generate automation using JSDocs, one can use custom scripts or build tools to parse and analyze the annotated code. For instance, by writing JSDoc annotations to describe function signatures, parameter types, and return values, one can automatically generate code snippets, unit tests, or even API clients. These automated processes can save developers significant time and effort by eliminating repetitive tasks and reducing the likelihood of errors.
+
+Additionally, JSDoc annotations can be used to enforce coding standards, generate type information, or aid in code analysis. By accurately annotating JavaScript code, static analysis tools or transpilers can extract useful information about the codebase. This information can be utilized for tasks like optimizing performance, identifying potential bugs, or providing intelligent code suggestions in integrated development environments (IDEs).
+
+In summary, JSDoc annotations in JavaScript offer a powerful way to generate automation. By leveraging the structured comments and incorporating custom scripts or build tools, developers can automate various tasks such as code generation, documentation, testing, and code analysis. This not only enhances productivity but also improves code quality and maintainability.
