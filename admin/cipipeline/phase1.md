@@ -8,7 +8,7 @@ For linting and code style enforcement, we plan on using npm lint– a command-l
 
 ## Code Quality via Tool (ex. Codeclimate, Codacy, etc.)
 
-- Zihan
+To improve our code quality, we intend to use some code quality tools, such as Codeclimate or Codacy, in our project. Code quality tools are software tools designed to assess and evaluate the quality of code in software projects. They could help identify potential issues, bugs, and violations of coding standards, and provide insights and recommendations to improve the overall quality, maintainability, and reliability of the code. Code quality tools usually employ various techniques, such as static code analysis, linting, and automated testing, during the process. Different code quality tools have different instructions. But in general, to use code quality tools, we need to set up the tool, define coding standards, run code analysis, review results, address issues, and repeat this process multiple times for improvement. With the usage of code quality tools, we expect to have better code quality, efficiency, and productivity in this project.
 
 ## Code Quality via Human Review (ex. Pull Requests)
 
