@@ -1,27 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Marcellus&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+html,
 body {
-  font-family: "Arial", sans-serif;
-  background-color: #070808;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
 }
 
+/*background image added*/
+body {
+  font-family: "Arial", sans-serif;
+  /*
+  background: rgb(68, 67, 78);
+  background: radial-gradient(
+    circle,
+    rgba(68, 67, 78, 1) 0%,
+    rgba(38, 38, 38, 1) 35%,
+    rgba(0, 0, 0, 1) 100%
+  );*/
+  background: url("media/magic8.png") no-repeat center center fixed;
+  z-index: -300;
+  background-size: cover;
+}
+
+/*font style changed*/
 h1 {
-  font-size: 36px;
+  font-size: 50px;
   font-weight: bold;
   text-align: center;
-  color: #fff;
-  margin-top: 50px;
+  color: #f6f6f6;
+  margin-top: 36px;
+  font-family: "Marcellus", serif;
+  cursor: default;
+  z-index: 1;
+}
+
+div {
+  z-index: 999;
+}
+
+.gradient {
+  background: linear-gradient(
+    99.6deg,
+    rgb(112, 128, 152) 10.6%,
+    rgb(242, 227, 234) 32.9%,
+    rgb(234, 202, 213) 52.7%,
+    rgb(220, 227, 239) 72.8%,
+    rgb(185, 205, 227) 81.1%,
+    rgb(154, 180, 212) 102.4%
+  );
+  background-size: 200% 200%;
+  animation: gray-scale 2s ease-in-out infinite;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: #f6f6f6;
+  transition: color 0.2s ease-in-out;
+}
+
+.gradient:hover {
+  color: rgba(0, 0, 0, 0);
+}
+
+@keyframes gray-scale {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
 }
 
 .magic-8-ball {
-  width: 200px;
-  height: 200px;
+  width: 230px;
+  height: 230px;
   border-radius: 50%;
-  background-color: #fff;
+  background: rgb(74, 73, 79);
+  background: radial-gradient(
+    circle,
+    rgba(68, 67, 78, 1) 0%,
+    rgba(38, 38, 38, 1) 35%,
+    rgba(0, 0, 0, 1) 100%
+  );
   position: relative;
   margin: 50px auto;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -35,15 +103,26 @@ h1 {
   left: -20px;
   right: -20px;
   bottom: -20px;
-  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.6) 70%, rgba(255, 255, 255, 0.9) 100%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.6) 70%,
+    rgba(255, 255, 255, 0.9) 100%
+  );
   opacity: 0.3;
   border-radius: 50%;
-  z-index: -1;
   animation: rays 5s linear infinite;
 }
 
 .magic-8-ball::after {
-  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.6) 70%, rgba(255, 255, 255, 0.9) 100%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.6) 70%,
+    rgba(255, 255, 255, 0.9) 100%
+  );
   animation-delay: -2.5s;
 }
 
@@ -56,15 +135,16 @@ h1 {
   }
 }
 
-.input-container{
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-input{
-  font-size: 24px;
+#question-input {
+  position: relative;
+  z-index: 5;
+  font-size: 20px;
   padding: 10px;
   border-radius: 5px;
   border: none;
@@ -72,28 +152,114 @@ input{
   width: 300px;
 }
 
-button {
-  background-color: #333;
-  color: #fff;
+#gradient-btn {
+  background-size: 300% 100%;
+  background-color: #fff;
+  background-image: linear-gradient(45deg, #fff 50%, #333 50%);
+  background-size: 270%;
+  background-repeat: repeat;
+  background-position: top right;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  animation: btn-animation 0.65s 0.15s ease-out forwards;
+}
+
+/* invisible buttons */
+#secret-yes,
+#secret-no {
+  position: fixed;
+  top: 15%;
+  bottom: 0;
+  width: 43%;
+  height: 100%;
+  z-index: 2;
+  background: transparent;
+  border: none;
+  cursor: default;
+}
+
+/* covers left and right part of screen */
+#secret-yes {
+  left: 0;
+}
+
+#secret-no {
+  right: 0;
+}
+
+.shake-btn {
+  position: relative;
+  z-index: 1;
   font-size: 24px;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(45deg, #333 50%, #eee 50%);
+  background-size: 270%;
+  background-repeat: repeat;
+  background-position: top right;
+  animation: btn-animation 0.65s 0.15s ease-out forwards;
   transition: all 0.3s ease;
   display: block;
   margin: 0 auto;
 }
 
-button:hover {
-  background-color: #444;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+.shake-btn:hover,
+.shake-btn:hover #gradient-btn {
+  animation: btn-animation-rev 0.65s ease-out forwards;
 }
 
-button:active {
-  transform: translateY(2px);
+.shake-btn:hover {
+  background-color: #444;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+}
+
+.shake-btn:active {
+  transform: translateY(3.5px);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes btn-animation {
+  0% {
+    background-position: top right;
+  }
+  100% {
+    background-position: top left;
+  }
+}
+
+@keyframes btn-animation-rev {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
+}
+
+#secret-icon {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 2%;
+  font-weight: bold;
+  color: #f5f2f2;
+  font-size: 14px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 5px 5px 5px;
+}
+
+#click-counter {
+  color: #ffffff;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  text-align: center;
 }
 
 .magic-8-ball-answer {
@@ -101,9 +267,10 @@ button:active {
   height: 80%;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
-  color: #2b5f98;
+  color: #f6f6f6;
   font-size: 24px;
   font-weight: bold;
+  opacity: 0;
   text-align: center;
   position: absolute;
   top: 50%;
@@ -112,14 +279,9 @@ button:active {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-  animation: hologram 2s linear infinite;
-}
-
-#shake-btn{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+  /*animation: hologram 2s linear infinite;*/
+  transition: opacity 2.5s ease-in-out;
 }
 
 @keyframes hologram {
@@ -132,24 +294,72 @@ button:active {
     box-shadow: 0 0 40px 40px rgba(255, 255, 255, 0.5);
   }
   100% {
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
   }
 }
 
 @keyframes shake {
-  0% { transform: translate(-5px, 0) rotate(0); }
-  10% { transform: translate(10px, 0) rotate(-5deg); }
-  20% { transform: translate(-10px, 0) rotate(5deg); }
-  30% { transform: translate(10px, 0) rotate(-5deg); }
-  40% { transform: translate(-10px, 0) rotate(5deg); }
-  50% { transform: translate(10px, 0) rotate(-5deg); }
-  60% { transform: translate(-10px, 0) rotate(5deg); }
-  70% { transform: translate(10px, 0) rotate(-5deg); }
-  80% { transform: translate(-10px, 0) rotate(5deg); }
-  90% { transform: translate(10px, 0) rotate(-5deg); }
-  100% { transform: translate(-5px, 0) rotate(0); }
+  0% {
+    transform: translate(-5px, 0) rotate(0);
+  }
+  10% {
+    transform: translate(10px, 0) rotate(-5deg);
+  }
+  20% {
+    transform: translate(-10px, 0) rotate(5deg);
+  }
+  30% {
+    transform: translate(10px, 0) rotate(-5deg);
+  }
+  40% {
+    transform: translate(-10px, 0) rotate(5deg);
+  }
+  50% {
+    transform: translate(10px, 0) rotate(-5deg);
+  }
+  60% {
+    transform: translate(-10px, 0) rotate(5deg);
+  }
+  70% {
+    transform: translate(10px, 0) rotate(-5deg);
+  }
+  80% {
+    transform: translate(-10px, 0) rotate(5deg);
+  }
+  90% {
+    transform: translate(10px, 0) rotate(-5deg);
+  }
+  100% {
+    transform: translate(-5px, 0) rotate(0);
+  }
 }
 
 .shake {
-  animation: shake 0.1s cubic-bezier(.36,.07,.19,.97) 20;
+  animation: shake 0.1s cubic-bezier(0.36, 0.07, 0.19, 0.97) 20;
+}
+
+/*stop the animation after 3 rotations*/
+.hologram {
+  animation: hologram 2s ease-out 3;
+}
+
+
+/* invisible buttons */
+.button-left, .button-right {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  z-index: 0;
+  background: transparent;
+  border: none;
+}
+
+/* covers left and right half of screen */
+.button-left {
+  left: 0;
+}
+
+.button-right {
+  right: 0;
 }
