@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fortune Cookie</title>
+  <link rel="stylesheet" type="text/css" href="opening-screen.css">
+  <script src="opening-screen.js"></script>
+</head>
+<body>
+  <div class="center">
+    <h1 id="title">Fortune Cookie</h1>
+    <div class="buttons">
+        <button onclick="openInstructions()" class="button" id="instructions-button">How to Play</button>
+        <button onclick="playGame()" class="play-button" id="play-button"><strong>Play!</strong></button>
+        <button class="button" id="settings-button">Settings</button>
+    </div>
+  </div>
+  <div id="settings-popup" class="popup">
+    <div class="popup-content">
+        <div class="popup-header">
+          <span class="close">&times;</span>
+          <h2>Settings</h2>
+        </div>
+        <div class="popup-body">
+          <p>Settings will be displayed here.</p>
+        </div>
+      </div>
+  </div>
+</body>
+</html>
