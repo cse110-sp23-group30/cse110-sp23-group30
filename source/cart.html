@@ -8,18 +8,36 @@
 </head>
 
 <body>
-    <h1>Ending Cart</h1>
+    <h1>Cart Check Out</h1>
 
     <div id="items">
-        
+        <ul>
+            <li>
+                Sample List item 1
+            </li>
+            <li>
+                Sample Plate: <br />
+                Fried Rice <br />
+                Broccoli Beef <br />
+                Honey Walnut Shrimp <br />
+            </li>
+        </ul>
     </div>
 
-    <button id="add-plate">Add Plate</button>
-    <button id="add-bowl">Add Bowl</button>
+    <button id="add-plate" onclick="addPlate();">Add Plate</button>
+    <button id="add-bowl" onclick="addBowl();">Add Bowl</button>
     <br />
-    <button id="clear">Clear Cart</button>
-    <button id="confirm">Confirm Purchase?</button>
+    <button id="clear" onclick="popUp()">Clear Cart</button>
+    <button id="confirm" onclick="purchase()">Confirm Purchase?</button>
 
+    <div id="confirm-clear" style="display: none;">
+        <div class="confirm-clear">
+            <h2>Confirm Clear</h2>
+            <p>Are you sure you want to clear your entire cart?</p>
+            <button onclick="popUp()" class="confirmbtn">Cancel</button>
+            <button onclick="confirmClear()" class="confirmbtn">Clear</button>
+        </div>
+    </div>
 
     <script src="cart.js"></script>
 </body>
