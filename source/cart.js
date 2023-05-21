@@ -10,6 +10,8 @@ function purchase() {
   location.href = "confirm.html";
 }
 
+function deleteItem() {}
+
 function popUp() {
   const confirmClear = document.getElementById("confirm-clear");
   confirmClear.style.display =
