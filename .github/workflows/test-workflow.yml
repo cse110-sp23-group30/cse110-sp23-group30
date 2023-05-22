@@ -12,3 +12,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: "14"
+      - name: Install Dependencies
+      - name: Build code
+      - name: Run Unit Tests
+      - name: 
