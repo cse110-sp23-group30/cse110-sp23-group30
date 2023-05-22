@@ -17,13 +17,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Super-Linter
+      - name: Copy Super-Linter files
+        run: |
+          cp -R ./super-linter/.github /github
+          cp -R ./super-linter/lib /lib
+          cp -R ./super-linter/.docker /docker
+
+      - name: Run Super-Linter
         uses: github/super-linter@v3
         with:
           valid_file_extensions: ""
           debug: false
           default_branch: main
           allowlist: ""
-
-      - name: Run Super-Linter
-        run: ./entrypoint.sh
