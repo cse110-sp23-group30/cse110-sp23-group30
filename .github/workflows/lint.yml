@@ -15,8 +15,5 @@ jobs:
       - name: Clone
         uses: actions/checkout@v2
 
-      - name: Install dependencies
-        run: npm --prefix ./source/ ci
-
       - name: Lint source
         run: npm --prefix ./source/ run lint-check
