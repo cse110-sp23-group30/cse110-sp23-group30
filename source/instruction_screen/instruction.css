@@ -1,0 +1,62 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#instructionsContainer {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+  
+#instructionsList {
+    list-style-type: none;
+    padding: 0;
+}
+  
+.instruction {
+    display: none;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 10px;
+    background-color: #fff;
+    color: #000000;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 4px;
+}
+  
+#navigationButtons {
+    margin-top: 20px;
+    color: black;
+}
+
+#goBackButton {
+    margin-right: 10px;
+}
+
+.arrow {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 24px;
+    margin: 0 10px;
+}
+  
+.arrow:hover {
+    color: blue;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+
