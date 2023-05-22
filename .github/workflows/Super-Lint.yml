@@ -4,11 +4,9 @@ on:
   push:
     branches:
       - main
-      - master
   pull_request:
     branches:
       - main
-      - master
 
 jobs:
   super-lint:
@@ -19,12 +17,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Copy linterVersions.sh
-        run: cp super-linter/lib/functions/linterVersions.sh .
+      - name: Set up Super-Linter
+        uses: github/super-linter@v3
+        with:
+          valid_file_extensions: ""
+          debug: false
+          default_branch: main
+          allowlist: ""
 
       - name: Run Super-Linter
-        uses: github/super-linter@v3
-        env:
-          VALIDATE_ALL_CODEBASE: true
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: ./entrypoint.sh
