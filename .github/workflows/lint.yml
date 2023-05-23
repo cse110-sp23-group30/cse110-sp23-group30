@@ -3,10 +3,10 @@ name: lint
 on:
   push:
     branches:
-      - main
+      - main, feature/P-Z-H/linting
   pull_request:
     branches:
-      - main
+      - main, feature/P-Z-H/linting
 
 jobs:
   build:
