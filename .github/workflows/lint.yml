@@ -1,27 +1,28 @@
 name: lint
 
 on:
-  push:
-    branches:
-      - feature/P-Z-H/linting
-  pull_request:
-    branches:
-      - feature/P-Z-H/linting
+    push:
+        branches:
+            - feature/P-Z-H/linting
+    pull_request:
+        branches:
+            - feature/P-Z-H/linting
 jobs:
-  build:
-    name: Lint Code Base
-    runs-on: ubuntu-latest
+    build:
+        name: Lint Code Base
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v3
+              with:
+                  fetch-depth: 0
 
-      - name: Lint Code Base
-        uses: github/super-linter@v4
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          LINTER_RULES_PATH: /.github/linters/
-        with:
-          args: source
+            - name: Lint Code Base
+              uses: github/super-linter@v4
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  LINTER_RULES_PATH: /.github/linters/
+                  CSS_FILE_NAME: .stylelintrc.json
+              with:
+                  args: source
