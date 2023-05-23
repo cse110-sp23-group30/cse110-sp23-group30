@@ -1,0 +1,27 @@
+.menu-card {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .menu-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+  
+  .menu-details h3 {
+    margin: 0;
+  }
+  
+  .menu-details p {
+    margin: 5px 0;
+  }
+
+  .selected {
+    border: 2px solid blue;
+  }

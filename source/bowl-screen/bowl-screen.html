@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Choose an Image</title>
+    <link rel="stylesheet" href="bowl-screen.css">
+</head>
+<body>
+    <h1>Please choose a Main:</h1>
+    <form>
+        <div onclick="selectImageMain(this)" class="menu-card">
+            <div class="image-option">
+                <img src="Panda-Express-Chow-Mein.jpg" alt="Image 1">
+            </div>
+            <div class="menu-details">
+                <h3>Chow Mein</h3>
+                <p>Description: Add a brief description of the item here.</p>
+                <p>Price: $9.99</p>
+            </div>
+        </div>
+
+        <div onclick="selectImageMain(this)" class="menu-card">
+            <div class="image-option">
+                <img src="Panda-Express-Fried-Rice.jpg" alt="Image 2">
+            </div>
+            <div class="menu-details">
+                <h3>Fried Rice</h3>
+                <p>Description: Add a brief description of the item here.</p>
+                <p>Price: $8.99</p>
+            </div>
+        </div>
+          
+        <div onclick="selectImageMain(this)" class="menu-card">
+            <div class="image-option">
+                <img src="panda-express-veggies.jpg" alt="Image 3">
+            </div>
+            <div class="menu-details">
+                <h3>Veggies</h3>
+                <p>Description: Add a brief description of the item here.</p>
+                <p>Price: $7.99</p>
+            </div>
+        </div>
+
+        <h1>Select two entrees</h1>
+        <div onclick="selectImage(this)" class="menu-card">
+            <img src="panda-express-orange-chicken.jpg" alt="Orange Chicken">
+            <div class="menu-details">
+                <h3>Orange Chicken</h3>
+                <p>Description: Add a brief description of the item here.</p>
+                <p>Price: $9.99</p>
+            </div>
+        </div>
+          
+        <div onclick="selectImage(this)" class="menu-card">
+            <img src="panda-express-beijing-beef.jpg" alt="Beijing Beef">
+            <div class="menu-details">
+                <h3>Beijing Beef</h3>
+                <p>Description: Add a brief description of the item here.</p>
+                <p>Price: $9.99</p>
+            </div>
+        </div>
+          
+        <div onclick="selectImage(this)" class="menu-card">
+            <img src="panda-express-honey-walnut-shrimp.jpg" alt="Honey Walnut Shrimp">
+            <div class="menu-details">
+                <h3>Honey Walnut Shrimp</h3>
+                <p>Description: Add a brief description of the item here.</p>
+                <p>Price: $10.99</p>
+            </div>
+        </div>
+          
+        <div onclick="selectImage(this)" class="menu-card">
+            <img src="Panda-Express-Beef-and-Broccoli.jpg" alt="Beef and Broccoli">
+            <div class="menu-details">
+                <h3>Beef and Broccoli</h3>
+                <p>Description: Add a brief description of the item here.</p>
+                <p>Price: $8.99</p>
+            </div>
+        </div>
+          
+        <div onclick="selectImage(this)" class="menu-card">
+            <img src="panda-express-kung-pao-chicken.jpg" alt="Kung Pao Chicken">
+            <div class="menu-details">
+                <h3>Kung Pao Chicken</h3>
+                <p>Description: Add a brief description of the item here.</p>
+                <p>Price: $9.99</p>
+            </div>
+        </div>
+          
+
+        <input type="submit" value="Submit" style="font-size:20px; padding:10px;">
+        <button style="font-size:20px; padding:10px;">Cart</button>
+    </form>
+    <script src="bowl-screen.js"></script>
+</body>
+</html>
