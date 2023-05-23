@@ -12,7 +12,7 @@
 - Zhicheng Wang
 - Peter Lu
 
-We talked about meeting logistics and created our group organization and repo. We also planned about the group video and just hungout to get to know each other better.
+We talked about meeting logistics and created our group organization and repository. We also planned about the group video and just hungout to get to know each other better.
 
 ### To-Do
 - Group Video Assignment
