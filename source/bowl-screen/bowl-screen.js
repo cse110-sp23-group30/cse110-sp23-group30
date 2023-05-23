@@ -1,7 +1,7 @@
 let selectedCountMain = 0;
 let selectedCount = 0;
 
-export function selectImageMain(element) {
+function selectImageMain(element) {
     if (element.classList.contains('selected')) {
       element.classList.remove('selected');
       selectedCountMain--;
@@ -11,7 +11,7 @@ export function selectImageMain(element) {
     }
   }
 
-export function selectImage(element) {
+function selectImage(element) {
   if (element.classList.contains('selected')) {
     element.classList.remove('selected');
     selectedCount--;
@@ -21,4 +21,4 @@ export function selectImage(element) {
   }
 }
 
- 
+export {selectImageMain, selectImage}
