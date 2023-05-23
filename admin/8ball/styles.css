@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+/* stylelint-disable string_quotes */
+@import url("https://fonts.googleapis.com/css2?family=Marcellus&display=swap");
 
 * {
   box-sizing: border-box;
@@ -15,7 +16,7 @@ body {
 
 /*background image added*/
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   /*
   background: rgb(68, 67, 78);
   background: radial-gradient(
@@ -24,7 +25,7 @@ body {
     rgba(38, 38, 38, 1) 35%,
     rgba(0, 0, 0, 1) 100%
   );*/
-  background: url('media/magic8.png') no-repeat center center fixed;
+  background: url("media/magic8.png") no-repeat center center fixed;
   z-index: -300;
   background-size: cover;
 }
@@ -36,7 +37,7 @@ h1 {
   text-align: center;
   color: #f6f6f6;
   margin-top: 36px;
-  font-family: 'Marcellus', serif;
+  font-family: "Marcellus", serif;
   cursor: default;
   z-index: 1;
 }
@@ -99,7 +100,7 @@ div {
 
 .magic-8-ball::before,
 .magic-8-ball::after {
-  content: '';
+  content: "";
   position: absolute;
   top: -20px;
   left: -20px;
