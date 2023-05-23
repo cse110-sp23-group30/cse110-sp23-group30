@@ -1,24 +1,24 @@
 #connected-component {
-    width: 200px;
-    height: 200px;
-    background-color: #ccc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
+  width: 200px;
+  height: 200px;
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
   
-  #connected-component p {
-    font-size: 24px;
-    margin-bottom: 16px;
-  }
+#connected-component p {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
   
-  #toggle-button {
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    background-color: #fff;
-    color: #333;
-    cursor: pointer;
-  }
+#toggle-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+}
   
