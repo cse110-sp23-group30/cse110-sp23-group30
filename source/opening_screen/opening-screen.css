@@ -1,6 +1,6 @@
 /* stylelint-disable string_quotes */
 body {
-  background-image: url("path/to/background-image.jpg");
+  background-image: url('path/to/background-image.jpg');
   background-color: #888;
   background-size: cover;
   background-repeat: no-repeat;
