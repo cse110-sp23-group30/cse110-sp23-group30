@@ -1,34 +1,55 @@
-const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
+// test.js
 
-const {showSettings, closeSettings} = require("../bowl-screen/bowl-screen.js")
+const { selectImageMain, selectImage } = require("../bowl-screen/bowl-screen.js");
 
-describe('showSettings', () => {
-    it('should display the settings popup', () => {
-        const dom = new JSDOM(`
-            <!DOCTYPE html>
-            <div id="settings-popup" style="display: none;"></div>
-        `);
-        
-        global.window = dom.window;
-        global.document = dom.window.document;
+describe('selectImageMain', () => {
+    it('should add "selected" class if not already present', () => {
+        const mockElement = {
+            classList: {
+                contains: jest.fn().mockReturnValue(false),
+                add: jest.fn(),
+                remove: jest.fn()
+            }
+        };
+        selectImageMain(mockElement);
+        expect(mockElement.classList.add).toHaveBeenCalledWith('selected');
+    });
 
-        showSettings();
-        expect(document.getElementById("settings-popup").style.display).toBe("block");
+    it('should remove "selected" class if present', () => {
+        const mockElement = {
+            classList: {
+                contains: jest.fn().mockReturnValue(true),
+                add: jest.fn(),
+                remove: jest.fn()
+            }
+        };
+        selectImageMain(mockElement);
+        expect(mockElement.classList.remove).toHaveBeenCalledWith('selected');
     });
 });
 
-describe('closeSettings', () => {
-    it('should hide the settings popup', () => {
-        const dom = new JSDOM(`
-            <!DOCTYPE html>
-            <div id="settings-popup" style="display: block;"></div>
-        `);
-        
-        global.window = dom.window;
-        global.document = dom.window.document;
+describe('selectImage', () => {
+    it('should add "selected" class if not already present and selectedCount < 2', () => {
+        const mockElement = {
+            classList: {
+                contains: jest.fn().mockReturnValue(false),
+                add: jest.fn(),
+                remove: jest.fn()
+            }
+        };
+        selectImage(mockElement);
+        expect(mockElement.classList.add).toHaveBeenCalledWith('selected');
+    });
 
-        closeSettings();
-        expect(document.getElementById("settings-popup").style.display).toBe("none");
+    it('should remove "selected" class if present', () => {
+        const mockElement = {
+            classList: {
+                contains: jest.fn().mockReturnValue(true),
+                add: jest.fn(),
+                remove: jest.fn()
+            }
+        };
+        selectImage(mockElement);
+        expect(mockElement.classList.remove).toHaveBeenCalledWith('selected');
     });
 });

@@ -21,4 +21,4 @@ function selectImage(element) {
   }
 }
 
-export {selectImageMain, selectImage}
+module.exports = {selectImageMain, selectImage}
