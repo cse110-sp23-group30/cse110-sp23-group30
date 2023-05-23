@@ -21,6 +21,7 @@ jobs:
     - name: Install Node.js dependencies
       run: |
         npm install jest
+        npm install jsdom
 
     - name: Run Jest tests
       run: |
