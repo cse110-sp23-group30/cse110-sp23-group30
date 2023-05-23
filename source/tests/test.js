@@ -1,6 +1,8 @@
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
+const {showSettings, closeSettings} = require("../bowl-screen/bowl-screen.js")
+
 describe('showSettings', () => {
     it('should display the settings popup', () => {
         const dom = new JSDOM(`
