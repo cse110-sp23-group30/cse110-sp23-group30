@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <link rel="stylesheet" type="text/css" href="cookie_screen.css">
-</head>
-<body>
-  <button onclick="shakeCookie()">Shake</button>
-  <button onclick="goToHome()">Home</button>
-  <button onclick="restartGame()">Restart</button>
-  <div class="container">
-    <div id="fortune-cookie">
-      <img src="cookie_before.png" alt="Fortune Cookie">
+  <head>
+    <title>Cookie Screen</title>
+    <link rel="stylesheet" type="text/css" href="cookie_screen.css" />
+  </head>
+  <body>
+    <button onclick="shakeCookie()">Shake</button>
+    <button onclick="goToHome()">Home</button>
+    <button onclick="restartGame()">Restart</button>
+    <div class="container">
+      <div id="fortune-cookie">
+        <img src="cookie_before.png" alt="Fortune Cookie" />
+      </div>
+      <p id="fortune-message"></p>
     </div>
-    <p id="fortune-message"></p>
-  </div>
-  <script src="cookie_screen.js"></script>
-</body>
+    <script src="cookie_screen.js"></script>
+  </body>
 </html>
