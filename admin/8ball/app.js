@@ -1,3 +1,7 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable no-lonely-if */
+/* eslint-disable no-void */
+/* eslint-disable linebreak-style */
 /**
   @description An implementation of the Magic 8 Ball game using JavaScript.
   This program uses an array of messages and randomly selects one
@@ -34,8 +38,8 @@ const messages = [
   "Don't count on it",
   'Outlook not so good',
   'My sources say no',
-  'Very doubtful'
-]
+  'Very doubtful',
+];
 
 /**
  * @description Override messages for all no reponses.
@@ -49,8 +53,8 @@ const secretN = [
   'Absolutely not',
   'Uh-uh',
   'No way',
-  "I don't think so"
-]
+  "I don't think so",
+];
 /**
  * @description Override messages for all yes messages.
  */
@@ -63,51 +67,51 @@ const secretY = [
   'Indeed',
   'You bet',
   'Definitely',
-  'Affirmative'
-]
+  'Affirmative',
+];
 
 /**
  * @description Dom elements.
  */
-const magic8Ball = document.querySelector('#magic-8-ball')
-const magic8BallMessage = document.querySelector('#magic-8-ball-message')
-const shakeBtn = document.querySelector('#shake-btn')
-const input = document.getElementById('question-input')
-const clickCounter = document.getElementById('click-counter')
+const magic8Ball = document.querySelector('#magic-8-ball');
+const magic8BallMessage = document.querySelector('#magic-8-ball-message');
+const shakeBtn = document.querySelector('#shake-btn');
+const input = document.getElementById('question-input');
+const clickCounter = document.getElementById('click-counter');
 
 /**
  * @description Shake count.
  */
-let shakeCount = 0
+let shakeCount = 0;
 
 /**
  * @description Flags for message overrides.
  */
-let overrideY = false
-let overrideN = false
+let overrideY = false;
+let overrideN = false;
 
 /**
  * @description Counter for shake points.
- */
-const counter = 0
+ *
+const counter = 0 */
 
 /**
   Sets the overrideY flag to true and overrideN flag to false.
   Called when the left side of the screen is clicked.
-*/
+*
 function overrideYes () {
   overrideY = true
   overrideN = false
-}
+} */
 
 /**
   Sets the overrideN flag to true and overrideY flag to false.
   Called when the right side of the screen is clicked.
-*/
+
 function overrideNo () {
   overrideN = true
   overrideY = false
-}
+} */
 
 /**
   Handles the main event when the shake button is clicked.
@@ -115,61 +119,60 @@ function overrideNo () {
   shake count and displays a secret message if the user accumulates
   enough shake points.
 */
-function clicked () {
+function clicked() {
   // Remove any animation classes
-  magic8BallMessage.style.opacity = '0'
-  magic8Ball.classList.remove('shake')
-  magic8BallMessage.classList.remove('hologram')
+  magic8BallMessage.style.opacity = '0';
+  magic8Ball.classList.remove('shake');
+  magic8BallMessage.classList.remove('hologram');
   if (input.value != null && input.value !== '') {
-    shakeCount += 10
-    if (shakeCount == 100) {
-      const secretIcon = document.createElement('span')
-      secretIcon.innerText =
-                'Congratulations! You have accumulated enough points to see the secret: Clicking the left side of the screen always gives a positive answer while clicking the right side of the screen always gives a negative answer!'
-      secretIcon.id = 'secret-icon'
-      document.getElementById('secret').appendChild(secretIcon)
-      secretIcon.style.display = 'inline'
+    shakeCount += 10;
+    if (shakeCount === 100) {
+      const secretIcon = document.createElement('span');
+      secretIcon.innerText = 'Congratulations! You have accumulated enough points to see the secret: Clicking the left side of the screen always gives a positive answer while clicking the right side of the screen always gives a negative answer!';
+      secretIcon.id = 'secret-icon';
+      document.getElementById('secret').appendChild(secretIcon);
+      secretIcon.style.display = 'inline';
     }
   }
 
-  clickCounter.textContent = `Shake Points: ${shakeCount}`
+  clickCounter.textContent = `Shake Points: ${shakeCount}`;
   // Clear message before shaking
-  magic8BallMessage.textContent = ''
+  magic8BallMessage.textContent = '';
 
   // Trigger a reflow (flush the CSS changes and restart the animation)
-  void magic8Ball.offsetWidth
+  void magic8Ball.offsetWidth;
 
   // Add the animation class to the ball
   // as well to the text
-  magic8Ball.classList.add('shake')
-  magic8BallMessage.classList.add('hologram')
+  magic8Ball.classList.add('shake');
+  magic8BallMessage.classList.add('hologram');
 
   // Wait for the animation to end (2s) before displaying a message
   // was 1 seconds now changed to 2 second
   setTimeout(() => {
-    let randomIndex = Math.floor(Math.random() * messages.length)
-    let randomMessage = ''
+    let randomIndex = Math.floor(Math.random() * messages.length);
+    let randomMessage = '';
 
     // case: no input
     if (input.value == null || input.value === '') {
-      randomMessage = 'There was no question'
+      randomMessage = 'There was no question';
     } else {
       // checks whether to override messages with all yes or all no answers
       if (overrideY) {
-        randomIndex = Math.floor(Math.random() * secretY.length)
-        randomMessage = secretY[randomIndex]
-        overrideY = false
+        randomIndex = Math.floor(Math.random() * secretY.length);
+        randomMessage = secretY[randomIndex];
+        overrideY = false;
       } else if (overrideN) {
-        randomIndex = Math.floor(Math.random() * secretN.length)
-        randomMessage = secretN[randomIndex]
-        overrideN = false
+        randomIndex = Math.floor(Math.random() * secretN.length);
+        randomMessage = secretN[randomIndex];
+        overrideN = false;
       } else {
-        randomMessage = messages[randomIndex]
+        randomMessage = messages[randomIndex];
       }
     }
-    magic8BallMessage.textContent = randomMessage
-    magic8BallMessage.style.opacity = '1'
-  }, 2000)
+    magic8BallMessage.textContent = randomMessage;
+    magic8BallMessage.style.opacity = '1';
+  }, 2000);
 }
 
-shakeBtn.addEventListener('click', clicked)
+shakeBtn.addEventListener('click', clicked);
