@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the transparency as needed */
+    color: #fff; /* Set the text color to white */
+    padding: 10px
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #2591ac;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #035266;
+  }
+
+  .logo {
+    width: 60px; /* Adjust the width as needed */
+    height: 60px; /* Adjust the height as needed */
+    margin-right: 10px; /* Adjust the margin as needed */
+  }
+  
