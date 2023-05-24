@@ -47,6 +47,9 @@ function restartGame() {
     // Hide the fortune message
     message.style.display = "none";
 }
+
+localStorage.setItem("after", "source/cookie_screen/cookie_after.png");
+localStorage.setItem("before", "source/cookie_screen/cookie_before.png");
   
 function goToHome() {
     // Implement 
