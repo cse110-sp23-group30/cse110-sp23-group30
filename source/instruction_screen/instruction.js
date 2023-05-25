@@ -7,12 +7,12 @@ document.addEventListener("DOMContentLoaded", function() {
   
     var goBackButton = document.getElementById("goBackButton");
     goBackButton.addEventListener("click", function() {
-      window.location.href = "home.html"; // Redirect to home screen
+      window.location.href = "/group/source/opening_screen/opening-screen.html"; // Redirect to home screen
     });
   
     var proceedButton = document.getElementById("proceedButton");
     proceedButton.addEventListener("click", function() {
-      window.location.href = "cart.html"; // Redirect to cart screen
+      window.location.href = "/group/source/cart_screen/cart.html"; // Redirect to cart screen
     });
   
     var prevArrow = document.getElementById("prevArrow");

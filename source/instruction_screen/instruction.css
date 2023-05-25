@@ -1,4 +1,5 @@
 body {
+    font-size: 500%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,14 +27,21 @@ body {
     justify-content: space-evenly;
 }
 
-.button {
+button {
+    cursor: pointer;
     display: inline-block;
-    padding: 10px 10px;
+    align-items: center;
+    justify-content: center;
+    padding: 10% 10%;
     background-color: #fff;
     color: #000000;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 30%;
     border-radius: 4px;
+}
+
+button:hover {
+    background-color: blue;
 }
   
 #navigationButtons {
@@ -45,18 +53,44 @@ body {
     margin-right: 10px;
 }
 
+#arrows {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .arrow {
     display: inline-block;
     cursor: pointer;
     font-size: 24px;
-    margin: 0 10px;
-}
-  
-.arrow:hover {
-    color: blue;
+    margin: 50px; 
+
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 50px solid black; /* Adjust the thickness and color as needed */
 }
 
-.rotate {
-    transform: rotate(180deg);
+.arrow:hover {
+    border-bottom-color: blue;
+}
+
+#prevArrow {
+    transform: rotate(-90deg);
+}
+
+#nextArrow {
+    transform: rotate(90deg);
+}
+  
+.vertical-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: black;
+    transform: translateX(-50%);
 }
 
