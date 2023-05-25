@@ -18,7 +18,7 @@
 During the meeting, we reviewed the progress made in Sprint 1 and were pleased with the successful completion of most of our planned objectives and user stories. We acknowledged minor challenges encountered but appreciated the team's collaboration in overcoming them. Lessons learned included the importance of effective communication, close collaboration, and proper planning. For Sprint 2, we discussed and set objectives, identified user stories, and allocated resources accordingly. We scheduled regular check-ins and stand-up meetings to ensure timely progress tracking and issue resolution. The next meeting was scheduled to review Sprint 2 progress and plan for subsequent sprints.
 
 ### Reviews:
-
+Richard Xu - Created a working plate screen that lets you choose images that are different items on the menu.
  
  ### To-Do
  - Complete remaining Issues for sprint 1.
