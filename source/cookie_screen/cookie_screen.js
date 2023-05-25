@@ -113,3 +113,6 @@ function generateFloatingCookies() {
     }
 }
 generateFloatingCookies();
+
+module.exports = {shakeCookie, openFortune, restartGame, goToHome}
+
