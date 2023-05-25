@@ -19,7 +19,7 @@ During the meeting, we reviewed the progress made in Sprint 1 and were pleased w
 
 ### Reviews:
 
- 
+- Jaemin: I configured Jest and GitHub actions to run unit tests. I added unit tests for two of the screens and confirmed that they pass the test. 
  ### To-Do
  - Complete remaining Issues for sprint 1.
  - Start sprint 2.
