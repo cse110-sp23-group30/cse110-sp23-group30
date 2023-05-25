@@ -51,3 +51,4 @@ function restartGame() {
 function goToHome() {
     // Implement 
 }
+module.exports = {shakeCookie, openFortune, restartGame, goToHome}

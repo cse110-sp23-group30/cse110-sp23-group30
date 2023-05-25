@@ -20,3 +20,5 @@ function selectImage(element) {
     selectedCount++;
   }
 }
+
+module.exports = {selectImageMain, selectImage}
