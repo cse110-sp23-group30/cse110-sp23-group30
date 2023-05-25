@@ -1,3 +1,14 @@
+.image {
+  transition: transform 0.2s; /* Animation */
+  width: 600px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.image:hover {
+  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
 .image-option {
     display: flex;
     align-items: center;
@@ -11,10 +22,14 @@
 }
 
 img {
-    width: 500px;
+    width: 600px;
     height: 400px;
   }
 
   .selected {
-    border: 2px solid blue;
+    border: 5px solid blue;
+  }
+
+  h1 {
+    margin-left: 45%;
   }

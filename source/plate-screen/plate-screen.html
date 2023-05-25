@@ -6,29 +6,32 @@
     <link rel="stylesheet" href="plate-screen.css">
 </head>
 <body>
-    <h1>Please choose a Main:</h1>
+    <h1>Please Choose A Main:</h1>
     <form>
-        <div class="image-option">
-            <img src="Panda-Express-Chow-Mein.jpg" alt="Image 1">
-            <input type="radio" name="image" value="Image1">
+        <div class = "image">
+            <img onclick="selectImageMain(this)" src="Panda-Express-Chow-Mein.jpg">
         </div>
-
-        <div class="image-option">
-            <img src="Panda-Express-Fried-Rice.jpg" alt="Image 2">
-            <input type="radio" name="image" value="Image2">
+        <div class = "image">
+            <img onclick="selectImageMain(this)" src="Panda-Express-Fried-Rice.jpg">
         </div>
-
-        <div class="image-option">
-            <img src="panda-express-veggies.jpg" alt="Image 3">
-            <input type="radio" name="image" value="Image3">
+        <div class = "image">
+            <img onclick="selectImageMain(this)" src="panda-express-veggies.jpg">
         </div>
     
-        <h1>Select two entrees</h1>
-        <div>
+        <h1>Select Two Entrees</h1>
+        <div class = "image">
             <img onclick="selectImage(this)" src="panda-express-orange-chicken.jpg">
+        </div>
+        <div class = "image">
             <img onclick="selectImage(this)" src="panda-express-beijing-beef.jpg">
+        </div>
+        <div class = "image">
             <img onclick="selectImage(this)" src="panda-express-honey-walnut-shrimp.jpg">
+        </div>
+        <div class = "image">
             <img onclick="selectImage(this)" src="Panda-Express-Beef-and-Broccoli.jpg">
+        </div>
+        <div class = "image">
             <img onclick="selectImage(this)" src="panda-express-kung-pao-chicken.jpg">
         </div>
 
