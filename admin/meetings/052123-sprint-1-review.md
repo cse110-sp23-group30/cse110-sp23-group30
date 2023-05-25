@@ -20,6 +20,8 @@ During the meeting, we reviewed the progress made in Sprint 1 and were pleased w
 ### Reviews:
 
 - Jaemin: I configured Jest and GitHub actions to run unit tests. I added unit tests for two of the screens and confirmed that they pass the test. 
+<img width="938" alt="jaemin_screenshot" src="https://github.com/cse110-sp23-group30/cse110-sp23-group30/assets/10336857/791c5e57-d06b-4b68-aa0e-bbc92f741ec7">
+
  ### To-Do
  - Complete remaining Issues for sprint 1.
  - Start sprint 2.
