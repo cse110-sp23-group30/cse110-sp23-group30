@@ -20,7 +20,9 @@ During the meeting, we reviewed the progress made in Sprint 1 and were pleased w
 ### Reviews:
 
 - Georgio: Created the bowl screen which allows users to customize their meals by selecting a base, protein, toppings, and sides. Implemented the necessary features, including creating div elements for each component, populating them with at least three "card-style" food selection items, and adding a button or section for users to order more items. I worked on the HTML structure, CSS styling, and JavaScript functionality to bring the bowl screen to life. The next steps include integrating the localStorage API, enhancing the user interface with images, dynamically updating the cart screen, and conducting user testing for a seamless user experience.
-INSERT IMAGE
+![240040058-e0cce33a-750c-41ba-8de1-36655496f07e](https://github.com/cse110-sp23-group30/cse110-sp23-group30/assets/75293296/afa8f383-61d4-4c30-a798-bcf6ceacf74c)
+![240040039-4adacf4f-c8be-40c3-bc0a-13db34c3d7d5](https://github.com/cse110-sp23-group30/cse110-sp23-group30/assets/75293296/5df7381f-fe38-4434-9f05-5dc527c08a49)
+
 
 - Peter: created backbone for the instruction screen(no real instructions for now),  added arrows to slide between each instruction, added button to go back to home screen, added button to proceed to cart screen. Style TBD.
 INSERT IMAGE
