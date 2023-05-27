@@ -25,21 +25,30 @@ During the meeting, we reviewed the progress made in Sprint 1 and were pleased w
 
 
 - Peter: created backbone for the instruction screen(no real instructions for now),  added arrows to slide between each instruction, added button to go back to home screen, added button to proceed to cart screen. Style TBD.
-INSERT IMAGE
+![Screen Shot 2023-05-24 at 5 28 38 PM](https://github.com/cse110-sp23-group30/cse110-sp23-group30/assets/75293296/b956b43b-78b4-4e9b-b407-6fe626467196)
+
 
 - Zihan Peng: Created .yml file for linting, ran linter through javascript files, and fixed the errors.
-INSERT IMAGE
+![linter](https://github.com/cse110-sp23-group30/cse110-sp23-group30/assets/75293296/5646e429-a5ff-41a1-959d-a66a4d732ae8)
+
 
 - Richard Xu: Created a working plate screen which allows the user choose food items from the menu by clicking on images. With code that restricts the user to select only one main menu item and two entree items.
 
 - Ryan Wang: Created the welcome/home screen that users will view upon entry into game. Includes a settings, instructions, and play button. Settings button prompts a popup which will include customization options such as adjusting game background sound (not yet implemented). Instructions button and play button will route to their respective pages. Background image and general page styling TBD.
-INSERT IMAGE
+![Screen Shot 2023-05-24 at 5 33 54 PM](https://github.com/cse110-sp23-group30/cse110-sp23-group30/assets/75293296/148fd3b3-ba83-42ac-9d7d-7e8e82101dba)
+![Screen Shot 2023-05-24 at 5 34 56 PM](https://github.com/cse110-sp23-group30/cse110-sp23-group30/assets/75293296/b0874c9d-fa88-4d07-a76d-9899757cf3e3)
+
 
 - Chris Wang: Explore different linking API and choose the most suitable one. Create .yml file using super-linter to check all the files.
-INSERT IMAGE
+![Screenshot 2023-05-24 at 7 09 42 PM](https://github.com/cse110-sp23-group30/cse110-sp23-group30/assets/75293296/ac68fe17-3c59-4a4f-89cc-df0331dd8681)
+
+- Eric Dong: Created the Cart checkout screen. Focused on getting a first working model out for the iterative process, focusing mostly on HTML and javascript. Created a basic working screen that holds the various plates and bowls for the fortune cookie. Created delete buttons to allow the user to delete the items in their carts. Created add plate and bowl functionality as well as clearing the entire cart. For clearing the cart, added a confirmation method. Finally, created a button to move on and checkout what is in the cart.
+![pasted image 0](https://github.com/cse110-sp23-group30/cse110-sp23-group30/assets/75293296/2a71cd7e-ec9c-4db6-884b-9fd14832c737)
+
 
 - Zhicheng Wang: Created cookie animation screen, Includes shake, home and restart button. The shake button was implemented using 2 images which functions after the animation stops and resets when the home and restart button has been clicked. Generate random messages that gets displayed.
-INSERT IMAGE
+![截屏2023-05-24 下午5 44 44](https://github.com/cse110-sp23-group30/cse110-sp23-group30/assets/75293296/a561f84d-dd61-4ef9-bdfe-feb46def345d)
+
 
 - Jaemin: I configured Jest and GitHub actions to run unit tests. I added unit tests for two of the screens and confirmed that they pass the test. 
 
