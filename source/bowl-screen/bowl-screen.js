@@ -1,3 +1,18 @@
+document.addEventListener('DOMContentLoaded', function() {
+  // Get the submit button element
+  var submitBtn = document.getElementById('submit');
+
+  // Handle submit button click event
+  submitBtn.addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Perform any required actions here
+
+    // Navigate to another screen or URL
+    window.location.href = '/source/cart_screen/cart.html';
+  });
+});
+
 let selectedCountMain = 0;
 let selectedCount = 0;
 
@@ -20,5 +35,8 @@ function selectImage(element) {
     selectedCount++;
   }
 }
+
+
+
 
 module.exports = {selectImageMain, selectImage}

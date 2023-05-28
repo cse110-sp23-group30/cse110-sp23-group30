@@ -9,10 +9,14 @@ function init() {
 
 function openInstructions() {
     // Link to Instructions Screen
+
+      window.location.href = "/source/instruction_screen/instruction.html"; // Redirect to home screen
+
 }
 
 function playGame() {
     // Link to Food Selection Screen
+    window.location.href = "/source/cart_screen/cart.html";
 }
 
 function showSettings() {

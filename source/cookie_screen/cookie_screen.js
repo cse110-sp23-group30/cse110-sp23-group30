@@ -49,6 +49,10 @@ function restartGame() {
 }
   
 function goToHome() {
-    // Implement 
+
+    window.location.href = '/source/opening_screen/opening-screen.html';
+
 }
+
 module.exports = {shakeCookie, openFortune, restartGame, goToHome}
+
