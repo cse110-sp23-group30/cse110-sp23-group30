@@ -9,6 +9,10 @@
 - Peter Lu
 - Zhicheng Wang
 - Richard Xu
+- Chris Wang
+- Eric Dong
+- Ryan Wong
+- Zihan Peng
 
 ### Agenda:
 - Check-in on sprint 1 progress.
