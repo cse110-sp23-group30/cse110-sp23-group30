@@ -3,33 +3,43 @@ const { JSDOM } = jsdom;
 
 const {showInstruction, hideInstruction} = require('../instruction_screen/instruction')
 
-describe('instructions', () => {
-    beforeEach(() => {
-        const dom = new JSDOM(
-            `<!DOCTYPE html>
-            <ul id="instructionsList">
-                <li class="instruction" style="display: none;">Instruction 1</li>
-                <li class="instruction" style="display: none;">Instruction 2</li>
-                <li class="instruction" style="display: none;">Instruction 3</li>
-            </ul>`
-        );
+const { browser, page } = require('./setup');
 
-        global.document = dom.window.document;
-    });
+test('instruction screen behavior', async () => {
+  await page.goto('../instruction_screen/instruction.html');
 
-    it('should show the instruction', () => {
-        const instructions = global.document.getElementsByClassName("instruction");
-        showInstruction(0);
-        expect(instructions[0].style.display).toBe("block");
-        expect(instructions[1].style.display).toBe("none");
-        expect(instructions[2].style.display).toBe("none");
-    });
+  const instructions = await page.evaluate(() => {
+    return Array.from(document.getElementsByClassName('instruction')).map(el => el.style.display);
+  });
 
-    it('should hide the instruction', () => {
-        const instructions = global.document.getElementsByClassName("instruction");
-        hideInstruction(0);
-        expect(instructions[0].style.display).toBe("none");
-        expect(instructions[1].style.display).toBe("none");
-        expect(instructions[2].style.display).toBe("none");
-    });
+  // Verify that the first instruction is displayed and the rest are hidden
+  expect(instructions[0]).toBe('block');
+  for (let i = 1; i < instructions.length; i++) {
+    expect(instructions[i]).toBe('none');
+  }
+
+  // Simulate clicking the next arrow and verify that the instruction changes
+  await page.click('#nextArrow');
+
+  const instructionsAfterClick = await page.evaluate(() => {
+    return Array.from(document.getElementsByClassName('instruction')).map(el => el.style.display);
+  });
+
+  expect(instructionsAfterClick[0]).toBe('none');
+  expect(instructionsAfterClick[1]).toBe('block');
+  for (let i = 2; i < instructionsAfterClick.length; i++) {
+    expect(instructionsAfterClick[i]).toBe('none');
+  }
+
+  // Simulate clicking the previous arrow and verify that the instruction changes back
+  await page.click('#prevArrow');
+
+  const instructionsAfterSecondClick = await page.evaluate(() => {
+    return Array.from(document.getElementsByClassName('instruction')).map(el => el.style.display);
+  });
+
+  expect(instructionsAfterSecondClick[0]).toBe('block');
+  for (let i = 1; i < instructionsAfterSecondClick.length; i++) {
+    expect(instructionsAfterSecondClick[i]).toBe('none');
+  }
 });
