@@ -22,3 +22,4 @@ function showSettings() {
 function closeSettings() {
     document.getElementById("settings-popup").style.display = "none";
 }
+

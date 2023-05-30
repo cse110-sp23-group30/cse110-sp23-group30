@@ -42,3 +42,4 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
   
+  module.exports = {showInstruction, hideInstruction}
