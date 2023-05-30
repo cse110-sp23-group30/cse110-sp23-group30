@@ -13,7 +13,7 @@ afterAll(() => {
 });
 
 test('home screen behavior', async () => {
-  await page.goto('file:///path/to/your/index.html');
+  await page.goto('../opening_screen/opening-screen.html');
 
   // Test the settings popup
   await page.click("#settings-button");
