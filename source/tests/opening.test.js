@@ -1,5 +1,5 @@
-
-const puppeteer = require('puppeteer');
+const path = require("path");
+const puppeteer = require("puppeteer");
 let browser;
 let page;
 
@@ -12,17 +12,20 @@ afterAll(() => {
   browser.close();
 });
 
-test('home screen behavior', async () => {
-  await page.goto('../opening_screen/opening-screen.html');
-
+test("home screen behavior", async () => {
+  const filePath = path.resolve(
+    __dirname,
+    "../sources/opening_screen/opening-screen.html"
+  );
+  await page.goto("file://" + filePath);
   // Test the settings popup
   await page.click("#settings-button");
-  let style = await page.$eval('#settings-popup', (el) => el.style.display);
-  expect(style).toBe('block');
+  let style = await page.$eval("#settings-popup", (el) => el.style.display);
+  expect(style).toBe("block");
 
   await page.click(".close");
-  style = await page.$eval('#settings-popup', (el) => el.style.display);
-  expect(style).toBe('none');
+  style = await page.$eval("#settings-popup", (el) => el.style.display);
+  expect(style).toBe("none");
 
   // Test the instructions and play buttons
   // This is more complex as it would involve navigation which is not covered in this example
