@@ -2,8 +2,18 @@ const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
 const {showInstruction, hideInstruction} = require('../instruction_screen/instruction')
+const puppeteer = require('puppeteer');
+let browser;
+let page;
 
-const { browser, page } = require('./setup');
+beforeAll(async () => {
+  browser = await puppeteer.launch();
+  page = await browser.newPage();
+});
+
+afterAll(() => {
+  browser.close();
+});
 
 test('instruction screen behavior', async () => {
   await page.goto('../instruction_screen/instruction.html');
