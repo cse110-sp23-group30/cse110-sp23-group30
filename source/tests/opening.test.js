@@ -15,7 +15,7 @@ afterAll(() => {
 test("home screen behavior", async () => {
   const filePath = path.resolve(
     __dirname,
-    "../sources/opening_screen/opening-screen.html"
+    "../opening_screen/opening-screen.html"
   );
   await page.goto("file://" + filePath);
   // Test the settings popup
