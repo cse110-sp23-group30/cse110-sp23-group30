@@ -71,7 +71,7 @@ function restartGame() {
     message.style.display = "none";
 
     // go to cart screen
-    window.location.href = "/group/source/cart_screen/cart.html";
+
 }
   
 function goToHome() {
@@ -88,7 +88,7 @@ function goToHome() {
     message.style.display = "none";
 
     // go to home 
-    window.location.href = "/group/source/opening_screen/opening-screen.html";
+
    
 }
 
