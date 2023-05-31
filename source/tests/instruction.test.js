@@ -1,5 +1,6 @@
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
+const path = require('path');
 
 
 const puppeteer = require('puppeteer');
