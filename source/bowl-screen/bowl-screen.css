@@ -1,15 +1,22 @@
+body {
+  background: url("pandanologo.png") no-repeat center fixed;
+  background-size: contain;
+  background-color: white;
+}
+
+
 .menu-card {
-    display: flex;
-    align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 10px;
+  padding: 1%;
+  margin: 2%;
+  width: 80%;
+  background: rgba(0, 0, 0, 0.4);
+  color: #f2f3f5;
+  align-items: center;
   }
   
   .menu-card img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
     margin-right: 10px;
   }
@@ -23,5 +30,15 @@
   }
 
   .selected {
-    border: 2px solid blue;
+    border: 3px solid blue;
+  }
+
+  .buttons {
+    padding: 15px;
+    border-style: none;
+    margin: 3px;
+    background-color: #c02827;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
   }
