@@ -1,7 +1,7 @@
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
-const {showInstruction, hideInstruction} = require('../instruction_screen/instruction')
+
 const puppeteer = require('puppeteer');
 let browser;
 let page;
@@ -16,7 +16,8 @@ afterAll(() => {
 });
 
 test('instruction screen behavior', async () => {
-  await page.goto('../instruction_screen/instruction.html');
+    await page.goto('file://' + path.resolve(__dirname, '../instruction_screen/instruction.html'));
+
 
   const instructions = await page.evaluate(() => {
     return Array.from(document.getElementsByClassName('instruction')).map(el => el.style.display);
