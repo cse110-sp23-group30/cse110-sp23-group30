@@ -23,7 +23,7 @@ test("home screen behavior", async () => {
   let style = await page.$eval("#settings-popup", (el) => el.style.display);
   expect(style).toBe("block");
 
-  await page.click("close");
+  await page.click(".close");
   style = await page.$eval("#settings-popup", (el) => el.style.display);
   expect(style).toBe("none");
 
