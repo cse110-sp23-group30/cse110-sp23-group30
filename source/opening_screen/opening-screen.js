@@ -15,3 +15,4 @@ function playGame() {
     // Link to Food Selection Screen
     window.location.href = "/source/cart_screen/cart.html";
 }
+

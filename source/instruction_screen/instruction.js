@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
+
   function play() {
     window.location.href = "/source/cart_screen/cart.html";
   }
@@ -41,3 +42,4 @@ document.addEventListener("DOMContentLoaded", function() {
     window.location.href = "/source/opening_screen/opening-screen.html";
   }
   
+
