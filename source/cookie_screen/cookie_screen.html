@@ -4,15 +4,30 @@
   <link rel="stylesheet" type="text/css" href="cookie_screen.css">
 </head>
 <body>
-  <button onclick="shakeCookie()">Shake</button>
-  <button onclick="goToHome()">Home</button>
-  <button onclick="restartGame()">Restart</button>
   <div class="container">
+    <!-- Buttons -->
+    <div class="buttons_container">
+      <button class="glow-on-hover" type ="button"  onclick="shakeCookie()">Shake</button>
+      <button class="glow-on-hover" type ="button" onclick="goToHome()">Home</button>
+      <button class="glow-on-hover" type ="button" onclick="restartGame()">Restart</button>
+    </div>
+
+     <!-- Fortune Cookie and Message -->
     <div id="fortune-cookie">
       <img src="cookie_before.png" alt="Fortune Cookie">
     </div>
     <p id="fortune-message"></p>
   </div>
+
+  <!-- Video background -->
+  <video autoplay muted loop id="video-background">
+    <source src="background_video.mp4" type="video/mp4">
+  </video>
+
+  <!-- Background music , To be Implemented -->
+  <audio id="background-music" src="lisa.mp3" loop></audio>
+  <button onclick="playBackgroundMusic()">Play Music</button>
+
   <script src="cookie_screen.js"></script>
 </body>
 </html>

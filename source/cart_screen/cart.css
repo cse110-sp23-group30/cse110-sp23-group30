@@ -1,3 +1,55 @@
+@import url("https://fonts.cdnfonts.com/css/frutiger");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100vh;
+  width: 100%;
+}
+
+html {
+  font-family: "Frutiger", sans-serif;
+  font-size: 18px;
+}
+
+body {
+  background: url("pandanologo.png") no-repeat center fixed;
+  background-size: contain;
+  background-color: white;
+}
+
+h1 {
+  margin-top: 6%;
+  text-align: center;
+}
+
+#items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#items section {
+  padding: 1%;
+  margin: 2%;
+  width: 80%;
+  background: rgba(0, 0, 0, 0.4);
+  color: #f2f3f5;
+  align-items: center;
+}
+
+.photos {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
 #confirm-clear {
   position: fixed;
   top: 0;
@@ -26,4 +78,24 @@
   background-color: white;
   padding: 20px;
   border-radius: 5px;
+}
+
+.buttons {
+  position: fixed;
+  bottom: 5%;
+  right: 7%;
+  display: flex;
+}
+
+.buttons button {
+  padding: 15px;
+  border-style: none;
+  margin: 3px;
+  background-color: #c02827;
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.add-extra {
 }

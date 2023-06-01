@@ -31,8 +31,16 @@ class HeaderComponent extends HTMLElement {
       
       // Add event listener to the settings button
       settingsBtn.addEventListener('click', () => {
-        // Create the settings popup;
+       // Check if the settings panel already exists
+        document.getElementById("settings-popup").style.display = "block";
       });
+
+      const closeSettings = document.getElementsByClassName("close")[0]
+
+      closeSettings.addEventListener('click', () => {
+        document.getElementById("settings-popup").style.display = "none";
+      })
+
     }
   }
   

@@ -1,13 +1,13 @@
 function addPlate() {
-  location.href = "plate.html";
+  location.href = "/source/plate-screen/plate-screen.html";
 }
 
 function addBowl() {
-  location.href = "bowl.html";
+  location.href = "/source/bowl-screen/bowl-screen.html";
 }
 
 function purchase() {
-  location.href = "confirm.html";
+  location.href = "/source/cookie_screen/cookie_screen.html";
 }
 
 function deleteItem() {
