@@ -20,14 +20,14 @@ test('instruction screen behavior', async () => {
     await page.goto('file://' + path.resolve(__dirname, '../instruction_screen/instruction.html'));
 
 
-  const instructions = await page.evaluate(() => {
-    return Array.from(document.getElementsByClassName('instruction')).map(el => el.style.display);
+  const instructionsList = await page.evaluate(() => {
+    return Array.from(document.getElementsByID('instructionslist')).map(el => el.style.display);
   });
 
   // Verify that the first instruction is displayed and the rest are hidden
-  expect(instructions[0]).toBe('block');
-  for (let i = 1; i < instructions.length; i++) {
-    expect(instructions[i]).toBe('none');
+  expect(instructionsList[0]).toBe('block');
+  for (let i = 1; i < instructionsList.length; i++) {
+    expect(instructionsList[i]).toBe('none');
   }
 
   // Simulate clicking the next arrow and verify that the instruction changes
