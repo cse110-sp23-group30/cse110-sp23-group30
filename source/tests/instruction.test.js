@@ -21,7 +21,7 @@ test('instruction screen behavior', async () => {
 
 
   const instructionsList = await page.evaluate(() => {
-    return Array.from(document.getElementByID('instructionslist')).map(el => el.style.display);
+    return Array.from(document.getElementById('instructionslist')).map(el => el.style.display);
   });
 
   // Verify that the first instruction is displayed and the rest are hidden
