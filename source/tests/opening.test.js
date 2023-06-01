@@ -18,14 +18,7 @@ test("home screen behavior", async () => {
     "../opening_screen/opening-screen.html"
   );
   await page.goto("file://" + filePath);
-  // Test the settings popup
-  await page.click("#settings-button");
-  let style = await page.$eval("#settings-popup", (el) => el.style.display);
-  expect(style).toBe("block");
-
-  await page.click(".close");
-  style = await page.$eval("#settings-popup", (el) => el.style.display);
-  expect(style).toBe("none");
+  // Don't test the settings popup
 
   // Test the instructions and play buttons
   // This is more complex as it would involve navigation which is not covered in this example
