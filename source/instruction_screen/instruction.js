@@ -5,15 +5,6 @@ document.addEventListener("DOMContentLoaded", function() {
   
     showInstruction(currentIndex);
   
-    var goBackButton = document.getElementById("goBackButton");
-    goBackButton.addEventListener("click", function() {
-      window.location.href = "/group/source/opening_screen/opening-screen.html"; // Redirect to home screen
-    });
-  
-    var proceedButton = document.getElementById("proceedButton");
-    proceedButton.addEventListener("click", function() {
-      window.location.href = "/group/source/cart_screen/cart.html"; // Redirect to cart screen
-    });
   
     var prevArrow = document.getElementById("prevArrow");
     prevArrow.addEventListener("click", function() {
@@ -41,4 +32,12 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }
   });
+
+  function play() {
+    window.location.href = "/source/cart_screen/cart.html";
+  }
+
+  function goBack() {
+    window.location.href = "/source/opening_screen/opening-screen.html";
+  }
   
