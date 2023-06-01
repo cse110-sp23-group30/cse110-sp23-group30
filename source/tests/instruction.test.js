@@ -19,8 +19,9 @@ afterAll(() => {
 test('instruction screen behavior', async () => {
     await page.goto('file://' + path.resolve(__dirname, '../instruction_screen/instruction.html'));
 
-  var instructionsList = document.getElementById("instructionsList");
+  
   const instruction = await page.evaluate(() => {
+    var instructionsList = document.getElementById("instructionsList");
     return Array.from(instructionsList.getElementsByClassName('instruction')).map(el => el.style.display);
   });
 
