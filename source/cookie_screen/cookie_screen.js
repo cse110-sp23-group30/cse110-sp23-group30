@@ -54,10 +54,6 @@ const messages = [
 function shakeCookie() {
     // prevent user clicking multiple times
     cookie.classList.remove("shake-animation");
-    // Clear the fortune message
-    message.textContent = "";
-    // Hide the fortune message
-    message.style.display = "none";
 
     cookie.innerHTML = '<img src="media/cookie_before.png" alt="Cracked Cookie">';
     // Clear the fortune message
@@ -113,6 +109,7 @@ function openFortune() {
     // Hide the fortune message
     message.style.display = "none";
 
+    cookie.classList.add("shake-animation");
     setTimeout(function() {
         cookie.classList.remove("shake-animation");
     
