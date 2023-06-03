@@ -66,7 +66,10 @@ function shakeCookie() {
     message.style.display = "none";
 
     // Increase the credit by 100
-    let credit = parseInt(creditElement.textContent);
+    if (creditElement !== null) {
+        let creditText = creditElement.textContent;
+        credit = parseInt(creditText);
+    }
     credit += 100;
     creditElement.textContent = credit;
 
@@ -131,7 +134,7 @@ function restartGame() {
     // Hide the fortune message
     message.style.display = "none";
     // go to cart screen
-    window.location.href = "../cart_screen/cart.html";
+    
 }
 
 function goToHome() {
@@ -143,7 +146,7 @@ function goToHome() {
     // Hide the fortune message
     message.style.display = "none";
     // go to home 
-    window.location.href = "../opening_screen/opening-screen.html";
+
 }
 if (volumeSlider) {
     volumeSlider.addEventListener("input", () => {
