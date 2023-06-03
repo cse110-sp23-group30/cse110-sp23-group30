@@ -69,9 +69,9 @@ function shakeCookie() {
     if (creditElement !== null) {
         let creditText = creditElement.textContent;
         credit = parseInt(creditText);
+        credit += 100;
+        creditElement.textContent = credit;
     }
-    credit += 100;
-    creditElement.textContent = credit;
 
     // Randomly select a video from the 'videos' array
     const randomIndex = Math.floor(Math.random() * videos.length);
