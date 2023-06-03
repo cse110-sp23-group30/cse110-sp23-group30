@@ -5,28 +5,53 @@
 </head>
 <body>
   <div class="container">
-    <!-- Buttons -->
-    <div class="buttons_container">
-      <button class="glow-on-hover" type ="button"  onclick="shakeCookie()">Shake</button>
-      <button class="glow-on-hover" type ="button" onclick="goToHome()">Home</button>
-      <button class="glow-on-hover" type ="button" onclick="restartGame()">Restart</button>
+    <!-- when user clicks shake animation -->
+    <div id="fullscreen-video">
+      <video id="video-player" src="media/video_blue.mp4" autoplay></video>
     </div>
 
-     <!-- Fortune Cookie and Message -->
-    <div id="fortune-cookie">
-      <img src="cookie_before.png" alt="Fortune Cookie">
+    <!-- tap-wrap -->
+    <div class = "tapWrap">
+      <div class="setting_icon">
+        <img id="setting_icon" src="media/icons8-settings-50.png" alt="Setting icon">
+      </div>
+      <!-- volume , language, etc...-->
+      <div class="volume_icon">
+        <img id="volume-icon" class="volume-icon" src="media/volume-level-1.svg" alt="Volume icon">
+      </div>
+
+      <div class="volume-controls">
+        <input type="range" id="volume-slider" class="vertical-slider" min="0" max="100" step="1" value="50">
+      </div>
     </div>
-    <p id="fortune-message"></p>
+
+    <div class="right_box">
+      <div class="credit">
+        <div id="fortune-cookie-credit">
+          <img src="media/fortune-cookie.png">
+        </div>
+        <div id ="credit">
+          50000
+        </div>
+      </div>
+      <!-- Fortune Cookie and Message -->
+      <div id="fortune-cookie">
+        <img src="media/cookie_before.png" alt="Fortune Cookie">
+      </div>
+      <p id="fortune-message"></p>
+
+      <!-- Buttons -->
+      <div class="buttons_container">
+        <button class="glow-on-hover" type ="button" onclick="goToHome()">Back to home</button>
+        <button class="glow-on-hover" type ="button"  onclick="shakeCookie()">Shake the cookie</button>
+        <button class="glow-on-hover" type ="button" onclick="restartGame()">Restart the game</button>
+      </div>
+
+    </div>
   </div>
 
-  <!-- Video background -->
-  <video autoplay muted loop id="video-background">
-    <source src="background_video.mp4" type="video/mp4">
-  </video>
-
   <!-- Background music , To be Implemented -->
-  <audio id="background-music" src="lisa.mp3" loop></audio>
-  <button onclick="playBackgroundMusic()">Play Music</button>
+  <audio id="background-music" src="media/lisa.mp3" loop></audio>
 
   <script src="cookie_screen.js"></script>
 </body>
