@@ -78,9 +78,11 @@ function shakeCookie() {
     const randomVideo = videos[randomIndex];
 
     // Set the source of the video player to the randomly selected video
-    videoPlayer.src = randomVideo;
-    fullscreenVideo.style.display = 'block';
-    videoPlayer.play();
+    if (videoPlayer !== null) {
+        videoPlayer.src = randomVideo;
+        fullscreenVideo.style.display = 'block';
+        videoPlayer.play();
+    }
 
     // skip if dont wanna see animation
     document.addEventListener("click", skipVideo);
@@ -110,8 +112,6 @@ function openFortune() {
     message.textContent = "";
     // Hide the fortune message
     message.style.display = "none";
-
-    cookie.classList.add("shake-animation");
 
     setTimeout(function() {
         cookie.classList.remove("shake-animation");
