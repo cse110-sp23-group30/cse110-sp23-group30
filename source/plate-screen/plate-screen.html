@@ -1,11 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
+ <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+  <script>
+    $(function(){
+      // Load index.html
+      $("#header").load("../header/index.html", function() {
+        // Callback function after loading index.html
+        // Load JavaScript file
+        $.getScript("../header/header-component.js");
+
+        // Append CSS file
+        $("<link>", {
+          rel: "stylesheet",
+          type: "text/css",
+          href: "../header/styles.css"
+        }).appendTo("head");
+      });
+    });
+  </script>
+  <link rel="stylesheet" type="text/css" href="opening-screen.css">
+  <script src="opening-screen.js"></script>
     <meta charset="UTF-8">
-    <title>Bowl Screen</title>
+    <title>Plate Screen</title>
     <link rel="stylesheet" href="plate-screen.css">
 </head>
 <body>
+    <div id="header"></div>
     <h1>Please choose a Main:</h1>
     <form>
         <div onclick="selectImageMain(this)" class="menu-card">
