@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 const toggleButton = document.querySelector('#toggle-button');
 const connectedComponent = document.querySelector('#connected-component');
 

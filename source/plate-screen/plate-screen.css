@@ -1,4 +1,3 @@
-/* stylelint-disable no-descending-specificity */
 .image {
   transition: transform 0.2s; /* Animation */
   width: 600px;

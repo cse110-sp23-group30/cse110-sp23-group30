@@ -1,28 +1,3 @@
-/* eslint-disable no-console */
-/* eslint-disable func-names */
-/* eslint-disable one-var */
-/* eslint-disable no-prototype-builtins */
-/* eslint-disable prefer-destructuring */
-/* eslint-disable max-len */
-/* eslint-disable default-case */
-/* eslint-disable no-mixed-operators */
-/* eslint-disable no-void */
-/* eslint-disable no-multi-assign */
-/* eslint-disable prefer-spread */
-/* eslint-disable no-sequences */
-/* eslint-disable no-bitwise */
-/* eslint-disable no-unused-expressions */
-/* eslint-disable no-plusplus */
-/* eslint-disable vars-on-top */
-/* eslint-disable no-var */
-/* eslint-disable no-redeclare */
-/* eslint-disable no-param-reassign */
-/* eslint-disable no-return-assign */
-/* eslint-disable no-nested-ternary */
-/* eslint-disable no-cond-assign */
-/* eslint-disable no-use-before-define */
-/* eslint-disable no-shadow */
-/* eslint-disable block-scoped-var */
 const q = null; window.PR_SHOULD_USE_CONTINUATION = !0;
 (function () {
   function L(a) {

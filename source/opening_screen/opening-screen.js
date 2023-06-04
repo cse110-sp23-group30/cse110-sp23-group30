@@ -1,7 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-undef */
-/* eslint-disable linebreak-style */
-/* eslint-disable no-use-before-define */
 window.addEventListener('DOMContentLoaded', init);
 
 function init() {

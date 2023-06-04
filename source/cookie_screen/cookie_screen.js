@@ -1,9 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-plusplus */
-/* eslint-disable linebreak-style */
-/* eslint-disable no-use-before-define */
-/* eslint-disable linebreak-style */
-/* eslint-disable no-unused-vars */
 function playBackgroundMusic() {
   const backgroundMusic = document.getElementById('background-music');
   backgroundMusic.play();

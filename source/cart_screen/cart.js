@@ -1,9 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-shadow */
-/* eslint-disable linebreak-style */
-/* eslint-disable no-restricted-globals */
-/* eslint-disable linebreak-style */
-/* eslint-disable no-unused-vars */
 function addPlate() {
   location.href = '/source/plate-screen/plate-screen.html';
 }

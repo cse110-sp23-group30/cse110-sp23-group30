@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 class HeaderComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
