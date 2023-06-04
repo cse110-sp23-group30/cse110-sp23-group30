@@ -47,7 +47,7 @@
 
 - Assigning issues and tasks to a team member is very important, because each team member has different skills and interests.
 - Some issues are harder than other issues, so it’s important to do standups to quickly address which team member needs assistance / more time.
-- Github is powerful for group development - it’s very easy to split tasks into issues and branches.
+- GitHub is powerful for group development - it’s very easy to split tasks into issues and branches.
 
 ### V. Action Items
 

@@ -11,26 +11,26 @@
 }
 
 .image-option {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .image-option img {
-    width: 200px;
-    height: auto;
-    margin-right: 10px;
+  width: 200px;
+  height: auto;
+  margin-right: 10px;
 }
 
 img {
-    width: 600px;
-    height: 400px;
-  }
+  width: 600px;
+  height: 400px;
+}
 
-  .selected {
-    border: 5px solid blue;
-  }
+.selected {
+  border: 5px solid blue;
+}
 
-  h1 {
-    margin-left: 45%;
-  }
+h1 {
+  margin-left: 45%;
+}

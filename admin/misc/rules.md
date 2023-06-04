@@ -1,4 +1,5 @@
 # Team Working Agreement
+
 __Purpose:__ The purpose of this team working agreement is to establish a shared understanding and set of guidelines that will help us work collaboratively and effectively towards our shared goals.
 
 &nbsp;
