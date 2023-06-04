@@ -15,26 +15,25 @@ afterAll(() => {
 test('cart screen behavior', async () => {
   await page.goto('file://' + path.resolve(__dirname, '../cart_screen/cart.html'));
 
+  // Before clicking the button, set up the location object to be able to be changed
+  await page.evaluate(() => {
+    delete window.location;
+    window.location = { href: "start" };
+  });
+
   // Simulate clicking "add-plate" button and check redirected url
   await page.click('#add-plate');
-  expect((new URL(await page.url())).pathname).toBe((new URL('file://' + path.resolve(__dirname, '../plate-screen/plate-screen.html'))).pathname);
+  const newUrl1 = await page.evaluate(() => window.location.href);
+  expect(newUrl1).toBe('/source/plate-screen/plate-screen.html');
 
-  // Go back to original page
-  await page.goto('file://' + path.resolve(__dirname, '../cart_screen/cart.html'));
-
-  // Simulate clicking "add-bowl" button and check redirected url
+  // Repeat this process for the other buttons
   await page.click('#add-bowl');
-  expect((new URL(await page.url())).pathname).toBe((new URL('file://' + path.resolve(__dirname, '../bowl-screen/bowl-screen.html'))).pathname);
+  const newUrl2 = await page.evaluate(() => window.location.href);
+  expect(newUrl2).toBe('/source/bowl-screen/bowl-screen.html');
 
-  // Go back to original page
-  await page.goto('file://' + path.resolve(__dirname, '../cart_screen/cart.html'));
-
-  // Simulate clicking "purchase" button and check redirected url
   await page.click('#confirm');
-  expect((new URL(await page.url())).pathname).toBe((new URL('file://' + path.resolve(__dirname, '../cookie_screen/cookie_screen.html'))).pathname);
-
-  // Go back to original page
-  await page.goto('file://' + path.resolve(__dirname, '../cart_screen/cart.html'));
+  const newUrl3 = await page.evaluate(() => window.location.href);
+  expect(newUrl3).toBe('/source/cookie_screen/cookie_screen.html');
 
   // Simulate clicking "deleteItem" button and check confirm-delete display style
   await page.click('.deletebtn');

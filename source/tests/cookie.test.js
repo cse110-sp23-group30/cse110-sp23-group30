@@ -28,6 +28,7 @@ test('fortune cookie game behavior', async () => {
   
   // Test for restartGame function
   await page.click('.buttons_container button:nth-child(3)');
+  await page.waitForFunction(() => document.querySelector("#fortune-message").style.display === 'none');
   messageStyle = await page.$eval("#fortune-message", (el) => el.style.display);
   expect(messageStyle).toBe('none');
 
