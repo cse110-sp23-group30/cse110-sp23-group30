@@ -3,7 +3,7 @@ name: lint
 on:
   push:
     branches:
-      - indent-using
+      - feature/P-Z-H/linter
       - main
   pull_request:
     branches:
