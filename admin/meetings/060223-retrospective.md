@@ -1,5 +1,5 @@
 # Meeting 8 - Sprint 2 Retrospective
-## Date/Time: 05/31/2023 at 6:00 PM
+## Date/Time: 06/02/2023 at 5:00 PM
 ## Location: Sixth College at UCSD
 
 ### Attendance List
