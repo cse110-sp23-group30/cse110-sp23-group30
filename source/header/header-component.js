@@ -1,6 +1,6 @@
 class HeaderComponent extends HTMLElement {
-    connectedCallback() {
-      this.innerHTML = `
+  connectedCallback () {
+    this.innerHTML = `
         <header>
           <div class="container">
             <img src="../assets/BlueMoon.png" alt="Logo" class="logo">
@@ -12,39 +12,37 @@ class HeaderComponent extends HTMLElement {
             </div>
           </div>
         </header>
-      `;
-  
-      // Add event listeners for the buttons
-      this.querySelector('#homeBtn').addEventListener('click', () => {
-        // Handle home button click
-        window.location.href = '../opening_screen/opening-screen.html';
-      });
-  
-      this.querySelector('#instructionsBtn').addEventListener('click', () => {
-        // Handle instructions button click
-        window.location.href = '../instruction_screen/instruction.html';
-      });
-      
-      
-      // Get a reference to the settings button
-      const settingsBtn = this.querySelector('#settingsBtn');
-      
-      // Add event listener to the settings button
-      settingsBtn.addEventListener('click', () => {
-       // Check if the settings panel already exists
-        document.getElementById("settings-popup").style.display = "block";
-      });
+      `
 
-      const closeSettings = document.getElementsByClassName("close")[0]
+    // Add event listeners for the buttons
+    this.querySelector('#homeBtn').addEventListener('click', () => {
+      // Handle home button click
+      window.location.href = '../opening_screen/opening-screen.html'
+    })
 
-      closeSettings.addEventListener('click', () => {
-        document.getElementById("settings-popup").style.display = "none";
-      })
+    this.querySelector('#instructionsBtn').addEventListener('click', () => {
+      // Handle instructions button click
+      window.location.href = '../instruction_screen/instruction.html'
+    })
 
-    }
+    // Get a reference to the settings button
+    const settingsBtn = this.querySelector('#settingsBtn')
+
+    // Add event listener to the settings button
+    settingsBtn.addEventListener('click', () => {
+      // Check if the settings panel already exists
+      document.getElementById('settings-popup').style.display = 'block'
+    })
+
+    const closeSettings = document.getElementsByClassName('close')[0]
+
+    closeSettings.addEventListener('click', () => {
+      document.getElementById('settings-popup').style.display = 'none'
+    })
   }
-  
-  customElements.define('header-component', HeaderComponent);
+}
+
+customElements.define('header-component', HeaderComponent)
 
 // // Dynamically insert the header into each page
 // window.addEventListener('DOMContentLoaded', () => {
@@ -52,4 +50,3 @@ class HeaderComponent extends HTMLElement {
 //   const headerComponent = document.createElement('header-component');
 //   headerContainer.appendChild(headerComponent);
 // });
-  
