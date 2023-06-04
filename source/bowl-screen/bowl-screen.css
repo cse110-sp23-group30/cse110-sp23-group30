@@ -1,28 +1,45 @@
-/* stylelint-disable string_quotes */
+/* stylelint-disable color-function-notation */
+body {
+  background: url("pandanologo.png") no-repeat center fixed;
+  background-size: contain;
+  background-color: white;
+}
+
+
 .menu-card {
-  display: flex;
+  padding: 1%;
+  margin: 2%;
+  width: 80%;
+  background: rgba(0, 0, 0, 40%);
+  color: #f2f3f5;
   align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 10px;
-}
+  }
+  
+  .menu-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+  
+  .menu-details h3 {
+    margin: 0;
+  }
+  
+  .menu-details p {
+    margin: 5px 0;
+  }
 
-.menu-card img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  margin-right: 10px;
-}
+  .selected {
+    border: 3px solid blue;
+  }
 
-.menu-details h3 {
-  margin: 0;
-}
-
-.menu-details p {
-  margin: 5px 0;
-}
-
-.selected {
-  border: 2px solid blue;
-}
+  .buttons {
+    padding: 15px;
+    border-style: none;
+    margin: 3px;
+    background-color: #c02827;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+  }

@@ -1,14 +1,15 @@
-const toggleButton = document.querySelector('#toggle-button')
-const connectedComponent = document.querySelector('#connected-component')
+/* eslint-disable linebreak-style */
+const toggleButton = document.querySelector('#toggle-button');
+const connectedComponent = document.querySelector('#connected-component');
 
-let isHidden = false
+let isHidden = false;
 
 toggleButton.addEventListener('click', () => {
   if (isHidden) {
-    connectedComponent.style.display = 'flex'
-    isHidden = false
+    connectedComponent.style.display = 'flex';
+    isHidden = false;
   } else {
-    connectedComponent.style.display = 'none'
-    isHidden = true
+    connectedComponent.style.display = 'none';
+    isHidden = true;
   }
-})
+});
