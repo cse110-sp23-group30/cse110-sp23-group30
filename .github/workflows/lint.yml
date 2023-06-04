@@ -24,7 +24,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           LINTER_RULES_PATH: /.github/linters/
-          VALIDATE_JAVASCRIPT_ES: true
           VALIDATE_JSCPD : false
           VALIDATE_GITLEAKS: false
           VALIDATE_NATURAL_LANGUAGE: false
