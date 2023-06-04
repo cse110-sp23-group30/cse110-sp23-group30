@@ -17,7 +17,7 @@ afterAll(() => {
 });
 
 test('instruction screen behavior', async () => {
-    await page.goto('file://' + path.resolve(__dirname, '../instruction_screen/instruction.html'));
+  await page.goto('file://' + path.resolve(__dirname, '../instruction_screen/instruction.html'));
 
   
   const instruction = await page.evaluate(() => {

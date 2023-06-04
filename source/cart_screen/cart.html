@@ -2,72 +2,72 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Cart Order</title>
-    <link rel="stylesheet" type="text/css" href="cart.css">
+	<meta charset="UTF-8">
+	<title>Cart Order</title>
+	<link rel="stylesheet" type="text/css" href="cart.css">
 </head>
 
 <body>
-    <h1>Cart Check Out</h1>
+	<h1>Cart Check Out</h1>
 
-    <div id="items">
-        <section>
-            <h4>Sample List item 1</h4>
-            <button onclick="deleteItem()" class="deletebtn">Delete</button>
-        </section>
-        <section>
-            <h4>Sample Plate</h4>
-            <img src="Fried-Rice.jpg" alt="Fried Rice" class="photos">
-            <p>Main: Fried Rice</p> <br />
-            <img src="Broccoli-Beef.jpg" alt="Broccoli Beef" class="photos">
-            Side 1: Broccoli Beef <br />
-            <img src="Honey-Walnut-Shrimp.jpg" alt="HWShrimp" class="photos">
-            Side 2: Honey Walnut Shrimp <br />
-            <button onclick="deleteItem()" class="deletebtn">Delete</button>
-        </section>
-        <section>
-            <h4>Sample Plate</h4>
-            <img src="Chow-Mein.jpg" alt="Chow Mein" class="photos"> <br />
-            Main: Chow Mein <br />
-            Side 1: Broccoli Beef <br />
-            Side 2: Honey Walnut Shrimp <br />
-            <button onclick="deleteItem()" class="deletebtn">Delete</button>
-        </section>
-        <section>
-            <h4>Sample Plate</h4>
-            <img src="Fried-Rice.jpg" alt="Fried Rice" class="photos"> <br />
-            Main: Fried Rice <br />
-            Side 1: Broccoli Beef <br />
-            Side 2: Honey Walnut Shrimp <br />
-            <button onclick="deleteItem()" class="deletebtn">Delete</button>
-        </section>
-    </div>
+	<div id="items">
+		<section>
+			<h4>Sample List item 1</h4>
+			<button onclick="deleteItem()" class="deletebtn">Delete</button>
+		</section>
+		<section>
+			<h4>Sample Plate</h4>
+			<img src="Fried-Rice.jpg" alt="Fried Rice" class="photos">
+			<p>Main: Fried Rice</p> <br />
+			<img src="Broccoli-Beef.jpg" alt="Broccoli Beef" class="photos">
+			Side 1: Broccoli Beef <br />
+			<img src="Honey-Walnut-Shrimp.jpg" alt="HWShrimp" class="photos">
+			Side 2: Honey Walnut Shrimp <br />
+			<button onclick="deleteItem()" class="deletebtn">Delete</button>
+		</section>
+		<section>
+			<h4>Sample Plate</h4>
+			<img src="Chow-Mein.jpg" alt="Chow Mein" class="photos"> <br />
+			Main: Chow Mein <br />
+			Side 1: Broccoli Beef <br />
+			Side 2: Honey Walnut Shrimp <br />
+			<button onclick="deleteItem()" class="deletebtn">Delete</button>
+		</section>
+		<section>
+			<h4>Sample Plate</h4>
+			<img src="Fried-Rice.jpg" alt="Fried Rice" class="photos"> <br />
+			Main: Fried Rice <br />
+			Side 1: Broccoli Beef <br />
+			Side 2: Honey Walnut Shrimp <br />
+			<button onclick="deleteItem()" class="deletebtn">Delete</button>
+		</section>
+	</div>
 
-    <div class="buttons">
-        <button id="add-plate" class="add-extra" onclick="addPlate();">Add Plate</button>
-        <button id="add-bowl" class="add-extra" onclick="addBowl();">Add Bowl</button>
-        <button id="clear" onclick="popUp()">Clear Cart</button>
-        <button id="confirm" onclick="purchase()">Confirm Purchase?</button>
-    </div>
-    <div id="confirm-clear" style="display: none;">
-        <div class="confirm-clear">
-            <h2>Confirm Clear</h2>
-            <p>Are you sure you want to clear your entire cart?</p>
-            <button onclick="popUp()" class="confirmbtn">Cancel</button>
-            <button onclick="confirmClear()" class="confirmbtn">Clear</button>
-        </div>
-    </div>
+	<div class="buttons">
+		<button id="add-plate" class="add-extra" onclick="addPlate();">Add Plate</button>
+		<button id="add-bowl" class="add-extra" onclick="addBowl();">Add Bowl</button>
+		<button id="clear" onclick="popUp()">Clear Cart</button>
+		<button id="confirm" onclick="purchase()">Confirm Purchase?</button>
+	</div>
+	<div id="confirm-clear" style="display: none;">
+		<div class="confirm-clear">
+			<h2>Confirm Clear</h2>
+			<p>Are you sure you want to clear your entire cart?</p>
+			<button onclick="popUp()" class="confirmbtn">Cancel</button>
+			<button onclick="confirmClear()" class="confirmbtn">Clear</button>
+		</div>
+	</div>
 
-    <div id="confirm-delete" style="display: none;">
-        <div class="confirm-clear">
-            <h2>Confirm Delete</h2>
-            <p>Are you sure you want to delete this item?</p>
-            <button onclick="deleteItem()" class="confirmdlt">Cancel</button>
-            <button onclick="confirmDelete()" class="confirmdlt">Delete</button>
-        </div>
-    </div>
+	<div id="confirm-delete" style="display: none;">
+		<div class="confirm-clear">
+			<h2>Confirm Delete</h2>
+			<p>Are you sure you want to delete this item?</p>
+			<button onclick="deleteItem()" class="confirmdlt">Cancel</button>
+			<button onclick="confirmDelete()" class="confirmdlt">Delete</button>
+		</div>
+	</div>
 
-    <script src="cart.js"></script>
+	<script src="cart.js"></script>
 </body>
 
 </html>

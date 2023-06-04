@@ -1,172 +1,172 @@
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
 }
 
 .buttons_container {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .buttons_container button {
-    margin-bottom: 10px; /* Adjust the spacing by changing the value */
+	margin-bottom: 10px; /* Adjust the spacing by changing the value */
 }
 
 #video-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: -1;
 }
 
 #fortune-cookie {
-    position: relative;
+	position: relative;
 }
 
 #fortune-cookie img {
-    width: 750px;
-    height: 650px;
+	width: 750px;
+	height: 650px;
 }
 
 #fortune-message {
-    position: absolute;
-    top: 36%;
-    left: 58%;
-    z-index: 1;
-    width: 190px;
-    height: 80px;
-    background-color: white;
-    border: 1px solid black;
-    text-align: center;
-    margin-top: -42px;
-    font-weight: bold;
-    font-size: 18px;
-    border: none;
-    display: none;
-    transform: translate(-50%, -50%) rotate(5deg);
+	position: absolute;
+	top: 36%;
+	left: 58%;
+	z-index: 1;
+	width: 190px;
+	height: 80px;
+	background-color: white;
+	border: 1px solid black;
+	text-align: center;
+	margin-top: -42px;
+	font-weight: bold;
+	font-size: 18px;
+	border: none;
+	display: none;
+	transform: translate(-50%, -50%) rotate(5deg);
 }
 
 /* CSS for the shake animation */
 @keyframes shake {
-    0% { transform: rotate(-5deg) translateX(0); }
-    10% { transform: rotate(5deg) translateX(5px); }
-    20% { transform: rotate(-5deg) translateX(-5px); }
-    30% { transform: rotate(5deg) translateX(5px); }
-    40% { transform: rotate(-5deg) translateX(-5px); }
-    50% { transform: rotate(5deg) translateX(5px); }
-    60% { transform: rotate(-5deg) translateX(-5px); }
-    70% { transform: rotate(5deg) translateX(5px); }
-    80% { transform: rotate(-5deg) translateX(-5px); }
-    90% { transform: rotate(5deg) translateX(5px); }
-    100% { transform: rotate(-5deg) translateX(0); }
+	0% { transform: rotate(-5deg) translateX(0); }
+	10% { transform: rotate(5deg) translateX(5px); }
+	20% { transform: rotate(-5deg) translateX(-5px); }
+	30% { transform: rotate(5deg) translateX(5px); }
+	40% { transform: rotate(-5deg) translateX(-5px); }
+	50% { transform: rotate(5deg) translateX(5px); }
+	60% { transform: rotate(-5deg) translateX(-5px); }
+	70% { transform: rotate(5deg) translateX(5px); }
+	80% { transform: rotate(-5deg) translateX(-5px); }
+	90% { transform: rotate(5deg) translateX(5px); }
+	100% { transform: rotate(-5deg) translateX(0); }
 }
 
 .shake-animation {
-    animation: shake 1s;
+	animation: shake 1s;
 }
 
 /* glowing button css */
 .glow-on-hover {
-    width: 220px;
-    height: 50px;
-    border: none;
-    outline: none;
-    color: #fff;
-    background: brown;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 10px;
+	width: 220px;
+	height: 50px;
+	border: none;
+	outline: none;
+	color: #fff;
+	background: brown;
+	cursor: pointer;
+	position: relative;
+	z-index: 0;
+	border-radius: 10px;
 }
 
 .glow-on-hover:before {
-    content: '';
-    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-    position: absolute;
-    top: -2px;
-    left:-2px;
-    background-size: 400%;
-    z-index: -1;
-    filter: blur(5px);
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    animation: glowing 20s linear infinite;
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
-    border-radius: 10px;
+	content: '';
+	background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+	position: absolute;
+	top: -2px;
+	left:-2px;
+	background-size: 400%;
+	z-index: -1;
+	filter: blur(5px);
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	animation: glowing 20s linear infinite;
+	opacity: 0;
+	transition: opacity .3s ease-in-out;
+	border-radius: 10px;
 }
 
 .glow-on-hover:active {
-    color:#000
+	color:#000
 }
 
 .glow-on-hover:active:after {
-    background: transparent;
+	background: transparent;
 }
 
 .glow-on-hover:hover:before {
-    opacity: 1;
+	opacity: 1;
 }
 
 .glow-on-hover:after {
-    z-index: -1;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgb(224, 163, 9);
-    left: 0;
-    top: 0;
-    border-radius: 10px;
+	z-index: -1;
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgb(224, 163, 9);
+	left: 0;
+	top: 0;
+	border-radius: 10px;
 }
 
 @keyframes glowing {
-    0% { background-position: 0 0; }
-    50% { background-position: 400% 0; }
-    100% { background-position: 0 0; }
+	0% { background-position: 0 0; }
+	50% { background-position: 400% 0; }
+	100% { background-position: 0 0; }
 }
 
 /* CSS for the background animation */
 @keyframes float {
-    0% {
-      transform: translateY(100%) translateX(calc(100vw * var(--x)));
-      opacity: 0;
-    }
-    10% {
-      opacity: 1;
-    }
-    90% {
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(-100%) translateX(calc(100vw * var(--x)));
-      opacity: 0;
-    }
+	0% {
+		transform: translateY(100%) translateX(calc(100vw * var(--x)));
+		opacity: 0;
+	}
+	10% {
+		opacity: 1;
+	}
+	90% {
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(-100%) translateX(calc(100vw * var(--x)));
+		opacity: 0;
+	}
 }
   
 .floating-cookie {
-    position: fixed;
-    bottom: 0;
-    animation: float 20s linear infinite;
-    transform-origin: center;
+	position: fixed;
+	bottom: 0;
+	animation: float 20s linear infinite;
+	transform-origin: center;
 }
   
 .floating-cookie img {
-    width: 25px;
-    height: 25px;
-    animation: rotate 5s linear infinite;
+	width: 25px;
+	height: 25px;
+	animation: rotate 5s linear infinite;
 }
   
 @keyframes rotate {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }

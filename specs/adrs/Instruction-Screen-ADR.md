@@ -6,13 +6,13 @@ At the beginning of trying to build the order to get the fortune cookie, how sho
 
 ## Considered Options
 
-_How to implement_
+### How to implement_
 
 - A whole page inbetween start page and first page
 - A pop-up over the first page
   - Adding a button to bring up the pop-up whenever the player wants
 
-_What's on the page_
+### What's on the page_
 
 - A control diagram with just graphics
 - Instruction sheet with just text
