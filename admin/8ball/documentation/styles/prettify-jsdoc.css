@@ -1,9 +1,10 @@
+/* stylelint-disable comment-empty-line-before */
 /* stylelint-disable string_quotes */
 /* JSDoc prettify.js theme */
 
 /* plain text */
 .pln {
-  color: #000000;
+  color: #000;
   font-weight: normal;
   font-style: normal;
 }
@@ -17,7 +18,7 @@
 
 /* a keyword */
 .kwd {
-  color: #000000;
+  color: #000;
   font-weight: bold;
   font-style: normal;
 }
@@ -30,7 +31,7 @@
 
 /* a type name */
 .typ {
-  color: #000000;
+  color: #000;
   font-weight: normal;
   font-style: normal;
 }
@@ -44,21 +45,21 @@
 
 /* punctuation */
 .pun {
-  color: #000000;
+  color: #000;
   font-weight: bold;
   font-style: normal;
 }
 
 /* lisp open bracket */
 .opn {
-  color: #000000;
+  color: #000;
   font-weight: bold;
   font-style: normal;
 }
 
 /* lisp close bracket */
 .clo {
-  color: #000000;
+  color: #000;
   font-weight: bold;
   font-style: normal;
 }
@@ -86,21 +87,21 @@
 
 /* a declaration */
 .dec {
-  color: #000000;
+  color: #000;
   font-weight: bold;
   font-style: normal;
 }
 
 /* a variable name */
 .var {
-  color: #000000;
+  color: #000;
   font-weight: normal;
   font-style: normal;
 }
 
 /* a function name */
 .fun {
-  color: #000000;
+  color: #000;
   font-weight: bold;
   font-style: normal;
 }

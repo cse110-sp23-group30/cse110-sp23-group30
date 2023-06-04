@@ -1,134 +1,49 @@
-/* stylelint-disable string_quotes */
+/* stylelint-disable length-zero-no-unit */
+/* stylelint-disable shorthand-property-no-redundant-values */
 body {
-  background-image: url('path/to/background-image.jpg');
-  background-color: #888;
-  background-size: cover;
-  background-repeat: no-repeat;
+    background-image: url('path/to/background-image.jpg');
+    background-color: #888;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .center {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 10px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
 }
 
 .buttons {
-  display: flex;
-  justify-content: space-evenly;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .button {
-  display: inline-block;
-  padding: 10px 10px;
-  background-color: #fff;
-  color: #000000;
-  text-decoration: none;
-  font-size: 14px;
-  border-radius: 4px;
+    display: inline-block;
+    padding: 10px 10px;
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 4px;
 }
 
 .play-button {
-  display: inline-block;
-  padding: 10px 40px;
-  background-color: #406cc3;
-  color: #000;
-  text-decoration: none;
-  font-size: 16px;
-  border-radius: 6px;
+    display: inline-block;
+    padding: 10px 40px;
+    background-color: #406cc3;
+    color: #000;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 6px;
 }
 
 #title {
-  font-size: 60px;
-  font-weight: 600;
-  color: #fdfdfe;
-  text-shadow: 0px 0px 5px #000000, 0px 0px 10px #020004, 0px 0px 10px #000000,
-    0px 0px 20px #000000;
-}
-
-.popup {
-  display: none;
-  /* Hidden by default */
-  position: fixed;
-  /* Stay in place */
-  z-index: 1;
-  /* Sit on top */
-  padding-top: 100px;
-  /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%;
-  /* Full width */
-  height: 100%;
-  /* Full height */
-  overflow: auto;
-  /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0);
-  /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4);
-  /* Black w/ opacity */
-}
-
-.popup-content {
-  position: relative;
-  background-color: #fefefe;
-  margin: auto;
-  padding: 0;
-  border: 1px solid #888;
-  width: 80%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  -webkit-animation-name: animatetop;
-  -webkit-animation-duration: 0.4s;
-  animation-name: animatetop;
-  animation-duration: 0.4s;
-}
-
-/* Popup Animation */
-@-webkit-keyframes animatetop {
-  from {
-    top: -300px;
-    opacity: 0;
-  }
-
-  to {
-    top: 0;
-    opacity: 1;
-  }
-}
-
-@keyframes animatetop {
-  from {
-    top: -300px;
-    opacity: 0;
-  }
-
-  to {
-    top: 0;
-    opacity: 1;
-  }
-}
-
-.close {
-  color: white;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.popup-header {
-  padding: 2px 10px;
-  background-color: #d3d1d1;
-  color: white;
-}
-
-.popup-body {
-  padding: 2px 16px;
+    font-size: 60px;
+    font-weight: 600;
+    color: #fdfdfe;
+    text-shadow: 0px 0px 5px #000, 0px 0px 10px #020004, 0px 0px 10px #000,
+        0px 0px 20px #000;
 }
