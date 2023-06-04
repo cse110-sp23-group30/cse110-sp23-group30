@@ -22,6 +22,7 @@ test('fortune cookie game behavior', async () => {
 
   // Test for openFortune function
   await page.evaluate(() => openFortune()); // Open fortune after shaking
+  await page.waitForTimeout(1100); // wait for timeout
   let messageStyle = await page.$eval("#fortune-message", (el) => el.style.display);
   expect(messageStyle).toBe('block');
   
