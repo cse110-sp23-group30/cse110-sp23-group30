@@ -66,7 +66,7 @@ This sprint should conclude the functionality updates. Starting next sprint, I w
 ![pasted image 0 (1)](https://github.com/cse110-sp23-group30/cse110-sp23-group30/assets/75293296/3eda46c4-ea2f-4613-90ad-2cdaafe981b1)
 
 - Zhicheng Wang: Added background music: Have to have user input (click). All Buttons now function and goes to the right place. Added background - mp4. Added some particles: there will be fortune cookies constantly floating and rotating on the screen. Buttons will have a glowing effect on the border when hover and glows completely when clicked. Added more messages
-[Github Issue Link](https://github.com/cse110-sp23-group30/cse110-sp23-group30/pull/55)
+[GitHub Issue Link](https://github.com/cse110-sp23-group30/cse110-sp23-group30/pull/55)
 
 <img width="798" alt="截屏2023-05-31 下午5 11 23" src="https://github.com/cse110-sp23-group30/cse110-sp23-group30/assets/75293296/89a571c8-8ced-42f8-ae94-6cb9f6f51632">
 
