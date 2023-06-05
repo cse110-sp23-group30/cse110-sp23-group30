@@ -13,22 +13,15 @@ afterAll(() => {
 });
 
 test('cart screen behavior', async () => {
-  await page.goto('file://' + path.resolve(__dirname, '../cart_screen/cart.html'));
 
   // Before clicking the button, set up the location object to be able to be changed
   await page.goto('file://' + path.resolve(__dirname, '../cart_screen/cart.html'));
 
-  await page.evaluate(() => {
-    delete window.location;
-    window.location = { href: "start" };
-  });
-
-  // Wait for navigation to complete before checking the new url
   await Promise.all([
     page.waitForNavigation(),
     page.click('#add-plate'),
   ]);
-  const newUrl1 = await page.evaluate(() => window.location.href);
+  const newUrl1 = (new URL(await page.url())).pathname;
   expect(newUrl1).toBe('/source/plate-screen/plate-screen.html');
 
   // Repeat this process for the other buttons
@@ -36,14 +29,14 @@ test('cart screen behavior', async () => {
     page.waitForNavigation(),
     page.click('#add-bowl'),
   ]);
-  const newUrl2 = await page.evaluate(() => window.location.href);
+  const newUrl2 = (new URL(await page.url())).pathname;
   expect(newUrl2).toBe('/source/bowl-screen/bowl-screen.html');
 
   await Promise.all([
     page.waitForNavigation(),
     page.click('#confirm'),
   ]);
-  const newUrl3 = await page.evaluate(() => window.location.href);
+  const newUrl3 = (new URL(await page.url())).pathname;
   expect(newUrl3).toBe('/source/cookie_screen/cookie_screen.html');
   // Simulate clicking "deleteItem" button and check confirm-delete display style
   await page.click('.deletebtn');
