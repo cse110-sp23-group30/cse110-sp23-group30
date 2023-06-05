@@ -1,96 +1,144 @@
-body {
-    font-size: 500%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+body,html {
+    overflow: hidden;
+    height: 100%;
     margin: 0;
-}
-
-#instructionsContainer {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-}
-  
-#instructionsList {
-    list-style-type: none;
     padding: 0;
-}
-  
-.instruction {
-    display: none;
+    align-items: center;
+    background-color: black;
+    color: white;
 }
 
-.buttons {
+.instruction-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    /* align-items: center; */
+    height: 100%;
+    background-color: black;
+    margin-left:200px;
+    margin-right:200px;
+    padding: 0 20px;
 }
+
+.instruction {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgb(4, 57, 57);
+    color: #fff;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+#style_one {
+    margin-top: 150px;
+    margin-bottom:180px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#style_two {
+    margin-top: 130px;
+    margin-bottom:220px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.instruction:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.instruction img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 100px;
+    margin-top: 10px;
+    background-color: rgb(10, 98, 69);
+}
+
+.instruction h2,p {
+    background: linear-gradient(45deg, #fff, #a8a8a8, #fff);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glossyAnimation 3s linear infinite;
+}
+
+.instruction h2 {
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+.instruction p {
+    margin-top: 5px;
+    margin-left:50px;
+    margin-right:50px;
+    font-size: 25px;
+}
+
+
 
 button {
     cursor: pointer;
     display: inline-block;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
-    padding: 10% 10%;
-    background-color: #fff;
-    color: #000000;
+    padding: 20px 52px;
+    background-color: rgb(10, 98, 69);
+    color: white;
     text-decoration: none;
-    font-size: 30%;
+    font-size: 25px;
     border-radius: 4px;
+    position: fixed;    
+    bottom: 80px;
+    left: 50%;
+    opacity: 0;
+    transform: translateX(-50%);
+    animation: fade 1s ease 2s forwards;
+    transition: transform 0.3s ease;
 }
 
 button:hover {
-    background-color: blue;
+    background-color: rgb(10, 98, 69);
+    transform: translateX(-50%) scale(1.5);
+    transition: transform 0.4s ease;
 }
-  
-#navigationButtons {
-    margin-top: 20px;
-    color: black;
-}
-
-#goBackButton {
-    margin-right: 10px;
-}
-
-#arrows {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* 
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-.arrow {
-    display: inline-block;
-    cursor: pointer;
-    font-size: 24px;
-    margin: 50px; 
-
-    width: 0;
-    height: 0;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-bottom: 50px solid black; /* Adjust the thickness and color as needed */
+@keyframes colorShuffle {
+    0% {
+        color: rgb(50, 186, 141); /* Start with cyan */
+    }
+    50% {
+        color: white; /* Transition to blue */
+    }
+    100% {
+        color: rgb(50, 186, 141); /* Transition back to cyan */
+    }
 }
 
-.arrow:hover {
-    border-bottom-color: blue;
-}
-
-#prevArrow {
-    transform: rotate(-90deg);
-}
-
-#nextArrow {
-    transform: rotate(90deg);
-}
-  
-.vertical-line {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background-color: black;
-    transform: translateX(-50%);
-}
-
+@keyframes glossyAnimation {
+    0% {
+        background-position: 0% 50%; /* Start gradient from left */
+    }
+    50% {
+        background-position: 100% 50%; /* Move gradient to right */
+    }
+    100% {
+        background-position: 0% 50%; /* Move gradient back to left */
+    }
+} */
