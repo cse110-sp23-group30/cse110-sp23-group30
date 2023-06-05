@@ -13,7 +13,7 @@ afterAll(() => {
 });
 
 test('fortune cookie game behavior', async () => {
-  await page.goto('file://' + path.resolve(__dirname, '../source/cookie_screen/cookie_screen.html'));
+  await page.goto('file://' + path.resolve(__dirname, '../cookie_screen/cookie_screen.html'));
 
   // Test for shakeCookie function
   await page.click('.buttons_container button:nth-child(2)');
