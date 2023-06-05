@@ -36,6 +36,7 @@ test('cart screen behavior', async () => {
 
   // Simulate clicking "confirmClear" button, check confirm-clear display style, and items innerHTML
   await page.click('.confirmbtn');
+  await page.waitForTimeout(1000);
   style = await page.$eval("#confirm-clear", (el) => el.style.display);
   expect(style).toBe('none');
   const items = await page.$eval("#items", (el) => el.innerHTML);
