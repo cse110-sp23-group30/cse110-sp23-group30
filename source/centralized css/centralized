@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  background: url("pandanologo.png") no-repeat center fixed;
+  background: url("team-logo-transparent.png") no-repeat center fixed;
   background-size: contain;
   background-color: white;
 }
@@ -21,8 +21,8 @@ body {
     padding: 15px;
     border-style: none;
     margin: 3px;
-    background-color: #c02827;
-    color: white;
+    background-color: #2591ac;
+    color: #fff;
     cursor: pointer;
     font-size: 20px;
   }
