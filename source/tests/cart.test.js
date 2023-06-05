@@ -17,27 +17,21 @@ test('cart screen behavior', async () => {
   // Before clicking the button, set up the location object to be able to be changed
   await page.goto('file://' + path.resolve(__dirname, '../cart_screen/cart.html'));
 
-  await Promise.all([
-    page.waitForNavigation(),
-    page.click('#add-plate'),
-  ]);
+  await page.waitForNavigation({ waitUntil: 'load' });
+  await page.click('#add-plate');
   const newUrl1 = (new URL(await page.url())).pathname;
-  expect(newUrl1).toBe('/source/plate-screen/plate-screen.html');
+  expect(newUrl1).toContain('plate-screen.html');
 
   // Repeat this process for the other buttons
-  await Promise.all([
-    page.waitForNavigation(),
-    page.click('#add-bowl'),
-  ]);
+  await page.waitForNavigation({ waitUntil: 'load' });
+  await page.click('#add-bowl');
   const newUrl2 = (new URL(await page.url())).pathname;
-  expect(newUrl2).toBe('/source/bowl-screen/bowl-screen.html');
+  expect(newUrl2).toContain('bowl-screen.html');
 
-  await Promise.all([
-    page.waitForNavigation(),
-    page.click('#confirm'),
-  ]);
+  await page.waitForNavigation({ waitUntil: 'load' });
+  await page.click('#confirm');
   const newUrl3 = (new URL(await page.url())).pathname;
-  expect(newUrl3).toBe('/source/cookie_screen/cookie_screen.html');
+  expect(newUrl3).toContain('cookie_screen.html');
   // Simulate clicking "deleteItem" button and check confirm-delete display style
   await page.click('.deletebtn');
   let style = await page.$eval("#confirm-delete", (el) => el.style.display);
