@@ -1,22 +1,27 @@
-let selectedCountMain = 0;
 let selectedCount = 0;
-
-function selectImageMain(element) {
-    if (element.classList.contains('selected')) {
-      element.classList.remove('selected');
-      selectedCountMain--;
-    } else if (selectedCountMain < 1) {
-      element.classList.add('selected');
-      selectedCountMain++;
-    }
-  }
+let selectedCountEntree = 0;
 
 function selectImage(element) {
   if (element.classList.contains('selected')) {
     element.classList.remove('selected');
     selectedCount--;
-  } else if (selectedCount < 2) {
+  } else if (selectedCount < 1) {
     element.classList.add('selected');
     selectedCount++;
   }
+}
+
+function selectImageEntree(element) {
+  if (element.classList.contains('selected')) {
+    element.classList.remove('selected');
+    selectedCountEntree--;
+  } else if (selectedCountEntree < 1) {
+    element.classList.add('selected');
+    selectedCountEntree++;
+  }
+}
+
+function goToCart() {
+  location.href = "/source/cart_screen/cart.html";
+  console.log("Function Called!");
 }

@@ -44,4 +44,14 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }
   });
+
+
+  function play() {
+    window.location.href = "/source/cart_screen/cart.html";
+  }
+
+  function goBack() {
+    window.location.href = "/source/opening_screen/opening-screen.html";
+  }
   
+

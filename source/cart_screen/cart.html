@@ -11,26 +11,44 @@
     <h1>Cart Check Out</h1>
 
     <div id="items">
-        <ul>
-            <li>
-                Sample List item 1
-                <button onclick="deleteItem()" class="deletebtn">Delete</button>
-            </li>
-            <li>
-                Sample Plate: <br />
-                Fried Rice <br />
-                Broccoli Beef <br />
-                Honey Walnut Shrimp <br />
-            </li>
-        </ul>
+        <section>
+            <h4>Sample List item 1</h4>
+            <button onclick="deleteItem()" class="deletebtn">Delete</button>
+        </section>
+        <section>
+            <h4>Sample Plate</h4>
+            <img src="Fried-Rice.jpg" alt="Fried Rice" class="photos">
+            <p>Main: Fried Rice</p> <br />
+            <img src="Broccoli-Beef.jpg" alt="Broccoli Beef" class="photos">
+            Side 1: Broccoli Beef <br />
+            <img src="Honey-Walnut-Shrimp.jpg" alt="HWShrimp" class="photos">
+            Side 2: Honey Walnut Shrimp <br />
+            <button onclick="deleteItem()" class="deletebtn">Delete</button>
+        </section>
+        <section>
+            <h4>Sample Plate</h4>
+            <img src="Chow-Mein.jpg" alt="Chow Mein" class="photos"> <br />
+            Main: Chow Mein <br />
+            Side 1: Broccoli Beef <br />
+            Side 2: Honey Walnut Shrimp <br />
+            <button onclick="deleteItem()" class="deletebtn">Delete</button>
+        </section>
+        <section>
+            <h4>Sample Plate</h4>
+            <img src="Fried-Rice.jpg" alt="Fried Rice" class="photos"> <br />
+            Main: Fried Rice <br />
+            Side 1: Broccoli Beef <br />
+            Side 2: Honey Walnut Shrimp <br />
+            <button onclick="deleteItem()" class="deletebtn">Delete</button>
+        </section>
     </div>
 
-    <button id="add-plate" onclick="addPlate();">Add Plate</button>
-    <button id="add-bowl" onclick="addBowl();">Add Bowl</button>
-    <br />
-    <button id="clear" onclick="popUp()">Clear Cart</button>
-    <button id="confirm" onclick="purchase()">Confirm Purchase?</button>
-
+    <div class="buttons">
+        <button id="add-plate" class="add-extra" onclick="addPlate();">Add Plate</button>
+        <button id="add-bowl" class="add-extra" onclick="addBowl();">Add Bowl</button>
+        <button id="clear" onclick="popUp()">Clear Cart</button>
+        <button id="confirm" onclick="purchase()">Confirm Purchase?</button>
+    </div>
     <div id="confirm-clear" style="display: none;">
         <div class="confirm-clear">
             <h2>Confirm Clear</h2>
