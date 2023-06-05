@@ -1,17 +1,12 @@
 // const variables
 const cookie = document.getElementById("fortune-cookie");
 const message = document.getElementById("fortune-message");
-const backgroundMusic = document.getElementById('background-music');
-const buttonsContainer = document.querySelector(".buttons_container");
 
 // videos 
 var videoPlayer = document.getElementById('video-player');
 var fullscreenVideo = document.getElementById('fullscreen-video');
 var videoStarted = false;
-
-// volumes
-const volumeSlider = document.getElementById("volume-slider");
-const volumeIcon = document.getElementById("volume-icon");
+videoPlayer.volume = 0;
 
 // credit
 const creditElement = document.getElementById("credit");
@@ -50,7 +45,9 @@ const messages = [
     "Your kindness will be rewarded tenfold.",
 ];
 
-
+/**
+ * Shake the fortune cookie and display a random fortune message.
+ */
 function shakeCookie() {
     // prevent user clicking multiple times
     cookie.classList.remove("shake-animation");
@@ -78,6 +75,7 @@ function shakeCookie() {
         videoPlayer.src = randomVideo;
         fullscreenVideo.style.display = 'block';
         videoPlayer.play();
+        videoPlayer.volume = 1;
     }
 
     // skip if dont wanna see animation
@@ -85,6 +83,9 @@ function shakeCookie() {
 
 }
 
+/**
+ * Skip the video animation and open the fortune cookie directly.
+ */
 function skipVideo() {
     if (videoStarted && videoPlayer.currentTime != videoPlayer.duration) {
         videoPlayer.currentTime = videoPlayer.duration;
@@ -101,6 +102,9 @@ if (videoPlayer) {
     });
 }
 
+/**
+ * Open the fortune cookie and display a random fortune message.
+ */
 function openFortune() {
     // remove animation before another if user clicks frequenly
     cookie.classList.remove("shake-animation");
@@ -122,6 +126,9 @@ function openFortune() {
     }, 1000);
 }
 
+/**
+ * Restart the game by going back to the cart screen.
+ */
 function restartGame() {
     // Replace the image source with the initial cookie image
     cookie.innerHTML = '<img src="media/cookie_before.png" alt="Fortune Cookie">';
@@ -131,34 +138,9 @@ function restartGame() {
     // Hide the fortune message
     message.style.display = "none";
     // go to cart screen
+    window.location.href = "/source/cart_screen/cart.html";
     
 }
 
-function goToHome() {
-    // Replace the image source with the initial cookie image
-    cookie.innerHTML = '<img src="media/cookie_before.png" alt="Fortune Cookie">';
-
-    // Clear the fortune message
-    message.textContent = "";
-    // Hide the fortune message
-    message.style.display = "none";
-    // go to home 
-
-}
-if (volumeSlider) {
-    volumeSlider.addEventListener("input", () => {
-        const volumeLevel = volumeSlider.value / 100;
-        backgroundMusic.volume = volumeLevel;
-        backgroundMusic.play();
-
-        if (volumeLevel < 0.5) {
-          volumeIcon.src = "media/volume-level-1.svg";
-          volumeIcon.alt = "Volume level 1";
-        } else {
-          volumeIcon.src = "media/volume-level-2.svg";
-          volumeIcon.alt = "Volume level 2";
-        }
-});
-}
-
+// Export the functions
 module.exports = {shakeCookie, openFortune, restartGame, goToHome}

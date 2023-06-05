@@ -33,6 +33,16 @@ class HeaderComponent extends HTMLElement {
       settingsBtn.addEventListener('click', () => {
        // Check if the settings panel already exists
         document.getElementById("settings-popup").style.display = "block";
+
+        const volumeSlider = document.getElementById("musicVolume");
+        volumeSlider.addEventListener('input', () => {
+          // Get a reference to the audio element
+          const audioPlayer = document.getElementById('audioPlayer');
+          // Adjust the music volume based on the slider value
+          const musicVolume = volumeSlider.value / 100;
+          audioPlayer.volume = musicVolume;
+          audioPlayer.play();
+        });
       });
 
       const closeSettings = document.getElementsByClassName("close")[0]

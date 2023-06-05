@@ -2,9 +2,31 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="cookie_screen.css">
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <script>
+    $(function(){
+      // Load index.html
+      $("#header").load("../header/index.html", function() {
+        // Callback function after loading index.html
+        // Load JavaScript file
+        $.getScript("../header/header-component.js");
+
+        // Append CSS file
+        $("<link>", {
+          rel: "stylesheet",
+          type: "text/css",
+          href: "../header/styles.css"
+        }).appendTo("head");
+      });
+    });
+  </script>
+  <link rel="stylesheet" type="text/css" href="opening-screen.css">
+  <script src="opening-screen.js"></script>
+
 </head>
 <body>
-  <div class="container">
+  <div id="header"></div>
+  <div class="container1">
     <!-- when user clicks shake animation -->
     <div id="fullscreen-video">
       <video id="video-player" src="media/video_blue.mp4" autoplay></video>
@@ -12,17 +34,7 @@
 
     <!-- tap-wrap -->
     <div class = "tapWrap">
-      <div class="setting_icon">
-        <img id="setting_icon" src="media/icons8-settings-50.png" alt="Setting icon">
-      </div>
-      <!-- volume , language, etc...-->
-      <div class="volume_icon">
-        <img id="volume-icon" class="volume-icon" src="media/volume-level-1.svg" alt="Volume icon">
-      </div>
-
-      <div class="volume-controls">
-        <input type="range" id="volume-slider" class="vertical-slider" min="0" max="100" step="1" value="50">
-      </div>
+      
     </div>
 
     <div class="right_box">
@@ -42,7 +54,6 @@
 
       <!-- Buttons -->
       <div class="buttons_container">
-        <button class="glow-on-hover" type ="button" onclick="goToHome()">Back to home</button>
         <button class="glow-on-hover" type ="button"  onclick="shakeCookie()">Shake the cookie</button>
         <button class="glow-on-hover" type ="button" onclick="restartGame()">Restart the game</button>
       </div>
