@@ -2,17 +2,38 @@
 <html>
 
 <head>
-  <title>Fortune Cookie</title>
+  <title>Blue Moon Express</title>
+  <link rel="stylesheet" type="text/css" href="../centralized\ css/centralized">
   <link rel="stylesheet" type="text/css" href="opening-screen.css">
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <script>
+    $(function () {
+      // Load index.html
+      $("#header").load("../header/index.html", function () {
+        // Callback function after loading index.html
+        // Load JavaScript file
+        $.getScript("../header/header-component.js");
+
+        // Append CSS file
+        $("<link>", {
+          rel: "stylesheet",
+          type: "text/css",
+          href: "../header/styles.css"
+        }).appendTo("head");
+      });
+    });
+  </script>
   <script src="opening-screen.js"></script>
 </head>
 
 <body>
+  <div id="header" style="position: absolute; left: -9999px;"></div>
   <div class="center">
-    <h1 id="title">Blue Moon Express</h1>
+    <h1 id="title" style="font-family: sans-serif;">Blue Moon Express</h1>
     <div class="buttons">
-      <button onclick="openInstructions()" class="button" id="instructions-button">How to Play</button>
-      <button onclick="playGame()" class="play-button" id="play-button"><strong>Play!</strong></button>
+      <button onclick="openInstructions()" id="instructions-button">How to Play</button>
+      <button onclick="playGame()" id="play-button"><strong>Play!</strong></button>
+      <button onclick="openSettings()" id="settings-button">Settings</button>
     </div>
   </div>
 </body>
