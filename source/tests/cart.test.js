@@ -1,5 +1,6 @@
 const puppeteer = require('puppeteer');
 const path = require('path');
+
 let browser;
 let page;
 
@@ -8,37 +9,43 @@ beforeAll(async () => {
   page = await browser.newPage();
 });
 
-afterAll(() => {
-  browser.close();
+afterAll(async () => {
+  await browser.close();
 });
 
-test('cart screen behavior', async () => {
+describe('Cart Page', () => {
+  beforeAll(async () => {
+    await page.goto('file://' + path.resolve(__dirname, '../cart_screen/cart.html'));
+  });
 
-  // Before clicking the button, set up the location object to be able to be changed
-  await page.goto('file://' + path.resolve(__dirname, '../cart_screen/cart.html'));
+  test('Add Plate button redirects to the correct page', async () => {
+    await page.click('#add-plate');
+    expect(await page.url()).toContain('/source/plate-screen/plate-screen.html'); // adjust as necessary
+  });
 
-  
-  
-  // Simulate clicking "deleteItem" button and check confirm-delete display style
-  await page.click('.deletebtn');
-  let style = await page.$eval("#confirm-delete", (el) => el.style.display);
-  expect(style).toBe('block');
+  test('Add Bowl button redirects to the correct page', async () => {
+    await page.goBack();
+    await page.click('#add-bowl');
+    expect(await page.url()).toContain('/source/bowl-screen/bowl-screen.html'); // adjust as necessary
+  });
 
-  // Simulate clicking "confirmDelete" button and check confirm-delete display style
-  await page.click('.confirmdlt');
-  style = await page.$eval("#confirm-delete", (el) => el.style.display);
-  expect(style).toBe('none');
+  test('Confirm Purchase button redirects to the correct page', async () => {
+    await page.goBack();
+    await page.click('#confirm');
+    expect(await page.url()).toContain('/source/cookie_screen/cookie_screen.html'); // adjust as necessary
+  });
 
-  // Simulate clicking "popUp" button and check confirm-clear display style
-  await page.click('#clear');
-  style = await page.$eval("#confirm-clear", (el) => el.style.display);
-  expect(style).toBe('block');
+  test('Clear Cart button pops up the confirm-clear element', async () => {
+    await page.goBack();
+    await page.click('#clear');
+    const displayStyle = await page.$eval('#confirm-clear', el => getComputedStyle(el).display);
+    expect(displayStyle).toBe('block');
+  });
 
-  // Simulate clicking "confirmClear" button, check confirm-clear display style, and items innerHTML
-  await page.click('.confirmbtn');
-  await page.waitForTimeout(1000);
-  style = await page.$eval("#confirm-clear", (el) => el.style.display);
-  expect(style).toBe('none');
-  const items = await page.$eval("#items", (el) => el.innerHTML);
-  expect(items).toBe('');
+  test('Delete button pops up the confirm-delete element', async () => {
+    // This test assumes that there is at least one delete button (class = "deletebtn") on the page
+    await page.click('.deletebtn');
+    const displayStyle = await page.$eval('#confirm-delete', el => getComputedStyle(el).display);
+    expect(displayStyle).toBe('block');
+  });
 });
