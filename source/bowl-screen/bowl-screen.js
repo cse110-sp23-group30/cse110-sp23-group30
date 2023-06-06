@@ -50,3 +50,9 @@ function getSelectedItems(selector) {
 
   return selectedItems;
 }
+
+module.exports = {selectImage,
+  selectImageEntree,
+  goToCart,
+  saveSelectedItems,
+  getSelectedItems,}
