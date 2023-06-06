@@ -1,8 +1,7 @@
 body {
-    background-image: url('path/to/background-image.jpg');
-    background-color: #888;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background: url("../centralized\ css/team-logo-transparent.png") no-repeat center fixed;
+    background-size: contain;
+    background-color: white;
 }
 
 .center {
@@ -16,26 +15,6 @@ body {
 .buttons {
     display: flex;
     justify-content: space-evenly;
-}
-
-.button {
-    display: inline-block;
-    padding: 10px 10px;
-    background-color: #fff;
-    color: #000000;
-    text-decoration: none;
-    font-size: 14px;
-    border-radius: 4px;
-}
-
-.play-button {
-    display: inline-block;
-    padding: 10px 40px;
-    background-color: #406cc3;
-    color: #000;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius: 6px;
 }
 
 #title {
