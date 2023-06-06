@@ -1,89 +1,88 @@
 /**
  * Redirects to the plate screen.
  */
-function addPlate() {
-  location.href = "/source/plate-screen/plate-screen.html";
+function addPlate () {
+  location.href = '/source/plate-screen/plate-screen.html'
 }
 
 /**
  * Redirects to the bowl screen.
  */
-function addBowl() {
-  location.href = "/source/bowl-screen/bowl-screen.html";
+function addBowl () {
+  location.href = '/source/bowl-screen/bowl-screen.html'
 }
 
 /**
  * Redirects to the cookie screen for purchase.
  */
-function purchase() {
-  location.href = "/source/cookie_screen/cookie_screen.html";
+function purchase () {
+  location.href = '/source/cookie_screen/cookie_screen.html'
 }
 
 /**
  * Toggles the display of the confirm-delete element and logs the value attribute of the clicked element.
  * @param {HTMLElement} e - The clicked element.
  */
-function deleteItem(e) {
-  const confirmClear = document.getElementById("confirm-delete");
+function deleteItem (e) {
+  const confirmClear = document.getElementById('confirm-delete')
   confirmClear.style.display =
-    confirmClear.style.display === "none" ? "block" : "none";
-  console.log(e.getAttribute("value"));
+    confirmClear.style.display === 'none' ? 'block' : 'none'
+  console.log(e.getAttribute('value'))
 }
 
 /**
  * Confirms the deletion of an item from the dishes array.
  * @param {HTMLElement} e - The clicked element.
  */
-function confirmDelete(e) {
-  let dishes = JSON.parse(localStorage.getItem("dishes"));
-  console.log(e.getAttribute("value"));
-  let valueAt = this.value;
-  console.log(valueAt);
+function confirmDelete (e) {
+  const dishes = JSON.parse(localStorage.getItem('dishes'))
+  console.log(e.getAttribute('value'))
+  const valueAt = this.value
+  console.log(valueAt)
   if (valueAt > -1) {
-    dishes.splice(valueAt, 1);
+    dishes.splice(valueAt, 1)
   }
-  deleteItem();
+  deleteItem()
 }
 
 /**
  * Toggles the display of the confirm-clear element.
  */
-function popUp() {
-  const confirmClear = document.getElementById("confirm-clear");
+function popUp () {
+  const confirmClear = document.getElementById('confirm-clear')
   confirmClear.style.display =
-    confirmClear.style.display === "none" ? "block" : "none";
+    confirmClear.style.display === 'none' ? 'block' : 'none'
 }
 
 /**
  * Clears the cart by removing all items from the items element and clearing localStorage.
  */
-function confirmClear() {
-  const items = document.getElementById("items");
-  items.innerHTML = "";
-  localStorage.clear();
-  popUp();
+function confirmClear () {
+  const items = document.getElementById('items')
+  items.innerHTML = ''
+  localStorage.clear()
+  popUp()
 }
-
 
 /**
  * Loads the cart by retrieving items from localStorage and populating the items element.
  */
-function loadCart() {
-  const items = document.getElementById("items");
+function loadCart () {
+  const items = document.getElementById('items')
 
   // Get list from local Storage, if it exists
-  let dishes;
-  if (localStorage.getItem("dishes") === null) {
-    console.log("Local Storage has no dishes");
+  let dishes
+  if (localStorage.getItem('dishes') === null) {
+    console.log('Local Storage has no dishes')
   } else {
-    dishes = JSON.parse(localStorage.getItem("dishes"));
-    let i = 0;
-    for (let dish of dishes) {
-      console.log(dish);
-      const main = dish.main;
-      const entree = dish.entree;
-      const newSection = document.createElement("section");
-      newSection.setAttribute("value", `${i}`);
+    dishes = JSON.parse(localStorage.getItem('dishes'))
+    let i = 0
+    for (const dish of dishes) {
+      console.log(dish)
+      const main = dish.main
+      const entree = dish.entree
+      const newSection = document.createElement('section')
+      newSection.setAttribute('value', `${i}`)
 
       if (entree.length == 2) {
         newSection.innerHTML = `
@@ -106,7 +105,7 @@ function loadCart() {
               </div>
           </div>
           <button onclick="deleteItem(this)" class="deletebtn">Delete</button>
-        `;
+        `
       } else {
         newSection.innerHTML = `
           <h4>Bowl</h4>
@@ -123,15 +122,15 @@ function loadCart() {
               </div>
           </div>
           <button onclick="deleteItem(this)" class="deletebtn">Delete</button>
-        `;
+        `
       }
 
-      items.appendChild(newSection);
-      i++;
+      items.appendChild(newSection)
+      i++
     }
   }
 }
 
-window.addEventListener("DOMContentLoaded", () => {
-  loadCart();
-});
+window.addEventListener('DOMContentLoaded', () => {
+  loadCart()
+})
