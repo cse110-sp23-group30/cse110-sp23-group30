@@ -2,43 +2,74 @@
 <html lang="en">
 
 <head>
+    <base href="/">
+    <script src="source/node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+        $(function () {
+            // Load index.html
+            $("#header").load("source/header/index.html", function () {
+                // Callback function after loading index.html
+                // Load JavaScript file
+                //$.getScript("source/header/header-component.js");
+
+                // Append CSS file
+                $("<link>", {
+                    rel: "stylesheet",
+                    type: "text/css",
+                    href: "source/header/styles.css"
+                }).appendTo("head");
+            });
+        }); 
+    </script>
+
+    <!--<link rel="stylesheet" type="text/css" href="../opening_screen/opening-screen.css">
+    <script src="../opening_screen/opening-screen.js"></script>-->
+
     <meta charset="UTF-8">
     <title>Cart Order</title>
-    <link rel="stylesheet" type="text/css" href="cart.css">
+    <link rel="stylesheet" type="text/css" href="source/centralized css/centralized.css">
+    <link rel="stylesheet" type="text/css" href="source/cart_screen/cart.css">
 </head>
 
 <body>
-    <h1>Cart Check Out</h1>
+    <div id="header"></div>
+    <h1 id="cart-title">Cart Check Out</h1>
 
     <div id="items">
         <section>
-            <h4>Sample List item 1</h4>
+            <h4>Sample Plate</h4>
+            <div class="food">
+                <div class="individual-item">
+                    <img src="source/assets/Chow-Mein.jpg" alt="Fried Rice" class="photos">
+                    <p>Main: Fried Rice</p> <br />
+                </div>
+                <div class="individual-item">
+                    <img src="source/assets/Broccoli-Beef.jpg" alt="Broccoli Beef" class="photos">
+                    <p>Side 1: Broccoli Beef</p> <br />
+                </div>
+                <div class="individual-item">
+                    <img src="source/assets/Honey-Walnut-Shrimp.jpg" alt="HWShrimp" class="photos">
+                    <p>Side 2: Honey Walnut Shrimp</p> <br />
+                </div>
+            </div>
             <button onclick="deleteItem()" class="deletebtn">Delete</button>
         </section>
         <section>
             <h4>Sample Plate</h4>
-            <img src="Fried-Rice.jpg" alt="Fried Rice" class="photos">
-            <p>Main: Fried Rice</p> <br />
-            <img src="Broccoli-Beef.jpg" alt="Broccoli Beef" class="photos">
-            Side 1: Broccoli Beef <br />
-            <img src="Honey-Walnut-Shrimp.jpg" alt="HWShrimp" class="photos">
-            Side 2: Honey Walnut Shrimp <br />
-            <button onclick="deleteItem()" class="deletebtn">Delete</button>
-        </section>
-        <section>
-            <h4>Sample Plate</h4>
-            <img src="Chow-Mein.jpg" alt="Chow Mein" class="photos"> <br />
-            Main: Chow Mein <br />
-            Side 1: Broccoli Beef <br />
-            Side 2: Honey Walnut Shrimp <br />
-            <button onclick="deleteItem()" class="deletebtn">Delete</button>
-        </section>
-        <section>
-            <h4>Sample Plate</h4>
-            <img src="Fried-Rice.jpg" alt="Fried Rice" class="photos"> <br />
-            Main: Fried Rice <br />
-            Side 1: Broccoli Beef <br />
-            Side 2: Honey Walnut Shrimp <br />
+            <div class="food">
+                <div class="individual-item">
+                    <img src="source/assets/Chow-Mein.jpg" alt="Fried Rice" class="photos">
+                    <p>Main: Fried Rice</p> <br />
+                </div>
+                <div class="individual-item">
+                    <img src="source/assets/Broccoli-Beef.jpg" alt="Broccoli Beef" class="photos">
+                    <p>Side 1: Broccoli Beef</p> <br />
+                </div>
+                <div class="individual-item">
+                    <img src="source/assets/Honey-Walnut-Shrimp.jpg" alt="HWShrimp" class="photos">
+                    <p>Side 2: Honey Walnut Shrimp</p> <br />
+                </div>
+            </div>
             <button onclick="deleteItem()" class="deletebtn">Delete</button>
         </section>
     </div>
@@ -67,7 +98,7 @@
         </div>
     </div>
 
-    <script src="cart.js"></script>
+    <script src="source/cart_screen/cart.js"></script>
 </body>
 
 </html>
