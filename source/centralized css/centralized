@@ -1,4 +1,4 @@
-@import url(“https://fonts.cdnfonts.com/css/frutiger”);
+@import url('https://fonts.cdnfonts.com/css/frutiger');
 
 html,
 body {
@@ -7,22 +7,22 @@ body {
 }
 
 html {
-  font-family: "Frutiger", sans-serif;
+  font-family: 'Frutiger', sans-serif;
   font-size: 18px;
 }
 
 body {
-  background: url("team-logo-transparent.png") no-repeat center fixed;
+  background: url('team-logo-transparent.png') no-repeat center fixed;
   background-size: contain;
   background-color: white;
 }
 
 .buttons button {
-    padding: 15px;
-    border-style: none;
-    margin: 3px;
-    background-color: #2591ac;
-    color: #fff;
-    cursor: pointer;
-    font-size: 20px;
-  }
+  padding: 15px;
+  border-style: none;
+  margin: 3px;
+  background-color: #2591ac;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+}

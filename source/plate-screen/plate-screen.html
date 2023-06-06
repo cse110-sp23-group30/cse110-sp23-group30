@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
- <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
-  <script>
-    $(function(){
-      // Load index.html
-      $("#header").load("../header/index.html", function() {
-        // Callback function after loading index.html
-        // Load JavaScript file
-        $.getScript("../header/header-component.js");
 
-        // Append CSS file
-        $("<link>", {
-          rel: "stylesheet",
-          type: "text/css",
-          href: "../header/styles.css"
-        }).appendTo("head");
-      });
-    });
-  </script>
-  <link rel="stylesheet" type="text/css" href="opening-screen.css">
-  <script src="opening-screen.js"></script>
+<head>
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+        $(function () {
+            // Load index.html
+            $("#header").load("../header/index.html", function () {
+                // Callback function after loading index.html
+                // Load JavaScript file
+                $.getScript("../header/header-component.js");
+
+                // Append CSS file
+                $("<link>", {
+                    rel: "stylesheet",
+                    type: "text/css",
+                    href: "../header/styles.css"
+                }).appendTo("head");
+            });
+        });
+    </script>
+    <link rel="stylesheet" type="text/css" href="opening-screen.css">
+    <script src="opening-screen.js"></script>
     <meta charset="UTF-8">
     <title>Plate Screen</title>
     <link rel="stylesheet" href="plate-screen.css">
 </head>
+
 <body>
     <div id="header"></div>
     <h1>Please choose a Main:</h1>
@@ -50,7 +52,7 @@
                 <p>Price: $8.99</p>
             </div>
         </div>
-          
+
         <div onclick="selectImageMain(this)" class="menu-card">
             <div class="image-option">
                 <img src="panda-express-veggies.jpg" alt="Image 3">
@@ -71,7 +73,7 @@
                 <p>Price: $9.99</p>
             </div>
         </div>
-          
+
         <div onclick="selectImage(this)" class="menu-card">
             <img src="panda-express-beijing-beef.jpg" alt="Beijing Beef">
             <div class="menu-details">
@@ -80,7 +82,7 @@
                 <p>Price: $9.99</p>
             </div>
         </div>
-          
+
         <div onclick="selectImage(this)" class="menu-card">
             <img src="panda-express-honey-walnut-shrimp.jpg" alt="Honey Walnut Shrimp">
             <div class="menu-details">
@@ -89,7 +91,7 @@
                 <p>Price: $10.99</p>
             </div>
         </div>
-          
+
         <div onclick="selectImage(this)" class="menu-card">
             <img src="Panda-Express-Beef-and-Broccoli.jpg" alt="Beef and Broccoli">
             <div class="menu-details">
@@ -98,7 +100,7 @@
                 <p>Price: $8.99</p>
             </div>
         </div>
-          
+
         <div onclick="selectImage(this)" class="menu-card">
             <img src="panda-express-kung-pao-chicken.jpg" alt="Kung Pao Chicken">
             <div class="menu-details">
@@ -112,4 +114,5 @@
     <button onclick="goToCart();" class="buttons">Cart</button>
     <script src="plate-screen.js"></script>
 </body>
+
 </html>

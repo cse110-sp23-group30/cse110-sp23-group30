@@ -1,116 +1,119 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
-    <script>
-        $(function(){
-        // Load index.html
-        $("#header").load("../header/index.html", function() {
-            // Callback function after loading index.html
-            // Load JavaScript file
-            $.getScript("../header/header-component.js");
+  <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+  <script>
+    $(function () {
+      // Load index.html
+      $("#header").load("../header/index.html", function () {
+        // Callback function after loading index.html
+        // Load JavaScript file
+        $.getScript("../header/header-component.js");
 
-            // Append CSS file
-            $("<link>", {
-            rel: "stylesheet",
-            type: "text/css",
-            href: "../header/styles.css"
-            }).appendTo("head");
-        });
-        });
-    </script>
-    <link rel="stylesheet" type="text/css" href="opening-screen.css">
-    <script src="opening-screen.js"></script>
-    <meta charset="UTF-8">
-    <title>Bowl Screen</title>
-    <link rel="stylesheet" href="bowl-screen.css">
+        // Append CSS file
+        $("<link>", {
+          rel: "stylesheet",
+          type: "text/css",
+          href: "../header/styles.css"
+        }).appendTo("head");
+      });
+    });
+  </script>
+  <link rel="stylesheet" type="text/css" href="opening-screen.css">
+  <script src="opening-screen.js"></script>
+  <meta charset="UTF-8">
+  <title>Bowl Screen</title>
+  <link rel="stylesheet" href="bowl-screen.css">
 </head>
+
 <body>
-    <div id="header"></div>
-    <h1 class="headers">Please choose a Main:</h1>
-    <form>
-        <div onclick="selectImage(this)" class="menu-card">
-            <div class="image-option">
-                <img src="Panda-Express-Chow-Mein.jpg" alt="Image 1">
-            </div>
-            <div class="menu-details">
-                <h3>Chow Mein</h3>
-                <p>Description: Stir-fried wheat noodles with onions, celery and cabbage.</p>
-                <p>Price: $9.99</p>
-            </div>
-        </div>
+  <div id="header"></div>
+  <h1 class="headers">Please choose a Main:</h1>
+  <form>
+    <div onclick="selectImage(this)" class="menu-card">
+      <div class="image-option">
+        <img src="Panda-Express-Chow-Mein.jpg" alt="Image 1">
+      </div>
+      <div class="menu-details">
+        <h3>Chow Mein</h3>
+        <p>Description: Stir-fried wheat noodles with onions, celery and cabbage.</p>
+        <p>Price: $9.99</p>
+      </div>
+    </div>
 
-        <div onclick="selectImage(this)" class="menu-card">
-            <div class="image-option">
-                <img src="Panda-Express-Fried-Rice.jpg" alt="Image 2">
-            </div>
-            <div class="menu-details">
-                <h3>Fried Rice</h3>
-                <p>Description: Prepared steamed white rice with soy sauce, eggs, peas, carrots and green onions.</p>
-                <p>Price: $8.99</p>
-            </div>
-        </div>
-          
-        <div onclick="selectImage(this)" class="menu-card">
-            <div class="image-option">
-                <img src="panda-express-veggies.jpg" alt="Image 3">
-            </div>
-            <div class="menu-details">
-                <h3>Veggies</h3>
-                <p>Description: A healthful medley of broccoli, zucchini, carrots, string beans and cabbage.</p>
-                <p>Price: $7.99</p>
-            </div>
-        </div>
+    <div onclick="selectImage(this)" class="menu-card">
+      <div class="image-option">
+        <img src="Panda-Express-Fried-Rice.jpg" alt="Image 2">
+      </div>
+      <div class="menu-details">
+        <h3>Fried Rice</h3>
+        <p>Description: Prepared steamed white rice with soy sauce, eggs, peas, carrots and green onions.</p>
+        <p>Price: $8.99</p>
+      </div>
+    </div>
 
-        <h1 class="headers">Please choose an Entree:</h1>
-        <div onclick="selectImageEntree(this)" class="menu-card">
-            <img src="panda-express-orange-chicken.jpg" alt="Orange Chicken">
-            <div class="menu-details">
-                <h3>Orange Chicken</h3>
-                <p>Description: Our signature dish. Crispy chicken wok-tossed in a sweet and spicy orange sauce.</p>
-                <p>Price: $9.99</p>
-            </div>
-        </div>
-          
-        <div onclick="selectImageEntree(this)" class="menu-card">
-            <img src="panda-express-beijing-beef.jpg" alt="Beijing Beef">
-            <div class="menu-details">
-                <h3>Beijing Beef</h3>
-                <p>Description: Crispy beef, bell peppers and onions in a sweet-tangy sauce.</p>
-                <p>Price: $9.99</p>
-            </div>
-        </div>
-          
-        <div onclick="selectImageEntree(this)" class="menu-card">
-            <img src="panda-express-honey-walnut-shrimp.jpg" alt="Honey Walnut Shrimp">
-            <div class="menu-details">
-                <h3>Honey Walnut Shrimp</h3>
-                <p>Description: Large tempura-battered shrimp, wok-tossed in a honey sauce and topped with glazed walnuts.
-                </p>
-                <p>Price: $10.99</p>
-            </div>
-        </div>
-          
-        <div onclick="selectImageEntree(this)" class="menu-card">
-            <img src="Panda-Express-Beef-and-Broccoli.jpg" alt="Beef and Broccoli">
-            <div class="menu-details">
-                <h3>Beef and Broccoli</h3>
-                <p>Description: A classic favorite. Tender beef and fresh broccoli in a ginger soy sauce.</p>
-                <p>Price: $8.99</p>
-            </div>
-        </div>
-          
-        <div onclick="selectImageEntree(this)" class="menu-card">
-            <img src="panda-express-kung-pao-chicken.jpg" alt="Kung Pao Chicken">
-            <div class="menu-details">
-                <h3>Kung Pao Chicken</h3>
-                <p>Description: A Szechwan-inspired dish with chicken, peanuts and vegetables, finished with chili peppers.</p>
-                <p>Price: $9.99</p>
-            </div>
-        </div>
-    </form>
-    <button onclick="saveSelectedItems();" class="buttons">Submit</button>
-    <button onclick="goToCart();" class="buttons">Cart</button>
-    <script src="bowl-screen.js"></script>
+    <div onclick="selectImage(this)" class="menu-card">
+      <div class="image-option">
+        <img src="panda-express-veggies.jpg" alt="Image 3">
+      </div>
+      <div class="menu-details">
+        <h3>Veggies</h3>
+        <p>Description: A healthful medley of broccoli, zucchini, carrots, string beans and cabbage.</p>
+        <p>Price: $7.99</p>
+      </div>
+    </div>
+
+    <h1 class="headers">Please choose an Entree:</h1>
+    <div onclick="selectImageEntree(this)" class="menu-card">
+      <img src="panda-express-orange-chicken.jpg" alt="Orange Chicken">
+      <div class="menu-details">
+        <h3>Orange Chicken</h3>
+        <p>Description: Our signature dish. Crispy chicken wok-tossed in a sweet and spicy orange sauce.</p>
+        <p>Price: $9.99</p>
+      </div>
+    </div>
+
+    <div onclick="selectImageEntree(this)" class="menu-card">
+      <img src="panda-express-beijing-beef.jpg" alt="Beijing Beef">
+      <div class="menu-details">
+        <h3>Beijing Beef</h3>
+        <p>Description: Crispy beef, bell peppers and onions in a sweet-tangy sauce.</p>
+        <p>Price: $9.99</p>
+      </div>
+    </div>
+
+    <div onclick="selectImageEntree(this)" class="menu-card">
+      <img src="panda-express-honey-walnut-shrimp.jpg" alt="Honey Walnut Shrimp">
+      <div class="menu-details">
+        <h3>Honey Walnut Shrimp</h3>
+        <p>Description: Large tempura-battered shrimp, wok-tossed in a honey sauce and topped with glazed walnuts.
+        </p>
+        <p>Price: $10.99</p>
+      </div>
+    </div>
+
+    <div onclick="selectImageEntree(this)" class="menu-card">
+      <img src="Panda-Express-Beef-and-Broccoli.jpg" alt="Beef and Broccoli">
+      <div class="menu-details">
+        <h3>Beef and Broccoli</h3>
+        <p>Description: A classic favorite. Tender beef and fresh broccoli in a ginger soy sauce.</p>
+        <p>Price: $8.99</p>
+      </div>
+    </div>
+
+    <div onclick="selectImageEntree(this)" class="menu-card">
+      <img src="panda-express-kung-pao-chicken.jpg" alt="Kung Pao Chicken">
+      <div class="menu-details">
+        <h3>Kung Pao Chicken</h3>
+        <p>Description: A Szechwan-inspired dish with chicken, peanuts and vegetables, finished with chili peppers.</p>
+        <p>Price: $9.99</p>
+      </div>
+    </div>
+  </form>
+  <button onclick="saveSelectedItems();" class="buttons">Submit</button>
+  <button onclick="goToCart();" class="buttons">Cart</button>
+  <script src="bowl-screen.js"></script>
 </body>
+
 </html>

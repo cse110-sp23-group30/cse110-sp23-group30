@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <link rel="stylesheet" type="text/css" href="cookie_screen.css">
   <script src="../node_modules/jquery/dist/jquery.min.js"></script>
   <script>
-    $(function(){
+    $(function () {
       // Load index.html
-      $("#header").load("../header/index.html", function() {
+      $("#header").load("../header/index.html", function () {
         // Callback function after loading index.html
         // Load JavaScript file
         $.getScript("../header/header-component.js");
@@ -24,6 +25,7 @@
   <script src="opening-screen.js"></script>
 
 </head>
+
 <body>
   <div id="header"></div>
   <div class="container1">
@@ -33,8 +35,8 @@
     </div>
 
     <!-- tap-wrap -->
-    <div class = "tapWrap">
-      
+    <div class="tapWrap">
+
     </div>
 
     <div class="right_box">
@@ -42,7 +44,7 @@
         <div id="fortune-cookie-credit">
           <img src="media/fortune-cookie.png">
         </div>
-        <div id ="credit">
+        <div id="credit">
           50000
         </div>
       </div>
@@ -54,8 +56,8 @@
 
       <!-- Buttons -->
       <div class="buttons_container">
-        <button class="glow-on-hover" type ="button"  onclick="shakeCookie()">Shake the cookie</button>
-        <button class="glow-on-hover" type ="button" onclick="restartGame()">Restart the game</button>
+        <button class="glow-on-hover" type="button" onclick="shakeCookie()">Shake the cookie</button>
+        <button class="glow-on-hover" type="button" onclick="restartGame()">Restart the game</button>
       </div>
 
     </div>
@@ -66,4 +68,5 @@
 
   <script src="cookie_screen.js"></script>
 </body>
+
 </html>

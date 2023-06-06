@@ -1,12 +1,12 @@
-@import url(“https://fonts.cdnfonts.com/css/frutiger”);
+@import url('https://fonts.cdnfonts.com/css/frutiger');
 
 html {
-  font-family: "Frutiger", sans-serif;
+  font-family: 'Frutiger', sans-serif;
   font-size: 18px;
 }
 
 body {
-  background: url("./team-logo-circular.png") no-repeat center fixed;
+  background: url('./team-logo-circular.png') no-repeat center fixed;
   background-size: 40%;
   border-radius: 50%;
   background-color: white;
@@ -21,41 +21,41 @@ body {
   background: rgba(0, 0, 0, 0.4);
   color: #f2f3f5;
   align-items: center;
-  }
+}
   
-  .menu-card img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    margin-right: 10px;
-  }
+.menu-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 10px;
+}
   
-  .menu-details h3 {
-    margin: 0;
-  }
+.menu-details h3 {
+  margin: 0;
+}
   
-  .menu-details p {
-    margin: 5px 0;
-  }
+.menu-details p {
+  margin: 5px 0;
+}
 
-  .selected {
-    border: 3px solid #FDDA0D;
-  }
+.selected {
+  border: 3px solid #FDDA0D;
+}
 
-  .selectedEntree {
-    border: 3px solid #FDDA0D;
-  }
+.selectedEntree {
+  border: 3px solid #FDDA0D;
+}
 
-  .buttons {
-    padding: 15px;
-    border-style: none;
-    margin: 3px;
-    background-color: #2591ac;
-    color: white;
-    cursor: pointer;
-    font-size: 20px;
-  }
+.buttons {
+  padding: 15px;
+  border-style: none;
+  margin: 3px;
+  background-color: #2591ac;
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+}
 
-  .headers {
-    color: #2591ac;
-  }
+.headers {
+  color: #2591ac;
+}
