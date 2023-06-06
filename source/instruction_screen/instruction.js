@@ -1,5 +1,5 @@
 function goBack() {
-  window.location.href = "/group/source/opening_screen/opening-screen.html";
+  window.location.href = "/source/opening_screen/opening-screen.html";
 }
 
 const keyframesAnimation = `
