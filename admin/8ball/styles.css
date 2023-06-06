@@ -36,7 +36,7 @@ h1 {
   text-align: center;
   color: #f6f6f6;
   margin-top: 36px;
-  font-family: "Marcellus", serif;
+  font-family: 'Marcellus', serif;
   cursor: default;
   z-index: 1;
 }
@@ -97,7 +97,7 @@ div {
 
 .magic-8-ball::before,
 .magic-8-ball::after {
-  content: "";
+  content: '';
   position: absolute;
   top: -20px;
   left: -20px;
