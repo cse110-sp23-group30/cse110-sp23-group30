@@ -1,4 +1,4 @@
-@import url(“https://fonts.cdnfonts.com/css/frutiger”);
+@import url("https://fonts.cdnfonts.com/css/frutiger");
 
 html {
   font-family: "Frutiger", sans-serif;
@@ -13,7 +13,6 @@ body {
   background-position: center;
 }
 
-
 .menu-card {
   padding: 1%;
   margin: 2%;
@@ -21,41 +20,41 @@ body {
   background: rgba(0, 0, 0, 0.4);
   color: #f2f3f5;
   align-items: center;
-  }
-  
-  .menu-card img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    margin-right: 10px;
-  }
-  
-  .menu-details h3 {
-    margin: 0;
-  }
-  
-  .menu-details p {
-    margin: 5px 0;
-  }
+}
 
-  .selected {
-    border: 3px solid #FDDA0D;
-  }
+.menu-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 10px;
+}
 
-  .selectedEntree {
-    border: 3px solid #FDDA0D;
-  }
+.menu-details h3 {
+  margin: 0;
+}
 
-  .buttons {
-    padding: 15px;
-    border-style: none;
-    margin: 3px;
-    background-color: #2591ac;
-    color: white;
-    cursor: pointer;
-    font-size: 20px;
-  }
+.menu-details p {
+  margin: 5px 0;
+}
 
-  .headers {
-    color: #2591ac;
-  }
+.selected {
+  border: 3px solid #fdda0d;
+}
+
+.selectedEntree {
+  border: 3px solid #fdda0d;
+}
+
+.buttons {
+  padding: 15px;
+  border-style: none;
+  margin: 3px;
+  background-color: #2591ac;
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.headers {
+  color: #2591ac;
+}
