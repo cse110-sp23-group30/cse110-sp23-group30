@@ -2,14 +2,22 @@ const functions = require('../plate-screen/plate-screen.js')
 
 describe('selectImageMain', () => {
   it('should add "selected" class if not already present', () => {
-    const mockElement = {
+    /*const mockElement = {
       classList: {
         contains: jest.fn().mockReturnValue(false),
         add: jest.fn(),
         remove: jest.fn()
       }
+    }*/
+    const mockElement = {
+      classList: {
+        0: "menu-card",
+        length: 1, 
+        value: "menu-card"
+      }
     }
     functions.selectImageMain(mockElement)
+    console.log(mockElement.classList[1])
     expect(mockElement.classList[1] == 'selected').toBe(true)
   })
 
