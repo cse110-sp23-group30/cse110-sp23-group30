@@ -1,4 +1,5 @@
-body,html {
+html,
+body {
   overflow: hidden;
   height: 100%;
   margin: 0;
@@ -13,8 +14,8 @@ body,html {
   justify-content: space-between;
   height: 100%;
   background-color: black;
-  margin-left:200px;
-  margin-right:200px;
+  margin-left: 200px;
+  margin-right: 200px;
   padding: 0 20px;
 }
 
@@ -34,14 +35,14 @@ body,html {
 
 #style_one {
   margin-top: 150px;
-  margin-bottom:180px;
+  margin-bottom: 180px;
   margin-left: 50px;
   margin-right: 50px;
 }
 
 #style_two {
   margin-top: 130px;
-  margin-bottom:220px;
+  margin-bottom: 220px;
   margin-left: 50px;
   margin-right: 50px;
 }
@@ -61,7 +62,8 @@ body,html {
   background-color: rgb(10, 98, 69);
 }
 
-.instruction h2,p {
+.instruction h2,
+p {
   background: linear-gradient(45deg, #fff, #a8a8a8, #fff);
   background-size: 200% 200%;
   -webkit-background-clip: text;
@@ -76,12 +78,10 @@ body,html {
 
 .instruction p {
   margin-top: 5px;
-  margin-left:50px;
-  margin-right:50px;
+  margin-left: 50px;
+  margin-right: 50px;
   font-size: 25px;
 }
-
-
 
 button {
   cursor: pointer;
@@ -94,7 +94,7 @@ button {
   text-decoration: none;
   font-size: 25px;
   border-radius: 4px;
-  position: fixed;    
+  position: fixed;
   bottom: 80px;
   left: 50%;
   opacity: 0;

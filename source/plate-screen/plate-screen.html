@@ -2,29 +2,30 @@
 <html>
 
 <head>
-    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <base href="/">
+    <script src="source/node_modules/jquery/dist/jquery.min.js"></script>
     <script>
         $(function () {
             // Load index.html
-            $("#header").load("../header/index.html", function () {
+            $("#header").load("source/header/index.html", function () {
                 // Callback function after loading index.html
                 // Load JavaScript file
-                $.getScript("../header/header-component.js");
+                //$.getScript("source/header/header-component.js");
 
                 // Append CSS file
                 $("<link>", {
                     rel: "stylesheet",
                     type: "text/css",
-                    href: "../header/styles.css"
+                    href: "source/header/styles.css"
                 }).appendTo("head");
             });
-        });
+        }); 
     </script>
-    <link rel="stylesheet" type="text/css" href="opening-screen.css">
-    <script src="opening-screen.js"></script>
     <meta charset="UTF-8">
     <title>Plate Screen</title>
-    <link rel="stylesheet" href="plate-screen.css">
+    <link rel="stylesheet" type="text/css" href="source/centralized css/centralized.css">
+    <link rel="stylesheet" href="source/plate-screen/plate-screen.css">
+    <link rel="shortcut icon" href="source/centralized css/team-logo-transparent.png">
 </head>
 
 <body>
@@ -33,7 +34,7 @@
     <form>
         <div onclick="selectImageMain(this)" class="menu-card">
             <div class="image-option">
-                <img src="Panda-Express-Chow-Mein.jpg" alt="Image 1">
+                <img src="source/assets/Chow-Mein.jpg" alt="Image 1">
             </div>
             <div class="menu-details">
                 <h3>Chow Mein</h3>
@@ -44,7 +45,7 @@
 
         <div onclick="selectImageMain(this)" class="menu-card">
             <div class="image-option">
-                <img src="Panda-Express-Fried-Rice.jpg" alt="Image 2">
+                <img src="source/assets/Fried-Rice.jpg" alt="Image 2">
             </div>
             <div class="menu-details">
                 <h3>Fried Rice</h3>
@@ -55,7 +56,7 @@
 
         <div onclick="selectImageMain(this)" class="menu-card">
             <div class="image-option">
-                <img src="panda-express-veggies.jpg" alt="Image 3">
+                <img src="source/assets/Veggies.jpg" alt="Image 3">
             </div>
             <div class="menu-details">
                 <h3>Veggies</h3>
@@ -66,7 +67,7 @@
 
         <h1>Please choose two Entree:</h1>
         <div onclick="selectImage(this)" class="menu-card">
-            <img src="panda-express-orange-chicken.jpg" alt="Orange Chicken">
+            <img src="source/assets/Orange-Chicken.jpg" alt="Orange Chicken">
             <div class="menu-details">
                 <h3>Orange Chicken</h3>
                 <p>Description: Add a brief description of the item here.</p>
@@ -75,7 +76,7 @@
         </div>
 
         <div onclick="selectImage(this)" class="menu-card">
-            <img src="panda-express-beijing-beef.jpg" alt="Beijing Beef">
+            <img src="source/assets/Beijing-Beef.jpg" alt="Beijing Beef">
             <div class="menu-details">
                 <h3>Beijing Beef</h3>
                 <p>Description: Add a brief description of the item here.</p>
@@ -84,7 +85,7 @@
         </div>
 
         <div onclick="selectImage(this)" class="menu-card">
-            <img src="panda-express-honey-walnut-shrimp.jpg" alt="Honey Walnut Shrimp">
+            <img src="source/assets/Honey-Walnut-Shrimp.jpg" alt="Honey Walnut Shrimp">
             <div class="menu-details">
                 <h3>Honey Walnut Shrimp</h3>
                 <p>Description: Add a brief description of the item here.</p>
@@ -93,7 +94,7 @@
         </div>
 
         <div onclick="selectImage(this)" class="menu-card">
-            <img src="Panda-Express-Beef-and-Broccoli.jpg" alt="Beef and Broccoli">
+            <img src="source/assets/Broccoli-Beef.jpg" alt="Beef and Broccoli">
             <div class="menu-details">
                 <h3>Beef and Broccoli</h3>
                 <p>Description: Add a brief description of the item here.</p>
@@ -102,7 +103,7 @@
         </div>
 
         <div onclick="selectImage(this)" class="menu-card">
-            <img src="panda-express-kung-pao-chicken.jpg" alt="Kung Pao Chicken">
+            <img src="source/assets/Kung-Pao-Chicken.jpg" alt="Kung Pao Chicken">
             <div class="menu-details">
                 <h3>Kung Pao Chicken</h3>
                 <p>Description: Add a brief description of the item here.</p>
@@ -110,9 +111,9 @@
             </div>
         </div>
     </form>
-    <input type="submit" class="buttons">
+    <button onclick="saveSelectedItems();" class="buttons">Submit</button>
     <button onclick="goToCart();" class="buttons">Cart</button>
-    <script src="plate-screen.js"></script>
+    <script src="source/plate-screen/plate-screen.js"></script>
 </body>
 
 </html>
