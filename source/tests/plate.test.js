@@ -1,17 +1,5 @@
 const functions = require('../plate-screen/plate-screen.js')
 
-  /*test('selectImageMain add', () => {
-    var mockElement = {
-      classList: {
-        contains: jest.fn().mockReturnValue(false),
-        add: jest.fn(),
-        remove: jest.fn()
-      }
-    }
-    functions.selectImageMain(mockElement)
-    expect(mockElement.classList.add).toBe(true)
-  });*/
-
 describe('selectImageMain', () => {
   it('should add "selected" class if not already present', () => {
     const mockElement = {
@@ -22,7 +10,7 @@ describe('selectImageMain', () => {
       }
     }
     functions.selectImageMain(mockElement)
-    expect(mockElement.classList.add).toBe('selected')
+    expect(mockElement.classList[1] == 'selected').toBe(true)
   })
 
 
@@ -35,7 +23,7 @@ describe('selectImageMain', () => {
       }
     }
     functions.selectImageMain(mockElement)
-    expect(mockElement.classList.remove).toHaveBeenCalledWith('selected')
+    expect(mockElement.classList[1] == 'selected').toBe(false)
   })
 })
 
@@ -49,7 +37,7 @@ describe('selectImage', () => {
       }
     }
     functions.selectImage(mockElement)
-    expect(mockElement.classList.add).toHaveBeenCalledWith('selected')
+    expect(mockElement.classList[1] == 'selected').toBe(true)
   })
 
   it('should remove "selected" class if present', () => {
@@ -61,6 +49,6 @@ describe('selectImage', () => {
       }
     }
     functions.selectImage(mockElement)
-    expect(mockElement.classList.remove).toHaveBeenCalledWith('selected')
+    expect(mockElement.classList[1] == 'selected').toBe(false)
   })
 })
