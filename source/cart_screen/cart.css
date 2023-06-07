@@ -11,7 +11,7 @@ body {
 }
 
 body {
-  /*background: url('pandanologo.png') no-repeat center fixed;*/
+  background: url('/source/centralized\ css/background.jpg') no-repeat center fixed;
   background-size: contain;
   background-color: #ebccab;
 }
@@ -69,9 +69,6 @@ h4 {
   padding-top: 10px;
 }
 
-.deletebtn {
-}
-
 #confirm-clear {
   position: fixed;
   top: 0;
@@ -124,6 +121,3 @@ h4 {
   font-size: 20px;
 }
 */
-
-.add-extra {
-}
