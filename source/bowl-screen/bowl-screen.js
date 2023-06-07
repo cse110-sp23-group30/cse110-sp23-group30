@@ -1,6 +1,8 @@
 let selectedCount = 0
 let selectedCountEntree = 0
 
+module.exports = { selectImage, selectImageEntree };
+
 function selectImage (element) {
   if (element.classList.contains('selected')) {
     element.classList.remove('selected')
