@@ -1,16 +1,17 @@
-.img {
-  transition: transform 0.2s; /* Animation */
-  width: 600px;
-  height: auto;
-  margin: 0 auto;
+@import url('https://fonts.cdnfonts.com/css/frutiger');
+
+html {
+  font-family: 'Frutiger', sans-serif;
+  font-size: 18px;
 }
 
 body {
   background: url('team-logo-transparent.png') no-repeat center fixed;
-  background-size: contain;
+  background-size: 40%;
+  border-radius: 50%;
   background-color: white;
+  background-position: center;
 }
-
 
 .menu-card {
   padding: 1%;
@@ -20,31 +21,28 @@ body {
   color: #f2f3f5;
   align-items: center;
 }
-  
+
 .menu-card img {
   width: 150px;
   height: 150px;
   object-fit: cover;
   margin-right: 10px;
 }
-.menu-card img {
-  transition: transform 0.2s; /* Animation */
-}
 
-.menu-card img:hover {
-  transform: scale(2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-}
-  
 .menu-details h3 {
   margin: 0;
 }
-  
+
 .menu-details p {
   margin: 5px 0;
 }
 
 .selected {
-  border: 3px solid blue;
+  border: 3px solid #fdda0d;
+}
+
+.selectedEntree {
+  border: 3px solid #fdda0d;
 }
 
 .buttons {
@@ -52,7 +50,11 @@ body {
   border-style: none;
   margin: 3px;
   background-color: #2591ac;
-  color: #fff;
+  color: white;
   cursor: pointer;
   font-size: 20px;
+}
+
+.headers {
+  color: #2591ac;
 }
