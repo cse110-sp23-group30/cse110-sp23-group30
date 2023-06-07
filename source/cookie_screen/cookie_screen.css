@@ -1,172 +1,244 @@
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@100&family=Rubik+Pixels&display=swap');
+
+body {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.container1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('media/background_image.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.tapWrap{
+  width: 15rem;
+  height: 34.6rem;
+  position: absolute;
+  background: url('media/tap_wrap.png') no-repeat;
+  -webkit-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+  background-position: center;
+  margin-right: 85%;
+  padding-top: 2.85rem;
+  z-index: 1;
+  display: inline;
+  justify-content: center;
+}
+
+.credit{
+  height: 3rem;
+  width: 12rem;
+  -webkit-border-radius: 0.65rem;
+  border-radius: 2rem;
+  background-color: rgba(0,0,0,.4);
+  position: absolute;
+  right: 5rem;
+  top: 8rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 0.1rem;
+}
+
+.right_box{
+  padding-left: 10rem;
 }
 
 .buttons_container {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: row;
+  margin-top: 30%;
+  margin-right: -20%;
+  padding-bottom: 5%;
+}
+
+.buttons_container button:nth-child(1) {
+  margin-right: 8rem; 
 }
 
 .buttons_container button {
-    margin-bottom: 10px; /* Adjust the spacing by changing the value */
+  width: 220px;
+  height: 60px;
+  font-size: 18px; 
+  margin-right: 4%; 
+  margin-top: 50%; 
+  border: 0.075rem solid #ddcb9d;
+  border-radius: 0.95rem;
+  color: #ae9783;
+  font-family: 'Rubik Pixels', sans-serif;
 }
 
-#video-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
+#fullscreen-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color: black;
+  display: none;
 }
+
+#fullscreen-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 
 #fortune-cookie {
-    position: relative;
+  position: absolute;
 }
 
 #fortune-cookie img {
-    width: 750px;
-    height: 650px;
+  width: 550px;
+  height: 400px;
+  margin-left: 4%;
+  padding-top: 15%;
+}
+
+#fortune-cookie-credit img {
+  width: 30px;
+  height: 30px;
+  padding-top: 5px;
+  padding-left: 10px;
+}
+
+#credit {
+  padding-left: 20%;
+  font-size: 20px;
+  color: white;
+  font-family: 'Rubik Pixels', sans-serif;
 }
 
 #fortune-message {
-    position: absolute;
-    top: 36%;
-    left: 58%;
-    z-index: 1;
-    width: 190px;
-    height: 80px;
-    background-color: white;
-    border: 1px solid black;
-    text-align: center;
-    margin-top: -42px;
-    font-weight: bold;
-    font-size: 18px;
-    border: none;
-    display: none;
-    transform: translate(-50%, -50%) rotate(5deg);
+  position: absolute;
+  z-index: 0;
+  width: 175px;
+  height: 45px;
+  background-color: white;
+  border: 1px solid black;
+  text-align: center;
+  margin-top: 12.2rem;
+  margin-left: 19.2rem;
+  font-weight: bold;
+  font-size: 13%;
+  border: none;
+  display: none;
+  transform: translate(-50%, -50%) rotate(5deg);
 }
 
 /* CSS for the shake animation */
 @keyframes shake {
-    0% { transform: rotate(-5deg) translateX(0); }
-    10% { transform: rotate(5deg) translateX(5px); }
-    20% { transform: rotate(-5deg) translateX(-5px); }
-    30% { transform: rotate(5deg) translateX(5px); }
-    40% { transform: rotate(-5deg) translateX(-5px); }
-    50% { transform: rotate(5deg) translateX(5px); }
-    60% { transform: rotate(-5deg) translateX(-5px); }
-    70% { transform: rotate(5deg) translateX(5px); }
-    80% { transform: rotate(-5deg) translateX(-5px); }
-    90% { transform: rotate(5deg) translateX(5px); }
-    100% { transform: rotate(-5deg) translateX(0); }
+  0% { transform: rotate(-5deg) translateX(0); }
+  10% { transform: rotate(5deg) translateX(5px); }
+  20% { transform: rotate(-5deg) translateX(-5px); }
+  30% { transform: rotate(5deg) translateX(5px); }
+  40% { transform: rotate(-5deg) translateX(-5px); }
+  50% { transform: rotate(5deg) translateX(5px); }
+  60% { transform: rotate(-5deg) translateX(-5px); }
+  70% { transform: rotate(5deg) translateX(5px); }
+  80% { transform: rotate(-5deg) translateX(-5px); }
+  90% { transform: rotate(5deg) translateX(5px); }
+  100% { transform: rotate(-5deg) translateX(0); }
 }
 
 .shake-animation {
-    animation: shake 1s;
+  animation: shake 1s;
 }
 
 /* glowing button css */
 .glow-on-hover {
-    width: 220px;
-    height: 50px;
-    border: none;
-    outline: none;
-    color: #fff;
-    background: brown;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 10px;
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background-image: linear-gradient(to right,hsl(134, 75%, 72%), hsl(184, 75%, 72%), hsl(154, 75%, 72%) , #80ED99);
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 5px;
 }
 
 .glow-on-hover:before {
-    content: '';
-    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-    position: absolute;
-    top: -2px;
-    left:-2px;
-    background-size: 400%;
-    z-index: -1;
-    filter: blur(5px);
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    animation: glowing 20s linear infinite;
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
-    border-radius: 10px;
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
 }
 
 .glow-on-hover:active {
-    color:#000
+  color:#000
 }
 
 .glow-on-hover:active:after {
-    background: transparent;
+  background: transparent;
 }
 
 .glow-on-hover:hover:before {
-    opacity: 1;
+  opacity: 1;
 }
 
 .glow-on-hover:after {
-    z-index: -1;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgb(224, 163, 9);
-    left: 0;
-    top: 0;
-    border-radius: 10px;
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  box-shadow: 0 4px 15px 0 hsl(184, 75%, 72%);
+  left: 0;
+  top: 0;
+  border-radius: 10px;
 }
 
 @keyframes glowing {
-    0% { background-position: 0 0; }
-    50% { background-position: 400% 0; }
-    100% { background-position: 0 0; }
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
 }
 
-/* CSS for the background animation */
-@keyframes float {
-    0% {
-      transform: translateY(100%) translateX(calc(100vw * var(--x)));
-      opacity: 0;
-    }
-    10% {
-      opacity: 1;
-    }
-    90% {
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(-100%) translateX(calc(100vw * var(--x)));
-      opacity: 0;
-    }
+/* Add CSS for the volume icon */
+.volume_icon {
+  width: 50px ;
+  height: 50px ;
+  padding-left: 100px;
+  margin-top: 1rem;
 }
   
-.floating-cookie {
-    position: fixed;
-    bottom: 0;
-    animation: float 20s linear infinite;
-    transform-origin: center;
+/* Add CSS for the vertical slider */
+.vertical-slider {
+  writing-mode: bt-lr; /* Set the slider orientation to vertical */
+  appearance: slider-vertical; /* Set the appearance for vertical slider */
+  height: 100px;
+  margin-left: 55px;
+  margin-top: 1rem;
 }
-  
-.floating-cookie img {
-    width: 25px;
-    height: 25px;
-    animation: rotate 5s linear infinite;
-}
-  
-@keyframes rotate {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+
+.setting_icon{
+  padding-left: 95px;
+  margin-top: 4rem;
 }
