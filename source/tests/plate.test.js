@@ -1,10 +1,10 @@
 const functions = require('../plate-screen/plate-screen.js')
-const { JSDOM } = require('jsdom');
+const { JSDOM } = require('jsdom')
 const dom = new JSDOM();
-const document = dom.window.document;
-const mockElement = document.createElement('div');
+const document = dom.window.document
 
 describe('selectImageMain', () => {
+  const mockElement = document.createElement('div')
   it('should add "selected" class if not already present', () => {
     functions.selectImageMain(mockElement)
     expect(mockElement.classList[0] == 'selected').toBe(true)
@@ -17,6 +17,7 @@ describe('selectImageMain', () => {
 })
 
 describe('selectImage', () => {
+  const mockElement = document.createElement('div')
   it('should add "selected" class if not already present and selectedCount < 2', () => {
     functions.selectImage(mockElement)
     expect(mockElement.classList[0] == 'selected').toBe(true)
