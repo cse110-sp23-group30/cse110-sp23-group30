@@ -9,16 +9,10 @@ describe('selectImageMain', () => {
         remove: jest.fn()
       }
     }*/
-    const mockElement = {
-      classList: {
-        0: "menu-card",
-        length: 1, 
-        value: "menu-card"
-      }
-    }
+    const mockElement = document.createElement("div");
     functions.selectImageMain(mockElement)
-    console.log(mockElement.classList[1])
-    expect(mockElement.classList[1] == 'selected').toBe(true)
+    console.log(mockElement.classList)
+    expect(mockElement.classList[0] == 'selected').toBe(true)
   })
 
 
