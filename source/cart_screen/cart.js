@@ -79,7 +79,10 @@ function loadCart() {
 
   // Get list from local Storage, if it exists
   let dishes;
-  if (localStorage.getItem("dishes") === null) {
+  if (
+    localStorage.getItem("dishes") === null ||
+    JSON.parse(localStorage.getItem("dishes")).length == 0
+  ) {
     console.log("Local Storage has no dishes");
 
     const confirmPurchase = document.getElementById("confirm");
