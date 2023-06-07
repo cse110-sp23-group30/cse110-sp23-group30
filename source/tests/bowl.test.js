@@ -1,55 +1,29 @@
-// test.js
+const functions = require('../bowl-screen/bowl-screen.js')
+const { JSDOM } = require('jsdom');
+const dom = new JSDOM();
+const document = dom.window.document;
+const mockElement = document.createElement('div');
 
-const { selectImageMain, selectImage } = require('../bowl-screen/bowl-screen.js')
-
-describe('selectImageMain', () => {
+describe('selectImage', () => {
   it('should add "selected" class if not already present', () => {
-    const mockElement = {
-      classList: {
-        contains: jest.fn().mockReturnValue(false),
-        add: jest.fn(),
-        remove: jest.fn()
-      }
-    }
-    selectImageMain(mockElement)
-    expect(mockElement.classList.add).toHaveBeenCalledWith('selected')
+    functions.selectImage(mockElement)
+    expect(mockElement.classList[0] == 'selected').toBe(true)
   })
 
   it('should remove "selected" class if present', () => {
-    const mockElement = {
-      classList: {
-        contains: jest.fn().mockReturnValue(true),
-        add: jest.fn(),
-        remove: jest.fn()
-      }
-    }
-    selectImageMain(mockElement)
-    expect(mockElement.classList.remove).toHaveBeenCalledWith('selected')
+    functions.selectImage(mockElement)
+    expect(mockElement.classList[0] == 'selected').toBe(false)
   })
 })
 
-describe('selectImage', () => {
-  it('should add "selected" class if not already present and selectedCount < 2', () => {
-    const mockElement = {
-      classList: {
-        contains: jest.fn().mockReturnValue(false),
-        add: jest.fn(),
-        remove: jest.fn()
-      }
-    }
-    selectImage(mockElement)
-    expect(mockElement.classList.add).toHaveBeenCalledWith('selected')
+describe('selectImageEntree', () => {
+  it('should add "selectedEntree" class if not already present and selectedCount < 1', () => {
+    functions.selectImageEntree(mockElement)
+    expect(mockElement.classList[0] == 'selectedEntree').toBe(true)
   })
 
-  it('should remove "selected" class if present', () => {
-    const mockElement = {
-      classList: {
-        contains: jest.fn().mockReturnValue(true),
-        add: jest.fn(),
-        remove: jest.fn()
-      }
-    }
-    selectImage(mockElement)
-    expect(mockElement.classList.remove).toHaveBeenCalledWith('selected')
+  it('should remove "selectedEntree" class if present', () => {
+    functions.selectImageEntree(mockElement)
+    expect(mockElement.classList[0] == 'selectedEntree').toBe(false)
   })
 })
