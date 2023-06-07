@@ -1,6 +1,6 @@
 const functions = require('../plate-screen/plate-screen.js')
 
-  test('selectImageMain test', () => {
+  /*test('selectImageMain add', () => {
     var mockElement = {
       classList: {
         contains: jest.fn().mockReturnValue(false),
@@ -10,7 +10,7 @@ const functions = require('../plate-screen/plate-screen.js')
     }
     functions.selectImageMain(mockElement)
     expect(mockElement.classList.add).toBe(true)
-});
+  });*/
 
 describe('selectImageMain', () => {
   it('should add "selected" class if not already present', () => {
@@ -22,7 +22,7 @@ describe('selectImageMain', () => {
       }
     }
     functions.selectImageMain(mockElement)
-    expect(mockElement.classList.add).toHaveBeenCalledWith('selected')
+    expect(mockElement.classList.add).toBe('selected')
   })
 
 
