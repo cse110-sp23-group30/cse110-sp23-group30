@@ -16,10 +16,7 @@ test('food screen behavior', async () => {
   await page.goto('file://' + path.resolve(__dirname, '../cart_screen/cart.html'))
 
   // Simulate clicking "addPlate" button and check redirected url
-  /*const prodItem = await page.$('add-Plate');
-  const shadow = await prodItem.evaluateHandle((element) => element.shadowRoot);
-  const button = await shadow.$('button');
-  await button.click();*/
+
   await page.click('#add-plate')
   expect(page.url()).toBe('file://' + path.resolve(__dirname, '../plate-screen/plate-screen.html'))
 
