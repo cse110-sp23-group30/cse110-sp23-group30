@@ -6,7 +6,7 @@
 }
 
 body {
-  background: url('team-logo-transparent.png') no-repeat center fixed;
+  background: url('background.jpg') no-repeat center fixed;
   background-size: contain;
   background-color: white;
 }
