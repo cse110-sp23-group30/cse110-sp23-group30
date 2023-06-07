@@ -44,6 +44,10 @@ body {
   border: 3px solid #fdda0d;
 }
 
+.selectedEntree {
+  border: 3px solid blue;
+}
+
 .buttons {
   padding: 15px;
   border-style: none;

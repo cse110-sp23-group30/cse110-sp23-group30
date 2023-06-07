@@ -2,27 +2,28 @@
 <html>
 
 <head>
-  <link rel="stylesheet" type="text/css" href="cookie_screen.css">
-  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <base href="/">
+  <title>Fortune Cookie</title>
+  <link rel="shortcut icon" href="source/centralized css/team-logo-transparent.png">
+  <link rel="stylesheet" type="text/css" href="source/cookie_screen/cookie_screen.css">
+  <script src="source/node_modules/jquery/dist/jquery.min.js"></script>
   <script>
     $(function () {
       // Load index.html
-      $("#header").load("../header/index.html", function () {
+      $("#header").load("source/header/index.html", function () {
         // Callback function after loading index.html
         // Load JavaScript file
-        $.getScript("../header/header-component.js");
+        //$.getScript("source/header/header-component.js");
 
         // Append CSS file
         $("<link>", {
           rel: "stylesheet",
           type: "text/css",
-          href: "../header/styles.css"
+          href: "source/header/styles.css"
         }).appendTo("head");
       });
-    });
+    }); 
   </script>
-  <link rel="stylesheet" type="text/css" href="opening-screen.css">
-  <script src="opening-screen.js"></script>
 
 </head>
 
@@ -31,7 +32,7 @@
   <div class="container1">
     <!-- when user clicks shake animation -->
     <div id="fullscreen-video">
-      <video id="video-player" src="media/video_blue.mp4" autoplay></video>
+      <video id="video-player" src="source/cookie_screen/media/video_blue.mp4" autoplay></video>
     </div>
 
     <!-- tap-wrap -->
@@ -42,7 +43,7 @@
     <div class="right_box">
       <div class="credit">
         <div id="fortune-cookie-credit">
-          <img src="media/fortune-cookie.png">
+          <img src="source/cookie_screen/media/fortune-cookie.png">
         </div>
         <div id="credit">
           50000
@@ -50,7 +51,7 @@
       </div>
       <!-- Fortune Cookie and Message -->
       <div id="fortune-cookie">
-        <img src="media/cookie_before.png" alt="Fortune Cookie">
+        <img src="source/cookie_screen/media/cookie_before.png" alt="Fortune Cookie">
       </div>
       <p id="fortune-message"></p>
 
@@ -64,9 +65,9 @@
   </div>
 
   <!-- Background music , To be Implemented -->
-  <audio id="background-music" src="media/lisa.mp3" loop></audio>
+  <audio id="background-music" src="source/assets/lisa.mp3" loop></audio>
 
-  <script src="cookie_screen.js"></script>
+  <script src="source/cookie_screen/cookie_screen.js"></script>
 </body>
 
 </html>
