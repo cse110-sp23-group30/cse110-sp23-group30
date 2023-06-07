@@ -6,11 +6,10 @@
 }
 
 body {
-  background: url('team-logo-transparent.png') no-repeat center fixed;
+  background: url("team-logo-transparent.png") no-repeat center fixed;
   background-size: contain;
   background-color: white;
 }
-
 
 .menu-card {
   padding: 1%;
@@ -20,7 +19,7 @@ body {
   color: #f2f3f5;
   align-items: center;
 }
-  
+
 .menu-card img {
   width: 150px;
   height: 150px;
@@ -32,18 +31,24 @@ body {
 }
 
 .menu-card img:hover {
-  transform: scale(2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  transform: scale(
+    2
+  ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
-  
+
 .menu-details h3 {
   margin: 0;
 }
-  
+
 .menu-details p {
   margin: 5px 0;
 }
 
 .selected {
+  border: 3px solid blue;
+}
+
+.selectedEntree {
   border: 3px solid blue;
 }
 

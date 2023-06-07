@@ -1,88 +1,109 @@
 /**
  * Redirects to the plate screen.
  */
-function addPlate () {
-  location.href = '/source/plate-screen/plate-screen.html'
+function addPlate() {
+  location.href = "/source/plate-screen/plate-screen.html";
 }
 
 /**
  * Redirects to the bowl screen.
  */
-function addBowl () {
-  location.href = '/source/bowl-screen/bowl-screen.html'
+function addBowl() {
+  location.href = "/source/bowl-screen/bowl-screen.html";
 }
 
 /**
  * Redirects to the cookie screen for purchase.
  */
-function purchase () {
-  location.href = '/source/cookie_screen/cookie_screen.html'
+function purchase() {
+  if (localStorage.getItem("dishes") === null) {
+    return;
+  }
+  location.href = "/source/cookie_screen/cookie_screen.html";
 }
 
 /**
  * Toggles the display of the confirm-delete element and logs the value attribute of the clicked element.
  * @param {HTMLElement} e - The clicked element.
  */
-function deleteItem (e) {
-  const confirmClear = document.getElementById('confirm-delete')
+function deleteItem(e) {
+  const confirmClear = document.getElementById("confirm-delete");
   confirmClear.style.display =
-    confirmClear.style.display === 'none' ? 'block' : 'none'
-  console.log(e.getAttribute('value'))
+    confirmClear.style.display === "none" ? "block" : "none";
+  let container = e.parentNode.getAttribute("value");
+  localStorage.setItem("toDelete", JSON.stringify(container));
 }
 
 /**
- * Confirms the deletion of an item from the dishes array.
- * @param {HTMLElement} e - The clicked element.
+ * Deletes the item from the dishes array.
  */
-function confirmDelete (e) {
-  const dishes = JSON.parse(localStorage.getItem('dishes'))
-  console.log(e.getAttribute('value'))
-  const valueAt = this.value
-  console.log(valueAt)
-  if (valueAt > -1) {
-    dishes.splice(valueAt, 1)
+function confirmDelete() {
+  let container = JSON.parse(localStorage.getItem("toDelete"));
+  let dishes = JSON.parse(localStorage.getItem("dishes"));
+  console.log(container);
+  if (container > -1) {
+    dishes.splice(Number(container), 1);
+    localStorage.setItem("dishes", JSON.stringify(dishes));
+    location.reload();
   }
-  deleteItem()
+  const confirmClear = document.getElementById("confirm-delete");
+  confirmClear.style.display =
+    confirmClear.style.display === "none" ? "block" : "none";
 }
 
 /**
  * Toggles the display of the confirm-clear element.
  */
-function popUp () {
-  const confirmClear = document.getElementById('confirm-clear')
+function popUp() {
+  const confirmClear = document.getElementById("confirm-clear");
   confirmClear.style.display =
-    confirmClear.style.display === 'none' ? 'block' : 'none'
+    confirmClear.style.display === "none" ? "block" : "none";
 }
 
 /**
  * Clears the cart by removing all items from the items element and clearing localStorage.
  */
-function confirmClear () {
-  const items = document.getElementById('items')
-  items.innerHTML = ''
-  localStorage.clear()
-  popUp()
+function confirmClear() {
+  const items = document.getElementById("items");
+  items.innerHTML = "";
+  localStorage.clear();
+  loadCart();
+  popUp();
 }
 
 /**
  * Loads the cart by retrieving items from localStorage and populating the items element.
  */
-function loadCart () {
-  const items = document.getElementById('items')
+function loadCart() {
+  const items = document.getElementById("items");
 
   // Get list from local Storage, if it exists
-  let dishes
-  if (localStorage.getItem('dishes') === null) {
-    console.log('Local Storage has no dishes')
+  let dishes;
+  if (
+    localStorage.getItem("dishes") === null ||
+    JSON.parse(localStorage.getItem("dishes")).length == 0
+  ) {
+    console.log("Local Storage has no dishes");
+
+    const confirmPurchase = document.getElementById("confirm");
+    confirmPurchase.style.backgroundColor = "#808080";
+    confirmPurchase.style.cursor = "not-allowed";
+
+    const newSection = document.createElement("section");
+    newSection.innerHTML = `
+      <h4>There is nothing in the cart!</h4>
+      <p>Add Items to the Cart down below by pressing "Add Plate" or "Add Bowl"</p>
+    `;
+    items.appendChild(newSection);
   } else {
-    dishes = JSON.parse(localStorage.getItem('dishes'))
-    let i = 0
+    dishes = JSON.parse(localStorage.getItem("dishes"));
+    let i = 0;
     for (const dish of dishes) {
-      console.log(dish)
-      const main = dish.main
-      const entree = dish.entree
-      const newSection = document.createElement('section')
-      newSection.setAttribute('value', `${i}`)
+      console.log(dish);
+      const main = dish.main;
+      const entree = dish.entree;
+      const newSection = document.createElement("section");
+      newSection.setAttribute("value", `${i}`);
 
       if (entree.length == 2) {
         newSection.innerHTML = `
@@ -105,7 +126,7 @@ function loadCart () {
               </div>
           </div>
           <button onclick="deleteItem(this)" class="deletebtn">Delete</button>
-        `
+        `;
       } else {
         newSection.innerHTML = `
           <h4>Bowl</h4>
@@ -122,15 +143,15 @@ function loadCart () {
               </div>
           </div>
           <button onclick="deleteItem(this)" class="deletebtn">Delete</button>
-        `
+        `;
       }
 
-      items.appendChild(newSection)
-      i++
+      items.appendChild(newSection);
+      i++;
     }
   }
 }
 
-window.addEventListener('DOMContentLoaded', () => {
-  loadCart()
-})
+window.addEventListener("DOMContentLoaded", () => {
+  loadCart();
+});
