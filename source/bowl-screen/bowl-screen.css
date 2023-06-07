@@ -6,9 +6,8 @@ html {
 }
 
 body {
-  background: url('./team-logo-circular.png') no-repeat center fixed;
-  background-size: 40%;
-  border-radius: 50%;
+  background: url('/source/centralized\ css/background.jpg') no-repeat center fixed;
+  background-size: contain;
   background-color: white;
   background-position: center;
 }
