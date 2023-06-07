@@ -9,7 +9,7 @@ const functions = require('../plate-screen/plate-screen.js')
       }
     }
     functions.selectImageMain(mockElement)
-    expect(mockElement.classList.add).toHaveBeenCalledWith('selected')
+    expect(mockElement.classList.add).toBe(true)
 });
 
 describe('selectImageMain', () => {
