@@ -1,5 +1,5 @@
 class HeaderComponent extends HTMLElement {
-  connectedCallback () {
+  connectedCallback() {
     this.innerHTML = `
       <header>
         <div class="container">
@@ -12,47 +12,51 @@ class HeaderComponent extends HTMLElement {
           </div>
         </div>
       </header>
-    `
+    `;
 
     // Add event listeners for the buttons
-    this.querySelector('#homeBtn').addEventListener('click', () => {
+    this.querySelector("#homeBtn").addEventListener("click", () => {
       // Handle home button click
-      window.location.href = 'source/opening_screen/opening-screen.html'
-    })
+      window.location.href = "source/opening_screen/opening-screen.html";
+    });
 
-    this.querySelector('#instructionsBtn').addEventListener('click', () => {
+    this.querySelector("#instructionsBtn").addEventListener("click", () => {
+      // Make sure instructinos returns back to screen it was on
+      let orgLink = window.location.href;
+      localStorage.setItem("orglink", JSON.stringify(orgLink));
+
       // Handle instructions button click
-      window.location.href = 'source/instruction_screen/instruction.html'
-    })
+      window.location.href = "source/instruction_screen/instruction.html";
+    });
 
     // Get a reference to the settings button
-    const settingsBtn = this.querySelector('#settingsBtn')
+    const settingsBtn = this.querySelector("#settingsBtn");
 
     // Add event listener to the settings button
-    settingsBtn.addEventListener('click', () => {
+    settingsBtn.addEventListener("click", () => {
       // Check if the settings panel already exists
-      document.getElementById('settings-popup').style.display = 'block'
+      document.getElementById("settings-popup").style.display = "block";
 
-      const volumeSlider = document.getElementById('musicVolume')
-      volumeSlider.addEventListener('input', () => {
+      const volumeSlider = document.getElementById("musicVolume");
+      volumeSlider.addEventListener("input", () => {
         // Get a reference to the audio element
-        const audioPlayer = document.getElementById('audioPlayer')
+        const audioPlayer = document.getElementById("audioPlayer");
         // Adjust the music volume based on the slider value
-        const musicVolume = volumeSlider.value / 100
-        audioPlayer.volume = musicVolume
-        audioPlayer.play()
-      })
-    })
+        const musicVolume = volumeSlider.value / 100;
+        audioPlayer.volume = musicVolume;
+        audioPlayer.play();
+      });
+    });
 
-    const closeSettings = document.getElementsByClassName('close')[0]
+    const closeSettings = document.getElementsByClassName("close")[0];
 
-    closeSettings.addEventListener('click', () => {
-      document.getElementById('settings-popup').style.display = 'none'
-    })
+    closeSettings.addEventListener("click", () => {
+      document.getElementById("settings-popup").style.display = "none";
+    });
   }
 }
 
-customElements.define('header-component', HeaderComponent)
+customElements.define("header-component", HeaderComponent);
 
 // // Dynamically insert the header into each page
 // window.addEventListener('DOMContentLoaded', () => {
