@@ -144,4 +144,4 @@ function restartGame() {
   window.location.href = "http://localhost:5502/source/opening_screen/opening-screen.html";
 }
 
-module.exports = {shakeCookie, openFortune, restartGame}
+module.exports = {shakeCookie, skipVideo,openFortune, restartGame}
