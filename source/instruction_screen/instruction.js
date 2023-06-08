@@ -1,5 +1,7 @@
-function goBack () {
-  window.location.href = '/source/opening_screen/opening-screen.html'
+function goBack() {
+  // Go back to page it came from
+  let orgLink = JSON.parse(localStorage.getItem("orglink"));
+  window.location.href = orgLink;
 }
 
 const keyframesAnimation = `
@@ -23,9 +25,9 @@ const keyframesAnimation = `
       background-position: 0% 50%;
     }
   }
-`
+`;
 
-const styleElement = document.createElement('style')
-styleElement.type = 'text/css'
-styleElement.innerHTML = keyframesAnimation
-document.head.appendChild(styleElement)
+const styleElement = document.createElement("style");
+styleElement.type = "text/css";
+styleElement.innerHTML = keyframesAnimation;
+document.head.appendChild(styleElement);

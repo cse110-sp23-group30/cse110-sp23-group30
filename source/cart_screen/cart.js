@@ -152,6 +152,7 @@ function loadCart() {
   }
 }
 
+
 window.addEventListener("DOMContentLoaded", () => {
   loadCart();
 });
