@@ -2,28 +2,30 @@
 <html>
 
 <head>
+  <base href="/">
   <title>Blue Moon Express</title>
-  <link rel="stylesheet" type="text/css" href="../centralized\ css/centralized">
-  <link rel="stylesheet" type="text/css" href="opening-screen.css">
-  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="source/centralized css/centralized.css">
+  <link rel="stylesheet" type="text/css" href="source/opening_screen/opening-screen.css">
+  <link rel="shortcut icon" href="source/centralized css/team-logo-transparent.png">
+  <script src="source/node_modules/jquery/dist/jquery.min.js"></script>
   <script>
     $(function () {
       // Load index.html
-      $("#header").load("../header/index.html", function () {
+      $("#header").load("source/header/index.html", function () {
         // Callback function after loading index.html
         // Load JavaScript file
-        $.getScript("../header/header-component.js");
+        //$.getScript("source/header/header-component.js");
 
         // Append CSS file
         $("<link>", {
           rel: "stylesheet",
           type: "text/css",
-          href: "../header/styles.css"
+          href: "source/header/styles.css"
         }).appendTo("head");
       });
-    });
+    }); 
   </script>
-  <script src="opening-screen.js"></script>
+  <script src="source/opening_screen/opening-screen.js"></script>
 </head>
 
 <body>

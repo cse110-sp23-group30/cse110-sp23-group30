@@ -40,6 +40,12 @@ function saveSelectedItems() {
     entree: getSelectedItems(".menu-card.selectedEntree"),
   };
 
+  // Check if user got one main and one entree
+  if (selectedItems.main.length < 1 || selectedItems.entree.length < 1) {
+    alert("Bowl is not full");
+    return;
+  }
+
   // Add selectedItems to list
   dishes.push(selectedItems);
 
