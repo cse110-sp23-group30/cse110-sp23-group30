@@ -6,7 +6,6 @@ const message = document.getElementById("fortune-message");
 const videoPlayer = document.getElementById("video-player");
 const fullscreenVideo = document.getElementById("fullscreen-video");
 let videoStarted = false;
-videoPlayer.volume = 0;
 
 // credit
 const creditElement = document.getElementById("credit");
@@ -141,8 +140,8 @@ function restartGame() {
   message.style.display = "none";
   // go to cart screen
   localStorage.clear();
+  
   window.location.href = "source/opening_screen/opening-screen.html";
 }
 
-// Export the functions
-//module.exports = { shakeCookie, openFortune, restartGame, goToHome };
+module.exports = {shakeCookie, skipVideo,openFortune, restartGame}
