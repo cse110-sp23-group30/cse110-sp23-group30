@@ -14,9 +14,9 @@ body {
   justify-content: space-between;
   height: 100%;
   background-color: black;
-  margin-left: 200px;
-  margin-right: 200px;
-  padding: 0 20px;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  /* padding: 0 2vw; */
 }
 
 .instruction {
@@ -34,17 +34,17 @@ body {
 }
 
 #style_one {
-  margin-top: 150px;
-  margin-bottom: 180px;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-top: 16vh;
+  margin-bottom: 16vh;
+  margin-left: 3vw;
+  margin-right: 3vw;
 }
 
 #style_two {
-  margin-top: 130px;
-  margin-bottom: 220px;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-top: 11vh;
+  margin-bottom: 21vh;
+  margin-left: 3vw;
+  margin-right: 3vw;
 }
 
 .instruction:hover {
@@ -53,12 +53,12 @@ body {
 }
 
 .instruction img {
-  width: 200px;
-  height: 200px;
+  width: 13vw;
+  height: 13vw;
   object-fit: cover;
   border-radius: 50%;
-  margin-bottom: 100px;
-  margin-top: 10px;
+  margin-bottom: 5vh;
+  margin-top: 5vw;
   background-color: rgb(10, 98, 69);
 }
 
@@ -72,15 +72,15 @@ p {
 }
 
 .instruction h2 {
-  margin-top: 10px;
-  font-size: 30px;
+  margin-top: 0vh;
+  font-size: 4vh;
 }
 
 .instruction p {
-  margin-top: 5px;
-  margin-left: 50px;
-  margin-right: 50px;
-  font-size: 25px;
+  margin-bottom: 15vh;
+  margin-left: 3vh;
+  margin-right: 3vh;
+  font-size: 3vh;
 }
 
 button {
