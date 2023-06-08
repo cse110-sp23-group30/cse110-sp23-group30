@@ -57,10 +57,3 @@ class HeaderComponent extends HTMLElement {
 }
 
 customElements.define("header-component", HeaderComponent);
-
-// // Dynamically insert the header into each page
-// window.addEventListener('DOMContentLoaded', () => {
-//   const headerContainer = document.getElementById('headerContainer');
-//   const headerComponent = document.createElement('header-component');
-//   headerContainer.appendChild(headerComponent);
-// });
