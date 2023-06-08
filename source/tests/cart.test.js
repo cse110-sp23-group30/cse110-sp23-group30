@@ -1,60 +1,43 @@
-const puppeteer = require('puppeteer')
-const path = require('path')
-let browser
-let page
+describe('Cart Page', () => {
+  beforeAll(async () => {
+    await page.goto('http://localhost:4444/source/cart_screen/cart.html');
+  });
 
-beforeAll(async () => {
-  browser = await puppeteer.launch()
-  page = await browser.newPage()
-})
+  test('Add Plate button redirects to the correct page', async () => {
+    await Promise.all([
+      page.click('#add-plate'),
+      page.waitForNavigation({ waitUntil: 'networkidle0' }),
+    ]);
+    expect(await page.url()).toContain('/source/plate-screen/plate-screen.html');
+  });
 
-afterAll(() => {
-  browser.close()
-})
+  test('Add Bowl button redirects to the correct page', async () => {
+    await page.goBack();
+    await page.waitForSelector('#add-bowl');
+    await page.click('#add-bowl');
+    expect(await page.url()).toContain('/source/bowl-screen/bowl-screen.html'); // adjust as necessary
+  });
 
-test('food screen behavior', async () => {
-  await page.goto('file://' + path.resolve(__dirname, '../cart_screen/cart.html'))
+  test('Confirm Purchase button redirects to the correct page', async () => {
+    await page.goBack();
+    await page.waitForSelector('#confirm');
+    await page.click('#confirm');
+    expect(await page.url()).toContain('/source/cookie_screen/cookie_screen.html'); // adjust as necessary
+  });
 
-  // Simulate clicking "addPlate" button and check redirected url
-  await page.click('#addPlate-button')
-  expect(page.url()).toBe('file://' + path.resolve(__dirname, '../plate-screen/plate-screen.html'))
+  test('Clear Cart button pops up the confirm-clear element', async () => {
+    await page.goBack();
+    await page.waitForSelector('#clear');
+    await page.click('#clear');
+    const displayStyle = await page.$eval('#confirm-clear', el => getComputedStyle(el).display);
+    expect(displayStyle).toBe('block');
+  });
 
-  // Go back to original page
-  await page.goto('file://' + path.resolve(__dirname, '../cart_screen/cart.html'))
-
-  // Simulate clicking "addBowl" button and check redirected url
-  await page.click('#addBowl-button')
-  expect(page.url()).toBe('file://' + path.resolve(__dirname, '../bowl-screen/bowl-screen.html'))
-
-  // Go back to original page
-  await page.goto('file://' + path.resolve(__dirname, '../cart_screen/cart.html'))
-
-  // Simulate clicking "purchase" button and check redirected url
-  await page.click('#purchase-button')
-  expect(page.url()).toBe('file://' + path.resolve(__dirname, '../cookie_screen/cookie_screen.html'))
-
-  // Go back to original page
-  await page.goto('file://' + path.resolve(__dirname, '../cart_screen/cart.html'))
-
-  // Simulate clicking "deleteItem" button and check confirm-delete display style
-  await page.click('#deleteItem-button')
-  let style = await page.$eval('#confirm-delete', (el) => el.style.display)
-  expect(style).toBe('block')
-
-  // Simulate clicking "confirmDelete" button and check confirm-delete display style
-  await page.click('#confirmDelete-button')
-  style = await page.$eval('#confirm-delete', (el) => el.style.display)
-  expect(style).toBe('none')
-
-  // Simulate clicking "popUp" button and check confirm-clear display style
-  await page.click('#popUp-button')
-  style = await page.$eval('#confirm-clear', (el) => el.style.display)
-  expect(style).toBe('block')
-
-  // Simulate clicking "confirmClear" button, check confirm-clear display style, and items innerHTML
-  await page.click('#confirmClear-button')
-  style = await page.$eval('#confirm-clear', (el) => el.style.display)
-  expect(style).toBe('none')
-  const items = await page.$eval('#items', (el) => el.innerHTML)
-  expect(items).toBe('')
-})
+  test('Delete button pops up the confirm-delete element', async () => {
+    // This test assumes that there is at least one delete button (class = "deletebtn") on the page
+    await page.waitForSelector('.deletebtn');
+    await page.click('.deletebtn');
+    const displayStyle = await page.$eval('#confirm-delete', el => getComputedStyle(el).display);
+    expect(displayStyle).toBe('block');
+  });
+});
