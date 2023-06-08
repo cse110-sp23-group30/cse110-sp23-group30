@@ -23,7 +23,7 @@
     </script>
     <meta charset="UTF-8">
     <title>Bowl Screen</title>
-    <link rel="shortcut icon" href="source/centralized css/team-logo-transparent.png">
+    <link rel="stylesheet" type="text/css" href="source/centralized css/centralized.css">
     <link rel="stylesheet" href="source/bowl-screen/bowl-screen.css">
 </head>
 
@@ -114,6 +114,14 @@
         </div>
     </form>
     <button onclick="saveSelectedItems();" class="buttons">Submit</button>
+    <div class="popup-modal">
+        <div class="popup-content">
+          <h2>Items Added to Cart</h2>
+          <p>Your selected items have been successfully added to the cart.</p>
+          <button onclick="closePopup();" class="popup-button">Close</button>
+        </div>
+      </div>
+      
     <button onclick="goToCart();" class="buttons">Cart</button>
     <script src="source/bowl-screen/bowl-screen.js"></script>
 </body>
