@@ -1,110 +1,110 @@
-body,html {
-    overflow: hidden;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    align-items: center;
-    background-color: black;
-    color: white;
+html,
+body {
+  overflow: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  background-color: black;
+  color: white;
 }
 
 .instruction-container {
-    display: flex;
-    justify-content: space-between;
-    height: 100%;
-    background-color: black;
-    margin-left:200px;
-    margin-right:200px;
-    padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  background-color: black;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  /* padding: 0 2vw; */
 }
 
 .instruction {
-    flex: 1;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: rgb(4, 57, 57);
-    color: #fff;
-    align-items: center;
-    transition: transform 0.3s ease;
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: rgb(4, 57, 57);
+  color: #fff;
+  align-items: center;
+  transition: transform 0.3s ease;
 }
 
 #style_one {
-    margin-top: 150px;
-    margin-bottom:180px;
-    margin-left: 50px;
-    margin-right: 50px;
+  margin-top: 16vh;
+  margin-bottom: 16vh;
+  margin-left: 3vw;
+  margin-right: 3vw;
 }
 
 #style_two {
-    margin-top: 130px;
-    margin-bottom:220px;
-    margin-left: 50px;
-    margin-right: 50px;
+  margin-top: 11vh;
+  margin-bottom: 21vh;
+  margin-left: 3vw;
+  margin-right: 3vw;
 }
 
 .instruction:hover {
-    transform: scale(1.1);
-    transition: transform 0.3s ease;
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
 }
 
 .instruction img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 100px;
-    margin-top: 10px;
-    background-color: rgb(10, 98, 69);
+  width: 13vw;
+  height: 13vw;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 5vh;
+  margin-top: 5vw;
+  background-color: rgb(10, 98, 69);
 }
 
-.instruction h2,p {
-    background: linear-gradient(45deg, #fff, #a8a8a8, #fff);
-    background-size: 200% 200%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: glossyAnimation 3s linear infinite;
+.instruction h2,
+p {
+  background: linear-gradient(45deg, #fff, #a8a8a8, #fff);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glossyAnimation 3s linear infinite;
 }
 
 .instruction h2 {
-    margin-top: 10px;
-    font-size: 30px;
+  margin-top: 0vh;
+  font-size: 4vh;
 }
 
 .instruction p {
-    margin-top: 5px;
-    margin-left:50px;
-    margin-right:50px;
-    font-size: 25px;
+  margin-bottom: 15vh;
+  margin-left: 3vh;
+  margin-right: 3vh;
+  font-size: 3vh;
 }
 
-
-
 button {
-    cursor: pointer;
-    display: inline-block;
-    align-items: flex-end;
-    justify-content: center;
-    padding: 20px 52px;
-    background-color: rgb(10, 98, 69);
-    color: white;
-    text-decoration: none;
-    font-size: 25px;
-    border-radius: 4px;
-    position: fixed;    
-    bottom: 80px;
-    left: 50%;
-    opacity: 0;
-    transform: translateX(-50%);
-    animation: fade 1s ease 2s forwards;
-    transition: transform 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 20px 52px;
+  background-color: rgb(10, 98, 69);
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  opacity: 0;
+  transform: translateX(-50%);
+  animation: fade 1s ease 2s forwards;
+  transition: transform 0.3s ease;
 }
 
 button:hover {
-    background-color: rgb(10, 98, 69);
-    transform: translateX(-50%) scale(1.5);
-    transition: transform 0.4s ease;
+  background-color: rgb(10, 98, 69);
+  transform: translateX(-50%) scale(1.5);
+  transition: transform 0.4s ease;
 }
