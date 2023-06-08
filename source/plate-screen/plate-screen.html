@@ -38,7 +38,7 @@
             </div>
             <div class="menu-details">
                 <h3>Chow Mein</h3>
-                <p>Description: Add a brief description of the item here.</p>
+                <p>Description: Stir-fried wheat noodles with onions, celery and cabbage.</p>
                 <p>Price: $9.99</p>
             </div>
         </div>
@@ -49,7 +49,7 @@
             </div>
             <div class="menu-details">
                 <h3>Fried Rice</h3>
-                <p>Description: Add a brief description of the item here.</p>
+                <p>Description: Prepared steamed white rice with soy sauce, eggs, peas, carrots and green onions.</p>
                 <p>Price: $8.99</p>
             </div>
         </div>
@@ -60,7 +60,7 @@
             </div>
             <div class="menu-details">
                 <h3>Veggies</h3>
-                <p>Description: Add a brief description of the item here.</p>
+                <p>Description: A healthful medley of broccoli, zucchini, carrots, string beans and cabbage.</p>
                 <p>Price: $7.99</p>
             </div>
         </div>
@@ -70,7 +70,7 @@
             <img src="source/assets/Orange-Chicken.jpg" alt="Orange Chicken">
             <div class="menu-details">
                 <h3>Orange Chicken</h3>
-                <p>Description: Add a brief description of the item here.</p>
+                <p>Description: Our signature dish. Crispy chicken wok-tossed in a sweet and spicy orange sauce.</p>
                 <p>Price: $9.99</p>
             </div>
         </div>
@@ -79,7 +79,7 @@
             <img src="source/assets/Beijing-Beef.jpg" alt="Beijing Beef">
             <div class="menu-details">
                 <h3>Beijing Beef</h3>
-                <p>Description: Add a brief description of the item here.</p>
+                <p>Description: Crispy beef, bell peppers and onions in a sweet-tangy sauce.</p>
                 <p>Price: $9.99</p>
             </div>
         </div>
@@ -88,7 +88,8 @@
             <img src="source/assets/Honey-Walnut-Shrimp.jpg" alt="Honey Walnut Shrimp">
             <div class="menu-details">
                 <h3>Honey Walnut Shrimp</h3>
-                <p>Description: Add a brief description of the item here.</p>
+                <p>Description: Large tempura-battered shrimp, wok-tossed in a honey sauce and topped with glazed
+                    walnuts.</p>
                 <p>Price: $10.99</p>
             </div>
         </div>
@@ -97,7 +98,7 @@
             <img src="source/assets/Broccoli-Beef.jpg" alt="Beef and Broccoli">
             <div class="menu-details">
                 <h3>Beef and Broccoli</h3>
-                <p>Description: Add a brief description of the item here.</p>
+                <p>Description: A classic favorite. Tender beef and fresh broccoli in a ginger soy sauce.</p>
                 <p>Price: $8.99</p>
             </div>
         </div>
@@ -106,12 +107,20 @@
             <img src="source/assets/Kung-Pao-Chicken.jpg" alt="Kung Pao Chicken">
             <div class="menu-details">
                 <h3>Kung Pao Chicken</h3>
-                <p>Description: Add a brief description of the item here.</p>
+                <p>Description: A Szechwan-inspired dish with chicken, peanuts and vegetables, finished with chili
+                    peppers.</p>
                 <p>Price: $9.99</p>
             </div>
         </div>
     </form>
     <button onclick="saveSelectedItems();" class="buttons">Submit</button>
+    <div class="popup-modal">
+        <div class="popup-content">
+          <h2>Items Added to Cart</h2>
+          <p>Your selected items have been successfully added to the cart.</p>
+          <button onclick="closePopup();" class="popup-button">Close</button>
+        </div>
+      </div>
     <button onclick="goToCart();" class="buttons">Cart</button>
     <script src="source/plate-screen/plate-screen.js"></script>
 </body>
