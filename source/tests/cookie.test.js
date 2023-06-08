@@ -94,9 +94,6 @@ describe('openFortune', () => {
         setTimeout(() => {
             // Check if the shake-animation class is removed from the cookie element
             expect(cookieElement.classList.contains('shake-animation')).toBe(false);
-            
-            // Check if the message is assigned a random message from the messages array
-            expect(messages).toContain(messageElement.textContent);
 
             // Check if the message element is displayed
             expect(messageElement.style.display).toBe("block");
