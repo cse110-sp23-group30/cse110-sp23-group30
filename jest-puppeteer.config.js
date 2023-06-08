@@ -6,8 +6,7 @@ module.exports = {
     server: {
       command: 'npx http-server -p 4444',
       port: 4444,
-      launchTimeout: 5000,
-      debug: true,
+      launchTimeout: 5000
     },
     browserContext: 'default',
   };

@@ -1,8 +1,3 @@
-//const puppeteer = require('puppeteer');
-const path = require('path');
-
-
-
 describe('Cart Page', () => {
   beforeAll(async () => {
     await page.goto('http://localhost:4444/source/cart_screen/cart.html');

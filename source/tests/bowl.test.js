@@ -1,22 +1,9 @@
-const puppeteer = require("puppeteer");
-const path = require("path");
-
-let browser, page;
-
-beforeAll(async () => {
-  browser = await puppeteer.launch();
-  page = await browser.newPage();
-});
-
-afterAll(async () => {
-  await browser.close();
-});
-
 describe("Bowl Screen Tests", () => {
+  beforeAll(async () => {
+    await page.goto('http://localhost:4444/source/bowl-screen/bowl-screen.html');
+  });
   test("User can select a Main", async () => {
-    await page.goto(
-      "file://" + path.resolve(__dirname, "../bowl-screen/bowl-screen.html")
-    );
+    
 
     // Select the first menu-card under mains
     await page.click("form .menu-card:nth-child(1)");
@@ -29,10 +16,7 @@ describe("Bowl Screen Tests", () => {
   });
 
   test("User can select an Entree", async () => {
-    await page.goto(
-      "file://" + path.resolve(__dirname, "../bowl-screen/bowl-screen.html")
-    );
-
+ 
     // Select the first menu-card under entrees
     await page.click("form .menu-card:nth-child(5)");
 
@@ -44,9 +28,7 @@ describe("Bowl Screen Tests", () => {
   });
 
   test("User can navigate to cart", async () => {
-    await page.goto(
-      "file://" + path.resolve(__dirname, "../bowl-screen/bowl-screen.html")
-    );
+
 
     // click the cart button
     await Promise.all([
