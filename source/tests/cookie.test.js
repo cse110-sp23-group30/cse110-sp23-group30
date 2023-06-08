@@ -97,8 +97,6 @@ describe('openFortune', () => {
 
             // Check if the message element is displayed
             expect(messageElement.style.display).toBe("block");
-            // Call `done` to indicate that the test has completed
-            done();
         }, 2000);
     });
 });
