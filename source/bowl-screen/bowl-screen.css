@@ -1,27 +1,77 @@
-.menu-card {
-    display: flex;
-    align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .menu-card img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    margin-right: 10px;
-  }
-  
-  .menu-details h3 {
-    margin: 0;
-  }
-  
-  .menu-details p {
-    margin: 5px 0;
-  }
+@import url('https://fonts.cdnfonts.com/css/frutiger');
 
-  .selected {
-    border: 2px solid blue;
-  }
+html {
+  font-family: 'Frutiger', sans-serif;
+  font-size: 18px;
+}
+
+.menu-card {
+  padding: 1%;
+  margin: 2%;
+  width: 80%;
+  background: rgba(0, 0, 0, 0.4);
+  color: #f2f3f5;
+  align-items: center;
+}
+
+.menu-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.menu-details h3 {
+  margin: 0;
+}
+
+.menu-details p {
+  margin: 5px 0;
+}
+
+.selected {
+  border: 3px solid #fdda0d;
+}
+
+.selectedEntree {
+  border: 3px solid #fdda0d;
+}
+
+.buttons {
+  padding: 15px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 10px;
+  margin: 3px;
+  background-color: #2591ac;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  margin-bottom: 2%;
+}
+
+.headers {
+  color: white;
+}
+
+.popup-modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 5px;
+  z-index: 9999;
+}
+
+.popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}

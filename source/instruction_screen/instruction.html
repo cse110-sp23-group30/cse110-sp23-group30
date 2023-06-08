@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <title>How To Play</title>
+  <title>Bluemoon express</title>
   <link rel="stylesheet" type="text/css" href="instruction.css">
+  <link rel="shortcut icon" href="source/centralized css/team-logo-transparent.png">
 </head>
+
 <body>
-  <div id="instructionsContainer">
-    <p>How to Play:</p>
-    <ol id="instructionsList">
-      <li class="instruction">First instruction goes here.</li>
-      <li class="instruction">Second instruction goes here.</li>
-      <li class="instruction">Third instruction goes here.</li>
-    </ol>
-
-    <div id="navigationButtons">
-      <button id="goBackButton">Go Back</button>
-      <button id="proceedButton">Proceed Playing</button>
+  <div class="instruction-container">
+    <div class="instruction" id="style_one">
+      <img src="BOWL&PLATE.png" alt="Pick a type">
+      <h2>1. Pick a type</h2>
+      <p>Are you a bowl person or a plate person? Choose one!</p>
     </div>
-
-    <div id="arrows">
-        <span id="prevArrow" class="arrow">&#8592;</span>
-        <span id="nextArrow" class="arrow">&#8594;</span>
+    <div class="instruction" id="style_two">
+      <img src="ITEM.png" alt="Pick Your Items">
+      <h2>2. Pick Your Items</h2>
+      <p>Are you looking for a light meal, or a extra-large meal? Pick your desired dishes!</p>
+    </div>
+    <div class="instruction" id="style_one">
+      <img src="COOKIE.png" alt="Read Your Fortune">
+      <h2>3. Read Your Fortune</h2>
+      <p>Submit your order. Based on your choices, the fortune cookie will reveal your fortune!</p>
     </div>
   </div>
 
+  <button id="goBackButton" onclick="goBack()">Go Back</button>
+
   <script src="instruction.js"></script>
 </body>
+
 </html>

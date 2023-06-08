@@ -1,62 +1,106 @@
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
+  background: url('/source/centralized\ css/background.jpg') no-repeat center fixed;
+  background-size: contain;
+  background-size: 100% 100%;
+  background-color: white;
+  overflow: hidden;
 }
 
-#instructionsContainer {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
+.instruction-container {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  /* padding: 0 2vw; */
 }
-  
-#instructionsList {
-    list-style-type: none;
-    padding: 0;
-}
-  
+
 .instruction {
-    display: none;
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: rgb(4, 57, 57);
+  color: #fff;
+  align-items: center;
+  transition: transform 0.3s ease;
 }
 
-.buttons {
-    display: flex;
-    justify-content: space-evenly;
+#style_one {
+  margin-top: 12vh;
+  margin-bottom: 30vh;
+  margin-left: 3vw;
+  margin-right: 3vw;
 }
 
-.button {
-    display: inline-block;
-    padding: 10px 10px;
-    background-color: #fff;
-    color: #000000;
-    text-decoration: none;
-    font-size: 14px;
-    border-radius: 4px;
-}
-  
-#navigationButtons {
-    margin-top: 20px;
-    color: black;
+#style_two {
+  margin-top: 9vh;
+  margin-bottom: 40vh;
+  margin-left: 3vw;
+  margin-right: 3vw;
 }
 
-#goBackButton {
-    margin-right: 10px;
+.instruction:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
 }
 
-.arrow {
-    display: inline-block;
-    cursor: pointer;
-    font-size: 24px;
-    margin: 0 10px;
-}
-  
-.arrow:hover {
-    color: blue;
-}
-
-.rotate {
-    transform: rotate(180deg);
+.instruction img {
+  width: 13vw;
+  height: 13vw;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 5vh;
+  margin-top: 5vw;
+  background-color: rgb(10, 98, 69);
 }
 
+.instruction h2,
+p {
+  background: linear-gradient(45deg, #fff, #a8a8a8, #fff);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glossyAnimation 3s linear infinite;
+}
+
+.instruction h2 {
+  margin-top: 0vh;
+  font-size: 4vh;
+}
+
+.instruction p {
+  margin-bottom: 15vh;
+  margin-left: 3vh;
+  margin-right: 3vh;
+  font-size: 3vh;
+}
+
+button {
+  cursor: pointer;
+  display: inline-block;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 20px 52px;
+  background-color: rgb(10, 98, 69);
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+  border-radius: 4px;
+  position: fixed;
+  bottom:2vh;
+  left: 50%;
+  opacity: 0;
+  transform: translateX(-50%);
+  animation: fade 1s ease 2s forwards;
+  transition: transform 0.3s ease;
+}
+
+button:hover {
+  background-color: rgb(10, 98, 69);
+  transform: translateX(-50%) scale(1.5);
+  transition: transform 0.4s ease;
+}

@@ -1,35 +1,63 @@
-.image {
+.img {
   transition: transform 0.2s; /* Animation */
   width: 600px;
   height: auto;
   margin: 0 auto;
 }
 
-.image:hover {
-  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+body {
+  background: url('/source/centralized\ css/background.jpg') no-repeat center fixed;
+  background-size: contain;
+  background-color: white;
 }
 
-.image-option {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+.menu-card {
+  padding: 1%;
+  margin: 2%;
+  width: 80%;
+  background: rgba(0, 0, 0, 0.4);
+  color: #f2f3f5;
+  align-items: center;
 }
 
-.image-option img {
-    width: 200px;
-    height: auto;
-    margin-right: 10px;
+.menu-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+.menu-card img {
+  transition: transform 0.2s; /* Animation */
 }
 
-img {
-    width: 600px;
-    height: 400px;
-  }
+.menu-card img:hover {
+  transform: scale(
+    2
+  ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
 
-  .selected {
-    border: 5px solid blue;
-  }
+.menu-details h3 {
+  margin: 0;
+}
 
-  h1 {
-    margin-left: 45%;
-  }
+.menu-details p {
+  margin: 5px 0;
+}
+
+.selected {
+  border: 3px solid blue;
+}
+
+.selectedEntree {
+  border: 3px solid blue;
+}
+
+.buttons {
+  padding: 15px;
+  border-style: none;
+  margin: 3px;
+  background-color: #2591ac;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+}
