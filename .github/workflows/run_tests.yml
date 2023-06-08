@@ -22,7 +22,10 @@ jobs:
       run: |
         npm install jest
         npm install jsdom
+        npm install http-server
         npm install puppeteer
+        npm install jest-puppeteer
+        npm install expect-puppeteer
 
     - name: Run Jest tests
       run: |

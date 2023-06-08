@@ -1,21 +1,11 @@
-const puppeteer = require('puppeteer');
+//const puppeteer = require('puppeteer');
 const path = require('path');
 
-let browser;
-let page;
 
-beforeAll(async () => {
-  browser = await puppeteer.launch();
-  page = await browser.newPage();
-});
-
-afterAll(async () => {
-  await browser.close();
-});
 
 describe('Cart Page', () => {
   beforeAll(async () => {
-    await page.goto('file://' + path.resolve(__dirname, '../cart_screen/cart.html'));
+    await page.goto('http://localhost:4444/source/cart_screen/cart.html');
   });
 
   test('Add Plate button redirects to the correct page', async () => {
