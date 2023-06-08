@@ -1,19 +1,15 @@
-html,
 body {
-  overflow: hidden;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  align-items: center;
-  background-color: black;
-  color: white;
+  background: url('/cse110-sp23-group30/source/centralized\ css/background.jpg') no-repeat center fixed;
+  background-size: contain;
+  background-size: 100% 100%;
+  background-color: white;
+  
 }
 
 .instruction-container {
   display: flex;
   justify-content: space-between;
   height: 100%;
-  background-color: black;
   margin-left: 10vw;
   margin-right: 10vw;
   /* padding: 0 2vw; */
@@ -34,15 +30,15 @@ body {
 }
 
 #style_one {
-  margin-top: 16vh;
-  margin-bottom: 16vh;
+  margin-top: 12vh;
+  margin-bottom: 30vh;
   margin-left: 3vw;
   margin-right: 3vw;
 }
 
 #style_two {
-  margin-top: 11vh;
-  margin-bottom: 21vh;
+  margin-top: 9vh;
+  margin-bottom: 40vh;
   margin-left: 3vw;
   margin-right: 3vw;
 }
@@ -95,7 +91,7 @@ button {
   font-size: 25px;
   border-radius: 4px;
   position: fixed;
-  bottom: 80px;
+  bottom:2vh;
   left: 50%;
   opacity: 0;
   transform: translateX(-50%);
