@@ -12,14 +12,16 @@ html {
 }
 
 body {
-  background: url('team-logo-transparent.png') no-repeat center fixed;
-  background-size: contain;
+  background: url('background.jpg') no-repeat center fixed;
+  background-size: cover;
   background-color: white;
 }
 
 .buttons button {
   padding: 15px;
-  border-style: none;
+  border-style: solid;
+  border-color: black;
+  border-radius: 10px;
   margin: 3px;
   background-color: #2591ac;
   color: #fff;
