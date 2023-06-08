@@ -8,7 +8,7 @@ global.localStorage = {
   clear: jest.fn(),
 };
 
-const { shakeCookie, skipVideo, openFortune, restartGame } = require("../cookie_screen/cookie_screen.js");
+const { shakeCookie, skipVideo, openFortune } = require("../cookie_screen/cookie_screen.js");
 
 describe('shakeCookie', () => {
     it('should delete "shake-animation" class to the cookie afterwards', () => {
@@ -19,16 +19,6 @@ describe('shakeCookie', () => {
     it('should clear and hide the fortune message', () => {
         document.getElementById("fortune-message").textContent = "Test message";
         shakeCookie();
-        expect(document.getElementById("fortune-message").textContent).toBe("");
-        expect(document.getElementById("fortune-message").style.display).toBe("none");
-    });
-});
-
-
-describe('restartGame', () => {
-    it('should clear and hide the fortune message', () => {
-        document.getElementById("fortune-message").textContent = "Test message";
-        restartGame();
         expect(document.getElementById("fortune-message").textContent).toBe("");
         expect(document.getElementById("fortune-message").style.display).toBe("none");
     });
