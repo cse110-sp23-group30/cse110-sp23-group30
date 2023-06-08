@@ -10,12 +10,6 @@ body {
   width: 100%;
 }
 
-body {
-  background: url('/source/centralized\ css/background.jpg') no-repeat center fixed;
-  background-size: contain;
-  background-color: #ebccab;
-}
-
 #cart-title {
   padding-left: 10%;
   padding-top: 3%;
