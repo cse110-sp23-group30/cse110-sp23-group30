@@ -2,6 +2,9 @@ const puppeteer = require('puppeteer')
 const path = require('path')
 let browser
 let page
+const {
+  openFortune,
+} = require('source/cookie_screen/cookie_screen.js');
 
 beforeAll(async () => {
   browser = await puppeteer.launch({ headless: 'new' }); 

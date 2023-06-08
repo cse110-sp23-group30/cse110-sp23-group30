@@ -145,4 +145,4 @@ function restartGame() {
 }
 
 // Export the functions
-//module.exports = { shakeCookie, openFortune, restartGame, goToHome };
+module.exports = { openFortune};
