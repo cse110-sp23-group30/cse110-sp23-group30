@@ -141,7 +141,7 @@ function restartGame() {
   // go to cart screen
   localStorage.clear();
   
-  window.location.href = "http://localhost:5502/source/opening_screen/opening-screen.html";
+  window.location.href = "source/opening_screen/opening-screen.html";
 }
 
 module.exports = {shakeCookie, skipVideo,openFortune, restartGame}
