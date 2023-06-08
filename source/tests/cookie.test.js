@@ -21,14 +21,16 @@ test('fortune cookie game behavior', async () => {
   expect(cookieClass).toContain('media/cookie_before.png')
 
   // Test for openFortune function
-  await page.evaluate(() => openFortune()) // Open fortune after shaking
-  let messageStyle = await page.$eval('#fortune-message', (el) => el.style.display)
-  expect(messageStyle).toBe('block')
-
+  await page.evaluate(() => openFortune()); // Open fortune after shaking
+  await page.waitForTimeout(1100); // wait for timeout
+  let messageStyle = await page.$eval("#fortune-message", (el) => el.style.display);
+  expect(messageStyle).toBe('block');
+  
   // Test for restartGame function
-  await page.click('.buttons_container button:nth-child(3)')
-  messageStyle = await page.$eval('#fortune-message', (el) => el.style.display)
-  expect(messageStyle).toBe('none')
+  await page.click('.buttons_container button:nth-child(3)');
+  await page.waitForFunction(() => document.querySelector("#fortune-message").style.display === 'none');
+  messageStyle = await page.$eval("#fortune-message", (el) => el.style.display);
+  expect(messageStyle).toBe('none');
 
   // Test for goToHome function
   await page.click('.buttons_container button:nth-child(1)')
