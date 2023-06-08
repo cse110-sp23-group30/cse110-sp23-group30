@@ -141,7 +141,7 @@ function restartGame() {
   message.style.display = "none";
   // go to cart screen
   localStorage.clear();
-  window.location.href = "source/cart_screen/cart.html";
+  window.location.href = "source/opening_screen/opening-screen.html";
 }
 
 // Export the functions

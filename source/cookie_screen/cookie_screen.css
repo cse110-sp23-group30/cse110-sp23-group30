@@ -76,7 +76,7 @@ body {
   margin-top: 50%; 
   border: 0.075rem solid #ddcb9d;
   border-radius: 0.95rem;
-  color: #ae9783;
+  color: #2591ac;
   font-family: 'Rubik Pixels', sans-serif;
 }
 
@@ -134,7 +134,7 @@ body {
   margin-top: 12.2rem;
   margin-left: 19.2rem;
   font-weight: bold;
-  font-size: 13%;
+  font-size: 80%;
   border: none;
   display: none;
   transform: translate(-50%, -50%) rotate(5deg);
