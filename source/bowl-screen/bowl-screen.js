@@ -22,7 +22,7 @@ function selectImageEntree(element) {
 }
 
 function goToCart() {
-  location.href = "/source/cart_screen/cart.html";
+  location.href = "../cart_screen/cart.html";
   console.log("Function Called!");
 }
 
