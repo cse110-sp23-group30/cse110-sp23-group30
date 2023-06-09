@@ -30,7 +30,7 @@ body {
   width: 80%;
   background: rgba(250, 249, 246, 0.8);
   border-radius: 25%;
-  color: #97162a;
+  color: black;
   align-items: center;
   text-align: center;
 }
@@ -40,18 +40,6 @@ h4 {
   font-size: 150%;
   padding: 5px;
   padding-bottom: 20px;
-  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
-}
-
-#total-container {
-  width: 20% !important;
-  display: flex;
-  position: relative;
-  right: -24%;
-}
-
-#total-price {
-  padding-bottom: 5px;
 }
 
 .photos {
