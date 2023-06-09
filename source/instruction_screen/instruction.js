@@ -1,7 +1,9 @@
+/**
+ * Redirects to the opening screen.
+ */
 function goBack() {
   // Go back to page it came from
-  let orgLink = JSON.parse(localStorage.getItem("orglink"));
-  window.location.href = orgLink;
+  window.location.href = "/source/opening_screen/opening-screen.html";
 }
 
 const keyframesAnimation = `
