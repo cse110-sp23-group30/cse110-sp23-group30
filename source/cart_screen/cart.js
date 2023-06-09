@@ -98,6 +98,7 @@ function loadCart() {
   } else {
     dishes = JSON.parse(localStorage.getItem("dishes"));
     let i = 0;
+    let total = 0;
     for (const dish of dishes) {
       console.log(dish);
       const main = dish.main;
@@ -106,40 +107,46 @@ function loadCart() {
       newSection.setAttribute("value", `${i}`);
 
       if (entree.length == 2) {
+        let dishPrice =
+          Number(main[0].price.substring(8)) +
+          Number(entree[0].price.substring(8)) +
+          Number(entree[1].price.substring(8));
+        total = total + dishPrice;
+        dishPrice = "$" + dishPrice.toString();
         newSection.innerHTML = `
-          <h4>Plate</h4>
+          <h4>Plate: ${dishPrice}</h4>
           <div class="food">
               <div class="individual-item">
                   <img src="${main[0].src}" alt="${main[0].name}" class="photos">
                   <p>Main: ${main[0].name}</p> 
-                  <p>${main[0].price}</p>
               </div>
               <div class="individual-item">
                   <img src="${entree[0].src}" alt="${entree[0].name}" class="photos">
                   <p>Side 1: ${entree[0].name}</p>
-                  <p>${entree[0].price}</p>
               </div>
               <div class="individual-item">
                   <img src="${entree[1].src}" alt="${entree[1].name}" class="photos">
                   <p>Side 2: ${entree[1].name}</p>
-                  <p>${entree[1].price}</p>
               </div>
           </div>
           <button onclick="deleteItem(this)" class="deletebtn">Delete</button>
         `;
       } else {
+        let dishPrice =
+          Number(main[0].price.substring(8)) +
+          Number(entree[0].price.substring(8));
+        total = total + dishPrice;
+        dishPrice = "$" + dishPrice.toString();
         newSection.innerHTML = `
-          <h4>Bowl</h4>
+          <h4>Bowl: ${dishPrice}</h4>
           <div class="food">
               <div class="individual-item">
                   <img src="${main[0].src}" alt="${main[0].name}" class="photos">
                   <p>Main: ${main[0].name}</p>
-                  <p>${main[0].price}</p>
               </div>
               <div class="individual-item">
                   <img src="${entree[0].src}" alt="${entree[0].name}" class="photos">
                   <p>Side 1: ${entree[0].name}</p>
-                  <p>${entree[0].price}</p>
               </div>
           </div>
           <button onclick="deleteItem(this)" class="deletebtn">Delete</button>
@@ -149,9 +156,15 @@ function loadCart() {
       items.appendChild(newSection);
       i++;
     }
+    const totalPrice = document.createElement("section");
+    totalPrice.setAttribute("id","total-container");
+    total = "$" + total.toString();
+    totalPrice.innerHTML = `
+      <h4 id="total-price">Total Price = ${total}</h4>
+    `;
+    items.appendChild(totalPrice);
   }
 }
-
 
 window.addEventListener("DOMContentLoaded", () => {
   loadCart();
