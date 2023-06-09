@@ -14,46 +14,56 @@ class HeaderComponent extends HTMLElement {
       </header>
     `;
 
-    // Add event listeners for the buttons
-    this.querySelector("#homeBtn").addEventListener("click", () => {
-      // Handle home button click
-      window.location.href = "../opening_screen/opening-screen.html";
+
+    this.initEventListeners();
+  }
+
+  initEventListeners() {
+    const homeButton = this.querySelector("#homeBtn");
+    homeButton.addEventListener('click', () => {
+      this.homeNavigation();
+    });
+    
+    const instructionsButton = this.querySelector("#instructionsBtn");
+    instructionsButton.addEventListener('click', () => {
+      this.instructionsNavigation();
     });
 
-    this.querySelector("#instructionsBtn").addEventListener("click", () => {
-      // Make sure instructinos returns back to screen it was on
-      let orgLink = window.location.href;
-      localStorage.setItem("orglink", JSON.stringify(orgLink));
-
-      // Handle instructions button click
-      window.location.href = "../instruction_screen/instruction.html";
+    const settingsButton = this.querySelector("#settingsBtn");
+    settingsButton.addEventListener('click', () => {
+      this.openSettings();
     });
+  }
 
-    // Get a reference to the settings button
-    const settingsBtn = this.querySelector("#settingsBtn");
+  homeNavigation() {
+    window.location.href = "source/opening_screen/opening-screen.html";
+  }
 
-    // Add event listener to the settings button
-    settingsBtn.addEventListener("click", () => {
-      // Check if the settings panel already exists
-      document.getElementById("settings-popup").style.display = "block";
+  instructionsNavigation() {
+    // Make sure instructions returns back to screen it was on
+    let orgLink = window.location.href;
+    localStorage.setItem("orglink", JSON.stringify(orgLink));
 
-      const volumeSlider = document.getElementById("musicVolume");
-      volumeSlider.addEventListener("input", () => {
-        // Get a reference to the audio element
-        const audioPlayer = document.getElementById("audioPlayer");
-        // Adjust the music volume based on the slider value
-        const musicVolume = volumeSlider.value / 100;
-        audioPlayer.volume = musicVolume;
-        audioPlayer.play();
-      });
-    });
+    // Handle instructions button click
+    window.location.href = "source/instruction_screen/instruction.html";
+  }
 
-    const closeSettings = document.getElementsByClassName("close")[0];
-
-    closeSettings.addEventListener("click", () => {
-      document.getElementById("settings-popup").style.display = "none";
-    });
+  openSettings() {
+    document.getElementById("settings-popup").style.display = "block";
   }
 }
 
 customElements.define("header-component", HeaderComponent);
+
+function init(){
+}
+
+// Close button functionality
+const closeButton = document.getElementsByClassName("close")[0];
+closeButton.addEventListener('click', () => {
+  closeSettings();
+});
+
+function closeSettings() {
+  document.getElementById("settings-popup").style.display = "none";
+}
