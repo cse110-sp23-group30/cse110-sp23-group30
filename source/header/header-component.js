@@ -14,29 +14,28 @@ class HeaderComponent extends HTMLElement {
       </header>
     `;
 
-
     this.initEventListeners();
   }
 
   initEventListeners() {
     const homeButton = this.querySelector("#homeBtn");
-    homeButton.addEventListener('click', () => {
+    homeButton.addEventListener("click", () => {
       this.homeNavigation();
     });
-    
+
     const instructionsButton = this.querySelector("#instructionsBtn");
-    instructionsButton.addEventListener('click', () => {
+    instructionsButton.addEventListener("click", () => {
       this.instructionsNavigation();
     });
 
     const settingsButton = this.querySelector("#settingsBtn");
-    settingsButton.addEventListener('click', () => {
+    settingsButton.addEventListener("click", () => {
       this.openSettings();
     });
   }
 
   homeNavigation() {
-    window.location.href = "source/opening_screen/opening-screen.html";
+    window.location.href = "../opening_screen/opening-screen.html";
   }
 
   instructionsNavigation() {
@@ -45,7 +44,7 @@ class HeaderComponent extends HTMLElement {
     localStorage.setItem("orglink", JSON.stringify(orgLink));
 
     // Handle instructions button click
-    window.location.href = "source/instruction_screen/instruction.html";
+    window.location.href = "../instruction_screen/instruction.html";
   }
 
   openSettings() {
@@ -55,12 +54,11 @@ class HeaderComponent extends HTMLElement {
 
 customElements.define("header-component", HeaderComponent);
 
-function init(){
-}
+function init() {}
 
 // Close button functionality
 const closeButton = document.getElementsByClassName("close")[0];
-closeButton.addEventListener('click', () => {
+closeButton.addEventListener("click", () => {
   closeSettings();
 });
 
