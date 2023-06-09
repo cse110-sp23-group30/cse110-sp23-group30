@@ -1,3 +1,17 @@
+const puppeteer = require("puppeteer");
+const path = require("path");
+let browser;
+let page;
+
+beforeAll(async () => {
+  browser = await puppeteer.launch({ headless: "new" });
+  page = await browser.newPage();
+});
+
+afterAll(() => {
+  browser.close();
+});
+
 describe("Cart Page", () => {
   beforeAll(async () => {
     await page.goto(
