@@ -6,7 +6,7 @@
 }
 
 body {
-  background: url("../centralized\ css/background.jpg") no-repeat center fixed;
+  background: url('../centralized\ css/background.jpg') no-repeat center fixed;
   background-size: cover;
   background-color: white;
 }
