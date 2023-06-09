@@ -49,6 +49,14 @@ class HeaderComponent extends HTMLElement {
 
   openSettings() {
     document.getElementById("settings-popup").style.display = "block";
+
+    const volumeSlider = document.getElementById("musicVolume");
+    volumeSlider.addEventListener("input", () => {
+      const audioPlayer = document.getElementById("audioPlayer");
+      const musicVolume = volumeSlider.value / 100;
+      audioPlayer.volume = musicVolume;
+      audioPlayer.play();
+    });
   }
 }
 
