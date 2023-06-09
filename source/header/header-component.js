@@ -3,7 +3,7 @@ class HeaderComponent extends HTMLElement {
     this.innerHTML = `
       <header>
         <div class="container">
-          <img src="source/assets/BlueMoon.png" alt="Logo" class="logo">
+          <img src="../assets/BlueMoon.png" alt="Logo" class="logo">
           <h1 class="header-title">The Blue Moon Express</h1>
           <div class="button-group">
             <button id="homeBtn">Home</button>
@@ -14,6 +14,7 @@ class HeaderComponent extends HTMLElement {
       </header>
     `;
 
+
     this.initEventListeners();
   }
 
@@ -22,7 +23,7 @@ class HeaderComponent extends HTMLElement {
     homeButton.addEventListener('click', () => {
       this.homeNavigation();
     });
-
+    
     const instructionsButton = this.querySelector("#instructionsBtn");
     instructionsButton.addEventListener('click', () => {
       this.instructionsNavigation();

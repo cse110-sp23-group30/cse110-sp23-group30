@@ -23,7 +23,7 @@ function openInstructions() {
   let orgLink = window.location.href;
   localStorage.setItem("orglink", JSON.stringify(orgLink));
 
-  window.location.href = "/source/instruction_screen/instruction.html";
+  window.location.href = "../instruction_screen/instruction.html";
 }
 
 /**
@@ -31,7 +31,7 @@ function openInstructions() {
  * order to play the game.
  */
 function playGame() {
-  window.location.href = "/source/cart_screen/cart.html";
+  window.location.href = "../cart_screen/cart.html";
 }
 
 /**
