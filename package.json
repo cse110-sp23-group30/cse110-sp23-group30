@@ -9,5 +9,8 @@
     "jest-puppeteer": "^9.0.0",
     "jsdom": "^22.1.0",
     "puppeteer": "^20.5.0"
+  },
+  "scripts": {
+    "test": "jest"
   }
 }

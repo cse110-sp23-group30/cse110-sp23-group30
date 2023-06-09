@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@100&family=Rubik+Pixels&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@100&family=Rubik+Pixels&display=swap');
 
 body {
   overflow-y: hidden;
@@ -15,7 +15,7 @@ body {
   width: 15rem;
   height: 34.3rem;
   position: absolute;
-  background: url("media/tap_wrap.png") no-repeat;
+  background: url('media/tap_wrap.png') no-repeat;
   -webkit-background-size: contain;
   -o-background-size: contain;
   background-size: contain;
@@ -73,7 +73,7 @@ body {
   border: 0.075rem solid #ddcb9d;
   border-radius: 0.95rem;
   color: #2591ac;
-  font-family: "Rubik Pixels", sans-serif;
+  font-family: 'Rubik Pixels', sans-serif;
 }
 
 #fullscreen-video {
@@ -115,7 +115,7 @@ body {
   padding-left: 20%;
   font-size: 20px;
   color: white;
-  font-family: "Rubik Pixels", sans-serif;
+  font-family: 'Rubik Pixels', sans-serif;
 }
 
 #fortune-message {
@@ -126,8 +126,8 @@ body {
   background-color: white;
   border: 1px solid black;
   text-align: center;
-  margin-top: 12.2rem;
-  margin-left: 19.2rem;
+  margin-top: 11rem;
+  margin-left: 17.1rem;
   font-weight: bold;
   font-size: 77%;
   border: none;
@@ -197,7 +197,7 @@ body {
 }
 
 .glow-on-hover:before {
-  content: "";
+  content: '';
   background: linear-gradient(
     45deg,
     #ff0000,
@@ -238,7 +238,7 @@ body {
 
 .glow-on-hover:after {
   z-index: -1;
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
   height: 100%;
