@@ -14,7 +14,9 @@ afterAll(() => {
 
 describe("Cart Page", () => {
   beforeAll(async () => {
-    await page.goto("http://localhost:4444/source/cart_screen/cart.html");
+    await page.goto(
+      "https://cse110-sp23-group30.github.io/cse110-sp23-group30/source/cart_screen/cart.html"
+    );
   });
 
   test("Add Plate button redirects to the correct page", async () => {
