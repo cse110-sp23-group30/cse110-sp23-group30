@@ -1,6 +1,12 @@
 let selectedCount = 0;
 let selectedCountEntree = 0;
 
+/**
+ * Selects or deselects an image element.
+ *
+ * @param {HTMLElement} element - The image element to select or deselect.
+ * @returns {void}
+ */
 function selectImage(element) {
   if (element.classList.contains("selected")) {
     element.classList.remove("selected");
@@ -11,6 +17,12 @@ function selectImage(element) {
   }
 }
 
+/**
+ * Selects or deselects an entree image element.
+ *
+ * @param {HTMLElement} element - The entree image element to select or deselect.
+ * @returns {void}
+ */
 function selectImageEntree(element) {
   if (element.classList.contains("selectedEntree")) {
     element.classList.remove("selectedEntree");
@@ -21,11 +33,21 @@ function selectImageEntree(element) {
   }
 }
 
+/**
+ * Redirects the user to the cart screen.
+ *
+ * @returns {void}
+ */
 function goToCart() {
   location.href = "/source/cart_screen/cart.html";
   console.log("Function Called!");
 }
 
+/**
+ * Saves the selected items to local storage.
+ *
+ * @returns {void}
+ */
 function saveSelectedItems() {
   // Create a either a new list or a list with everything in local storage
   let dishes;
@@ -56,6 +78,12 @@ function saveSelectedItems() {
   popupModal.style.display = "none" ? "block" : "none";
 }
 
+/**
+ * Retrieves the selected items based on the provided selector.
+ *
+ * @param {string} selector - The CSS selector to select the items.
+ * @returns {Array<Object>} An array of selected item details.
+ */
 function getSelectedItems(selector) {
   const selectedItems = [];
 
@@ -72,6 +100,11 @@ function getSelectedItems(selector) {
   return selectedItems;
 }
 
+/**
+ * Closes the popup modal.
+ *
+ * @returns {void}
+ */
 function closePopup() {
   const popupModal = document.querySelector(".popup-modal");
   popupModal.style.display = "none";
