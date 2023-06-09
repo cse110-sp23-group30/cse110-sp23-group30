@@ -3,7 +3,7 @@ class HeaderComponent extends HTMLElement {
     this.innerHTML = `
       <header>
         <div class="container">
-          <img src="source/assets/BlueMoon.png" alt="Logo" class="logo">
+          <img src="../assets/BlueMoon.png" alt="Logo" class="logo">
           <h1 class="header-title">The Blue Moon Express</h1>
           <div class="button-group">
             <button id="homeBtn">Home</button>
@@ -17,7 +17,7 @@ class HeaderComponent extends HTMLElement {
     // Add event listeners for the buttons
     this.querySelector("#homeBtn").addEventListener("click", () => {
       // Handle home button click
-      window.location.href = "source/opening_screen/opening-screen.html";
+      window.location.href = "../opening_screen/opening-screen.html";
     });
 
     this.querySelector("#instructionsBtn").addEventListener("click", () => {
@@ -26,7 +26,7 @@ class HeaderComponent extends HTMLElement {
       localStorage.setItem("orglink", JSON.stringify(orgLink));
 
       // Handle instructions button click
-      window.location.href = "source/instruction_screen/instruction.html";
+      window.location.href = "../instruction_screen/instruction.html";
     });
 
     // Get a reference to the settings button

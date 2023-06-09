@@ -12,9 +12,9 @@ const creditElement = document.getElementById("credit");
 
 // video array for animation
 const videos = [
-  "source/cookie_screen/media/video_blue.mp4",
-  "source/cookie_screen/media/video_gold.mp4",
-  "source/cookie_screen/media/video_purple.mp4",
+  "../cookie_screen/media/video_blue.mp4",
+  "../cookie_screen/media/video_gold.mp4",
+  "../cookie_screen/media/video_purple.mp4",
 ];
 
 // array of messages
@@ -52,7 +52,7 @@ function shakeCookie() {
   cookie.classList.remove("shake-animation");
 
   cookie.innerHTML =
-    '<img src="source/cookie_screen/media/cookie_before.png" alt="Cracked Cookie">';
+    '<img src="../cookie_screen/media/cookie_before.png" alt="Cracked Cookie">';
   // Clear the fortune message
   message.textContent = "";
   // Hide the fortune message
@@ -118,7 +118,7 @@ function openFortune() {
 
     // Replace the image source with the cracked cookie image
     cookie.innerHTML =
-      '<img src="source/cookie_screen/media/cookie_after.png" alt="Cracked Cookie">';
+      '<img src="../cookie_screen/media/cookie_after.png" alt="Cracked Cookie">';
 
     const randomIndex = Math.floor(Math.random() * messages.length);
     message.textContent = messages[randomIndex];
@@ -132,7 +132,7 @@ function openFortune() {
 function restartGame() {
   // Replace the image source with the initial cookie image
   cookie.innerHTML =
-    '<img src="source/cookie_screen/media/cookie_before.png" alt="Fortune Cookie">';
+    '<img src="../cookie_screen/media/cookie_before.png" alt="Fortune Cookie">';
 
   // Clear the fortune message
   message.textContent = "";
@@ -140,8 +140,8 @@ function restartGame() {
   message.style.display = "none";
   // go to cart screen
   localStorage.clear();
-  
-  window.location.href = "source/opening_screen/opening-screen.html";
+
+  window.location.href = "../opening_screen/opening-screen.html";
 }
 
-module.exports = {shakeCookie, skipVideo,openFortune, restartGame}
+module.exports = { shakeCookie, skipVideo, openFortune, restartGame };
