@@ -12,6 +12,7 @@ So far, the game has five different screens, and we want to have unified designs
 ## Decision Outcome
 
 Create a centralized css to store the following:
+
 - One background image to use
 - One consistent font
 - Opening, plate, bowl, cart screen should have unified button designs; Instruction and cookie screen should have unique designs.
