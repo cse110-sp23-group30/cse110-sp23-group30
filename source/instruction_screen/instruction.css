@@ -1,5 +1,5 @@
 body {
-  background: url('/source/centralized\ css/background.jpg') no-repeat center fixed;
+  background: url('../centralized\ css/background.jpg') no-repeat center fixed;
   background-size: contain;
   background-size: 100% 100%;
   background-color: white;
@@ -91,7 +91,7 @@ button {
   font-size: 25px;
   border-radius: 4px;
   position: fixed;
-  bottom:2vh;
+  bottom: 2vh;
   left: 50%;
   opacity: 0;
   transform: translateX(-50%);

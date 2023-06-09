@@ -22,7 +22,7 @@ function selectImage(element) {
 }
 
 function goToCart() {
-  location.href = "/source/cart_screen/cart.html";
+  location.href = "../cart_screen/cart.html";
 }
 
 function saveSelectedItems() {
@@ -53,6 +53,8 @@ function saveSelectedItems() {
 
   // Store selected items in LocalStorage as JSON
   // localStorage.setItem("selectedItems", JSON.stringify(selectedItems));
+  const popupModal = document.querySelector(".popup-modal");
+  popupModal.style.display = "none" ? "block" : "none";
 }
 
 function getSelectedItems(selector) {
@@ -69,4 +71,9 @@ function getSelectedItems(selector) {
   });
 
   return selectedItems;
+}
+
+function closePopup() {
+  const popupModal = document.querySelector(".popup-modal");
+  popupModal.style.display = "none";
 }
