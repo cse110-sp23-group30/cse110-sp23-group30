@@ -1,16 +1,20 @@
 # ADR: Setting Panel in the Fortune Teller App - Empty State and Expansion Opportunities
 
 ## Context and Problem Statement
-In the development of our Fortune Teller app, we have included a setting panel to provide users with customizable options and preferences. Currently, the setting panel is relatively empty, containing only music sliders. The decision to leave it mostly empty was deliberate, as explainde below.
+
+In the development of our Fortune Teller app, we have included a setting panel to provide users with customizable options and preferences. Currently, the setting panel is relatively empty, containing only music sliders. The decision to leave it mostly empty was deliberate, as explained below.
 
 ## Considered Options
+
 1. Including a comprehensive set of settings and features in the initial release, addressing various user preferences.
 2. Leaving the setting panel mostly empty, focusing on essential functionalities, and utilizing it as an expansion opportunity for future releases.
 
 ## Decision Outcome
+
 Chosen option: Leaving the setting panel mostly empty for expansion.
 
 ## Rationale
+
 We have intentionally decided to leave the setting panel in the Fortune Teller app mostly empty, with only music sliders, due to the following reasons:
 
 1. Time Constraints: With the limited development timeframe, we prioritized building a stable and user-friendly app. Implementing a comprehensive set of settings and features would have required significant time and resources. By keeping the setting panel minimal, we were able to focus on delivering a functional app within the given timeframe.
