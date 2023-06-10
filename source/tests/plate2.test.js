@@ -1,48 +1,34 @@
-const {
-    selectImageMain,
-    selectImage,
-    goToCart,
-    saveSelectedItems,
-    getSelectedItems,
-    closePopup,
-    closeWarningPopup,
-    clearSelectedOptions
-  } = require('./plate-screen.js');
-  
-  describe('Plate Screen functions', () => {
-    // Mocking the DOM element
-    const divElement = document.createElement('div');
-    divElement.className = "selected";
-  
-    test('selectImageMain', () => {
-      selectImageMain(divElement);
-      expect(divElement.classList.contains('selected')).toBe(false);
-    });
-  
-    test('selectImage', () => {
-      selectImage(divElement);
-      expect(divElement.classList.contains('selectedEntree')).toBe(false);
-    });
-  
-    // Here, you can add other tests like the following:
-  
-    // test('goToCart', () => {
-    // });
-  
-    // test('saveSelectedItems', () => {
-    // });
-  
-    // test('getSelectedItems', () => {
-    // });
-  
-    // test('closePopup', () => {
-    // });
-  
-    // test('closeWarningPopup', () => {
-    // });
-  
-    // test('clearSelectedOptions', () => {
-    // });
-  
+const puppeteer = require('puppeteer');
+
+describe('Plate Screen functions', () => {
+  let browser;
+  let page;
+
+  beforeAll(async () => {
+    // Launch browser
+    browser = await puppeteer.launch();
+    // Create new page
+    page = await browser.newPage();
+    // Navigate to the plate screen
+    await page.goto('http://localhost:3000/plate-screen.html');
   });
-  
+
+  afterAll(async () => {
+    // Close browser
+    await browser.close();
+  });
+
+  test('selectImageMain', async () => {
+    await page.evaluate(() => selectImageMain(document.querySelector('.menu-card')));
+    const isSelected = await page.evaluate(() => document.querySelector('.menu-card').classList.contains('selected'));
+    expect(isSelected).toBe(true);
+  });
+
+  test('selectImage', async () => {
+    await page.evaluate(() => selectImage(document.querySelector('.menu-card')));
+    const isSelectedEntree = await page.evaluate(() => document.querySelector('.menu-card').classList.contains('selectedEntree'));
+    expect(isSelectedEntree).toBe(true);
+  });
+
+  // ...write other tests...
+});
