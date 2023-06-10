@@ -34,7 +34,7 @@ describe('Bowl Screen Tests', () => {
 
     const selectedImageEntree = await page.$eval(
       'form .menu-card:nth-child(5)',
-      (el) => el.classList.contains('selected')
+      (el) => el.classList.contains('selectedEntree')
     );
     expect(selectedImageEntree).toBe(true);
   });
@@ -42,8 +42,8 @@ describe('Bowl Screen Tests', () => {
   test('User can navigate to cart', async () => {
     // click the cart button
     await Promise.all([
-      page.waitForNavigation(), // The promise resolves after navigation has finished
-      page.click('button'), // Clicking the link will indirectly cause a navigation
+      page.click('#cart'),
+      page.waitForNavigation({ waitUntil: 'networkidle0' }),
     ]);
 
     // get the current url
@@ -52,4 +52,6 @@ describe('Bowl Screen Tests', () => {
     // check the url contains 'cart.html'
     expect(url).toContain('cart.html');
   });
+
+  
 });
