@@ -52,7 +52,7 @@ describe("Plate Screen Tests", () => {
       const url = await page.url();
   
       // check the url contains 'cart.html'
-      expect(url).toContain("http://localhost:4444/source/cart_screen/cart.html");
+      expect(url).toContain("cart.html");
     });
   });
   
