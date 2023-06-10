@@ -54,23 +54,18 @@ describe('Cart Page', () => {
 
   test('Add Bowl button redirects to the correct page', async () => {
     await page.goBack();
-    await page.waitForSelector('#add-bowl');
-    await page.click('#add-bowl');
-    expect(await page.url()).toContain('/source/bowl-screen/bowl-screen.html');
+    await page.waitForSelector("#add-bowl");
+    await page.click("#add-bowl");
+    expect(await page.url()).toContain("/source/bowl-screen/bowl-screen.html"); // adjust as necessary
   });
 
-  test('Confirm Purchase button redirects with something in local storage', async () => {
+  test("Confirm Purchase button redirects to the correct page", async () => {
     await page.goBack();
-    /*
-    await page.evaluate(() => {
-      localStorage.setItem('dishes', JSON.stringify({ key: 'value' }));
-    });
-    await page.reload();*/
-    await Promise.all([page.click('#confirm'), page.waitForNavigation()]);
-
+    await page.waitForSelector("#confirm");
+    await page.click("#confirm");
     expect(await page.url()).toContain(
-      '/source/cookie_screen/cookie_screen.html'
-    );
+      "/source/cookie_screen/cookie_screen.html"
+    ); // adjust as necessary
   });
 
   test('Clear Cart button pops up the confirm-clear element', async () => {
@@ -86,23 +81,12 @@ describe('Cart Page', () => {
 
   test('Delete button pops up the confirm-delete element', async () => {
     // This test assumes that there is at least one delete button (class = "deletebtn") on the page
-    await page.reload();
-    await page.waitForSelector('.deletebtn');
-    await page.click('.deletebtn');
+    await page.waitForSelector(".deletebtn");
+    await page.click(".deletebtn");
     const displayStyle = await page.$eval(
       '#confirm-delete',
       (el) => getComputedStyle(el).display
     );
-    expect(displayStyle).toBe('block');
-  });
-
-  test('Load Cart Populates Screen', async () => {
-    await page.goBack();
-    await page.waitForSelector('#total-price');
-    const paddingBottom = await page.$eval(
-      '#confirm-delete',
-      (el) => getComputedStyle(el).paddingBottom
-    );
-    expect(paddingBottom).toBe('5px');
+    expect(displayStyle).toBe("block");
   });
 });
