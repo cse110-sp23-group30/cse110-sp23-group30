@@ -1,5 +1,4 @@
 const puppeteer = require('puppeteer');
-
 let browser;
 let page;
 
@@ -98,10 +97,10 @@ describe('Cart Page', () => {
   });
 
   test('Load Cart Populates Screen', async () => {
-    await page.goBack();
+    await page.reload();
     await page.waitForSelector('#total-price');
     const paddingBottom = await page.$eval(
-      '#confirm-delete',
+      '#total-price',
       (el) => getComputedStyle(el).paddingBottom
     );
     expect(paddingBottom).toBe('5px');
