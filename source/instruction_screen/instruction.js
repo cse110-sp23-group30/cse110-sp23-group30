@@ -1,9 +1,10 @@
+
 /**
  * Redirects to the opening screen.
  */
 function goBack() {
   // Go back to page it came from
-  window.location.href = "/source/opening_screen/opening-screen.html";
+  window.location.href = '../opening_screen/opening-screen.html';
 }
 
 const keyframesAnimation = `
@@ -33,3 +34,7 @@ const styleElement = document.createElement("style");
 styleElement.type = "text/css";
 styleElement.innerHTML = keyframesAnimation;
 document.head.appendChild(styleElement);
+
+module.exports = {
+  goBack: goBack
+};
