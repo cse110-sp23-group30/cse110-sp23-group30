@@ -8,6 +8,9 @@ function selectImage(element) {
   } else if (selectedCount < 1) {
     element.classList.add('selected');
     selectedCount++;
+  } else if (selectedCount == 1){
+    const fullPlateModal = document.getElementById("fullPlate");
+    fullPlateModal.style.display = "none" ? "block" : "none";
   }
 }
 
@@ -18,6 +21,9 @@ function selectImageEntree(element) {
   } else if (selectedCountEntree < 1) {
     element.classList.add('selectedEntree');
     selectedCountEntree++;
+  }  else if (selectedCountEntree == 1){
+    const fullPlateModal = document.getElementById("fullPlate");
+    fullPlateModal.style.display = "none" ? "block" : "none";
   }
 }
 
@@ -52,8 +58,10 @@ function saveSelectedItems() {
   // Store list in LocalStorage as JSON
   localStorage.setItem('dishes', JSON.stringify(dishes));
 
-  const popupModal = document.querySelector('.popup-modal');
-  popupModal.style.display = 'none' ? 'block' : 'none';
+  const popupModal = document.querySelector(".popup-modal");
+  popupModal.style.display = "none" ? "block" : "none";
+
+  clearSelectedOptions();
 }
 
 function getSelectedItems(selector) {
@@ -75,4 +83,18 @@ function getSelectedItems(selector) {
 function closePopup() {
   const popupModal = document.querySelector('.popup-modal');
   popupModal.style.display = 'none';
+}
+
+function closeWarningPopup() {
+  const fullPlateModal = document.getElementById("fullPlate");
+  fullPlateModal.style.display = "none";
+}
+
+function clearSelectedOptions() {
+  const selectedElements = document.querySelectorAll(".selected, .selectedEntree");
+  selectedElements.forEach((element) => {
+    element.classList.remove("selected", "selectedEntree");
+  });
+  selectedCount = 0;
+  selectedCountEntree = 0;
 }

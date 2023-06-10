@@ -2,12 +2,16 @@ let selectedCount = 0;
 let selectedCountMain = 0;
 
 function selectImageMain(element) {
-  if (element.classList.contains('selected')) {
-    element.classList.remove('selected');
+  console.log(selectedCountMain)
+  if (element.classList.contains("selected")) {
+    element.classList.remove("selected");
     selectedCountMain--;
   } else if (selectedCountMain < 1) {
     element.classList.add('selected');
     selectedCountMain++;
+  } else if (selectedCountMain == 1){
+    const fullPlateModal = document.getElementById("fullPlate");
+    fullPlateModal.style.display = "none" ? "block" : "none";
   }
 }
 
@@ -18,6 +22,9 @@ function selectImage(element) {
   } else if (selectedCount < 2) {
     element.classList.add('selectedEntree');
     selectedCount++;
+  } else if (selectedCount == 2){
+    const fullPlateModal = document.getElementById("fullPlate");
+    fullPlateModal.style.display = "none" ? "block" : "none";
   }
 }
 
@@ -53,8 +60,10 @@ function saveSelectedItems() {
 
   // Store selected items in LocalStorage as JSON
   // localStorage.setItem("selectedItems", JSON.stringify(selectedItems));
-  const popupModal = document.querySelector('.popup-modal');
-  popupModal.style.display = 'none' ? 'block' : 'none';
+  const popupModal = document.querySelector(".popup-modal");
+  popupModal.style.display = "none" ? "block" : "none";
+
+  clearSelectedOptions();
 }
 
 function getSelectedItems(selector) {
@@ -76,4 +85,18 @@ function getSelectedItems(selector) {
 function closePopup() {
   const popupModal = document.querySelector('.popup-modal');
   popupModal.style.display = 'none';
+}
+
+function closeWarningPopup() {
+  const fullPlateModal = document.getElementById("fullPlate");
+  fullPlateModal.style.display = "none";
+}
+
+function clearSelectedOptions() {
+  const selectedElements = document.querySelectorAll(".selected, .selectedEntree");
+  selectedElements.forEach((element) => {
+    element.classList.remove("selected", "selectedEntree");
+  });
+  selectedCount = 0;
+  selectedCountEntree = 0;
 }

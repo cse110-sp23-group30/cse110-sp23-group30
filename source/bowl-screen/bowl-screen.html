@@ -117,13 +117,23 @@
     <div class="popup-modal">
         <div class="popup-content">
             <h2>Items Added to Cart</h2>
-            <p>Your selected items have been successfully added to the cart.</p>
+            <p>Your selected items have been successfully added to the cart. Please feel free to add another Bowl
+            or navigate back to the cart screen!
+            </p>
             <button onclick="closePopup();" class="popup-button">Close</button>
             <button onclick="goToCart();" class="popup-button">Go To Cart</button>
         </div>
     </div>
 
-    <button onclick="goToCart();" class="buttons">Cart</button>
+    <div class="popup-modal" id='fullPlate'>
+        <div class="popup-content">
+            <h2>WARNING!</h2>
+            <p>You cannot select more items in this section! (Please re-click a selected item to unselect it)</p>
+            <button onclick="closeWarningPopup();" class="popup-button">Close</button>
+        </div>
+    </div>
+
+    <button onclick="goToCart();" class="buttons">View Cart</button>
     <script src="../bowl-screen/bowl-screen.js"></script>
 </body>
 
