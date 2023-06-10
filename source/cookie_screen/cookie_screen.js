@@ -6,6 +6,9 @@ const message = document.getElementById('fortune-message');
 const videoPlayer = document.getElementById('video-player');
 const fullscreenVideo = document.getElementById('fullscreen-video');
 let videoStarted = false;
+if (videoPlayer) {
+  videoPlayer.volume = 0;
+}
 
 // credit
 const creditElement = document.getElementById('credit');
