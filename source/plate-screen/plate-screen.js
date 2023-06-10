@@ -1,6 +1,12 @@
 let selectedCount = 0;
 let selectedCountMain = 0;
 
+
+/**
+ * Selects/deselects main image element
+ * @param {HTMLElement} 
+ * @returns {void}
+ */
 function selectImageMain(element) {
   if (element.classList.contains("selected")) {
     element.classList.remove("selected");
@@ -11,6 +17,11 @@ function selectImageMain(element) {
   }
 }
 
+/**
+ * Selects/deselects entree image element
+ * @param {HTMLElement} 
+ * @returns {void}
+ */
 function selectImage(element) {
   if (element.classList.contains("selectedEntree")) {
     element.classList.remove("selectedEntree");
@@ -21,10 +32,18 @@ function selectImage(element) {
   }
 }
 
+/**
+ * Redirects user to cart screen
+ * @returns {void}
+ */
 function goToCart() {
   location.href = "../cart_screen/cart.html";
 }
 
+/**
+ * Saves selected to local storage
+ * @returns {void}
+ */
 function saveSelectedItems() {
   // Create a either a new list or a list with everything in local storage
   let dishes;
@@ -57,6 +76,11 @@ function saveSelectedItems() {
   popupModal.style.display = "none" ? "block" : "none";
 }
 
+/**
+ * Gets the selected items
+ * @param {selector} 
+ * @returns {void}
+ */
 function getSelectedItems(selector) {
   const selectedItems = [];
 
@@ -73,6 +97,10 @@ function getSelectedItems(selector) {
   return selectedItems;
 }
 
+/**
+ * Selects pop up
+ * @returns {void}
+ */
 function closePopup() {
   const popupModal = document.querySelector(".popup-modal");
   popupModal.style.display = "none";
