@@ -18,41 +18,41 @@ class HeaderComponent extends HTMLElement {
   }
 
   initEventListeners() {
-    const homeButton = this.querySelector("#homeBtn");
-    homeButton.addEventListener("click", () => {
+    const homeButton = this.querySelector('#homeBtn');
+    homeButton.addEventListener('click', () => {
       this.homeNavigation();
     });
 
-    const instructionsButton = this.querySelector("#instructionsBtn");
-    instructionsButton.addEventListener("click", () => {
+    const instructionsButton = this.querySelector('#instructionsBtn');
+    instructionsButton.addEventListener('click', () => {
       this.instructionsNavigation();
     });
 
-    const settingsButton = this.querySelector("#settingsBtn");
-    settingsButton.addEventListener("click", () => {
+    const settingsButton = this.querySelector('#settingsBtn');
+    settingsButton.addEventListener('click', () => {
       this.openSettings();
     });
   }
 
   homeNavigation() {
-    window.location.href = "../opening_screen/opening-screen.html";
+    window.location.href = '../opening_screen/opening-screen.html';
   }
 
   instructionsNavigation() {
     // Make sure instructions returns back to screen it was on
     let orgLink = window.location.href;
-    localStorage.setItem("orglink", JSON.stringify(orgLink));
+    localStorage.setItem('orglink', JSON.stringify(orgLink));
 
     // Handle instructions button click
-    window.location.href = "../instruction_screen/instruction.html";
+    window.location.href = '../instruction_screen/instruction.html';
   }
 
   openSettings() {
-    document.getElementById("settings-popup").style.display = "block";
+    document.getElementById('settings-popup').style.display = 'block';
 
-    const volumeSlider = document.getElementById("musicVolume");
-    volumeSlider.addEventListener("input", () => {
-      const audioPlayer = document.getElementById("audioPlayer");
+    const volumeSlider = document.getElementById('musicVolume');
+    volumeSlider.addEventListener('input', () => {
+      const audioPlayer = document.getElementById('audioPlayer');
       const musicVolume = volumeSlider.value / 100;
       audioPlayer.volume = musicVolume;
       audioPlayer.play();
@@ -60,16 +60,16 @@ class HeaderComponent extends HTMLElement {
   }
 }
 
-customElements.define("header-component", HeaderComponent);
+customElements.define('header-component', HeaderComponent);
 
 function init() {}
 
 // Close button functionality
-const closeButton = document.getElementsByClassName("close")[0];
-closeButton.addEventListener("click", () => {
+const closeButton = document.getElementsByClassName('close')[0];
+closeButton.addEventListener('click', () => {
   closeSettings();
 });
 
 function closeSettings() {
-  document.getElementById("settings-popup").style.display = "none";
+  document.getElementById('settings-popup').style.display = 'none';
 }
