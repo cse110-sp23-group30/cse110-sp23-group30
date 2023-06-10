@@ -3,7 +3,7 @@ class HeaderComponent extends HTMLElement {
     this.innerHTML = `
       <header>
         <div class="container">
-          <img src="source/assets/BlueMoon.png" alt="Logo" class="logo">
+          <img src="../assets/BlueMoon.png" alt="Logo" class="logo">
           <h1 class="header-title">The Blue Moon Express</h1>
           <div class="button-group">
             <button id="homeBtn">Home</button>
@@ -19,23 +19,23 @@ class HeaderComponent extends HTMLElement {
 
   initEventListeners() {
     const homeButton = this.querySelector("#homeBtn");
-    homeButton.addEventListener('click', () => {
+    homeButton.addEventListener("click", () => {
       this.homeNavigation();
     });
 
     const instructionsButton = this.querySelector("#instructionsBtn");
-    instructionsButton.addEventListener('click', () => {
+    instructionsButton.addEventListener("click", () => {
       this.instructionsNavigation();
     });
 
     const settingsButton = this.querySelector("#settingsBtn");
-    settingsButton.addEventListener('click', () => {
+    settingsButton.addEventListener("click", () => {
       this.openSettings();
     });
   }
 
   homeNavigation() {
-    window.location.href = "source/opening_screen/opening-screen.html";
+    window.location.href = "../opening_screen/opening-screen.html";
   }
 
   instructionsNavigation() {
@@ -44,22 +44,29 @@ class HeaderComponent extends HTMLElement {
     localStorage.setItem("orglink", JSON.stringify(orgLink));
 
     // Handle instructions button click
-    window.location.href = "source/instruction_screen/instruction.html";
+    window.location.href = "../instruction_screen/instruction.html";
   }
 
   openSettings() {
     document.getElementById("settings-popup").style.display = "block";
+
+    const volumeSlider = document.getElementById("musicVolume");
+    volumeSlider.addEventListener("input", () => {
+      const audioPlayer = document.getElementById("audioPlayer");
+      const musicVolume = volumeSlider.value / 100;
+      audioPlayer.volume = musicVolume;
+      audioPlayer.play();
+    });
   }
 }
 
 customElements.define("header-component", HeaderComponent);
 
-function init(){
-}
+function init() {}
 
 // Close button functionality
 const closeButton = document.getElementsByClassName("close")[0];
-closeButton.addEventListener('click', () => {
+closeButton.addEventListener("click", () => {
   closeSettings();
 });
 

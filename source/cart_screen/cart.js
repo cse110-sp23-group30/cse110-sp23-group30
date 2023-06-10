@@ -2,14 +2,14 @@
  * Redirects to the plate screen.
  */
 function addPlate() {
-  location.href = "/source/plate-screen/plate-screen.html";
+  location.href = "../plate-screen/plate-screen.html";
 }
 
 /**
  * Redirects to the bowl screen.
  */
 function addBowl() {
-  location.href = "/source/bowl-screen/bowl-screen.html";
+  location.href = "../bowl-screen/bowl-screen.html";
 }
 
 /**
@@ -19,7 +19,7 @@ function purchase() {
   if (localStorage.getItem("dishes") === null) {
     return;
   }
-  location.href = "/source/cookie_screen/cookie_screen.html";
+  location.href = "../cookie_screen/cookie_screen.html";
 }
 
 /**
@@ -151,7 +151,6 @@ function loadCart() {
     }
   }
 }
-
 
 window.addEventListener("DOMContentLoaded", () => {
   loadCart();
