@@ -19,14 +19,14 @@ describe('Plate Screen functions', () => {
   });
 
   //test if main food image can be selected
-  test('selectImageMain', async () => {
+  test('Main can be selected', async () => {
     await page.evaluate(() => selectImageMain(document.querySelector('.menu-card')));
     const isSelected = await page.evaluate(() => document.querySelector('.menu-card').classList.contains('selected'));
     expect(isSelected).toBe(true);
   });
 
   //test if entree food image can be selected
-  test('selectImage', async () => {
+  test('Entree can be selected', async () => {
     await page.evaluate(() => selectImage(document.querySelector('.menu-card')));
     const isSelectedEntree = await page.evaluate(() => document.querySelector('.menu-card').classList.contains('selectedEntree'));
     expect(isSelectedEntree).toBe(true);
