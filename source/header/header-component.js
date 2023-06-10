@@ -1,4 +1,7 @@
 class HeaderComponent extends HTMLElement {
+  /**
+   * Adds the HTML data for the page to display the header element.
+   */
   connectedCallback() {
     this.innerHTML = `
       <header>
@@ -17,6 +20,9 @@ class HeaderComponent extends HTMLElement {
     this.initEventListeners();
   }
 
+  /**
+   * Adds event listeners for each of the components inside the header.
+   */
   initEventListeners() {
     const homeButton = this.querySelector('#homeBtn');
     homeButton.addEventListener('click', () => {
@@ -34,10 +40,16 @@ class HeaderComponent extends HTMLElement {
     });
   }
 
+  /**
+   * Redirects the user back to the home page.
+   */
   homeNavigation() {
     window.location.href = '../opening_screen/opening-screen.html';
   }
 
+  /**
+   * Redirects the user back to the instruction screen.
+   */
   instructionsNavigation() {
     // Make sure instructions returns back to screen it was on
     let orgLink = window.location.href;
@@ -47,6 +59,9 @@ class HeaderComponent extends HTMLElement {
     window.location.href = '../instruction_screen/instruction.html';
   }
 
+  /**
+   * Opens the settings popup for users to change their voleume/sound.
+   */
   openSettings() {
     document.getElementById('settings-popup').style.display = 'block';
 
@@ -62,6 +77,9 @@ class HeaderComponent extends HTMLElement {
 
 customElements.define('header-component', HeaderComponent);
 
+/**
+ * Initializes the header and adds a function to clost the settings popup.
+ */
 function init() {}
 
 // Close button functionality
@@ -70,6 +88,9 @@ closeButton.addEventListener('click', () => {
   closeSettings();
 });
 
+/**
+ * Closes the settings popup.
+ */
 function closeSettings() {
   document.getElementById('settings-popup').style.display = 'none';
 }
