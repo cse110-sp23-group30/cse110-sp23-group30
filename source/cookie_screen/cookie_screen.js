@@ -1,47 +1,50 @@
 // const variables
-const cookie = document.getElementById("fortune-cookie");
-const message = document.getElementById("fortune-message");
+const cookie = document.getElementById('fortune-cookie');
+const message = document.getElementById('fortune-message');
 
 // videos
-const videoPlayer = document.getElementById("video-player");
-const fullscreenVideo = document.getElementById("fullscreen-video");
+const videoPlayer = document.getElementById('video-player');
+const fullscreenVideo = document.getElementById('fullscreen-video');
 let videoStarted = false;
+if (videoPlayer) {
+  videoPlayer.volume = 0;
+}
 
 // credit
-const creditElement = document.getElementById("credit");
+const creditElement = document.getElementById('credit');
 
 // video array for animation
 const videos = [
-  "../cookie_screen/media/video_blue.mp4",
-  "../cookie_screen/media/video_gold.mp4",
-  "../cookie_screen/media/video_purple.mp4",
+  '../cookie_screen/media/video_blue.mp4',
+  '../cookie_screen/media/video_gold.mp4',
+  '../cookie_screen/media/video_purple.mp4',
 ];
 
 // array of messages
 const messages = [
   /*        message length for better display         */
-  "You will have a prosperous future.",
-  "Good fortune will come your way.",
-  "Seize the day and make it yours.",
-  "Your hard work will pay off soon.",
-  "Expect a pleasant surprise in the near future.",
-  "A thrilling opportunity is on its way.",
-  "Your talents will be recognized and rewarded.",
-  "Adventure awaits you at every corner.",
-  "You will find love in unexpected places.",
-  "A new chapter in your life will bring great happiness.",
-  "Your creativity will lead you to success.",
-  "An exciting journey will soon begin.",
-  "Good fortune will follow you wherever you go.",
-  "You will receive a pleasant surprise in the near future.",
-  "Believe in yourself and all that you are capable of.",
-  "Your dreams will become a reality with perseverance.",
-  "Great things will come from your positive attitude.",
-  "You will make a lasting impression on those you meet.",
-  "Opportunities will arise when you least expect them.",
-  "Your future is filled with abundance and prosperity.",
-  "You are destined for greatness.",
-  "Your kindness will be rewarded tenfold.",
+  'You will have a prosperous future.',
+  'Good fortune will come your way.',
+  'Seize the day and make it yours.',
+  'Your hard work will pay off soon.',
+  'Expect a pleasant surprise in the near future.',
+  'A thrilling opportunity is on its way.',
+  'Your talents will be recognized and rewarded.',
+  'Adventure awaits you at every corner.',
+  'You will find love in unexpected places.',
+  'A new chapter in your life will bring great happiness.',
+  'Your creativity will lead you to success.',
+  'An exciting journey will soon begin.',
+  'Good fortune will follow you wherever you go.',
+  'You will receive a pleasant surprise in the near future.',
+  'Believe in yourself and all that you are capable of.',
+  'Your dreams will become a reality with perseverance.',
+  'Great things will come from your positive attitude.',
+  'You will make a lasting impression on those you meet.',
+  'Opportunities will arise when you least expect them.',
+  'Your future is filled with abundance and prosperity.',
+  'You are destined for greatness.',
+  'Your kindness will be rewarded tenfold.',
 ];
 
 /**
@@ -49,14 +52,14 @@ const messages = [
  */
 function shakeCookie() {
   // prevent user clicking multiple times
-  cookie.classList.remove("shake-animation");
+  cookie.classList.remove('shake-animation');
 
   cookie.innerHTML =
     '<img src="../cookie_screen/media/cookie_before.png" alt="Cracked Cookie">';
   // Clear the fortune message
-  message.textContent = "";
+  message.textContent = '';
   // Hide the fortune message
-  message.style.display = "none";
+  message.style.display = 'none';
 
   // Increase the credit by 100
   if (creditElement !== null) {
@@ -73,13 +76,13 @@ function shakeCookie() {
   // Set the source of the video player to the randomly selected video
   if (videoPlayer !== null) {
     videoPlayer.src = randomVideo;
-    fullscreenVideo.style.display = "block";
+    fullscreenVideo.style.display = 'block';
     videoPlayer.play();
     videoPlayer.volume = 1;
   }
 
   // skip if dont wanna see animation
-  document.addEventListener("click", skipVideo);
+  document.addEventListener('click', skipVideo);
 }
 
 /**
@@ -91,12 +94,12 @@ function skipVideo() {
   }
 }
 if (videoPlayer) {
-  videoPlayer.addEventListener("playing", function () {
+  videoPlayer.addEventListener('playing', function () {
     videoStarted = true;
   });
 
-  videoPlayer.addEventListener("ended", function () {
-    fullscreenVideo.style.display = "none";
+  videoPlayer.addEventListener('ended', function () {
+    fullscreenVideo.style.display = 'none';
     openFortune();
   });
 }
@@ -106,15 +109,15 @@ if (videoPlayer) {
  */
 function openFortune() {
   // remove animation before another if user clicks frequenly
-  cookie.classList.remove("shake-animation");
+  cookie.classList.remove('shake-animation');
   // Clear the fortune message
-  message.textContent = "";
+  message.textContent = '';
   // Hide the fortune message
-  message.style.display = "none";
+  message.style.display = 'none';
 
-  cookie.classList.add("shake-animation");
+  cookie.classList.add('shake-animation');
   setTimeout(function () {
-    cookie.classList.remove("shake-animation");
+    cookie.classList.remove('shake-animation');
 
     // Replace the image source with the cracked cookie image
     cookie.innerHTML =
@@ -122,7 +125,7 @@ function openFortune() {
 
     const randomIndex = Math.floor(Math.random() * messages.length);
     message.textContent = messages[randomIndex];
-    message.style.display = "block";
+    message.style.display = 'block';
   }, 1000);
 }
 
@@ -135,13 +138,13 @@ function restartGame() {
     '<img src="../cookie_screen/media/cookie_before.png" alt="Fortune Cookie">';
 
   // Clear the fortune message
-  message.textContent = "";
+  message.textContent = '';
   // Hide the fortune message
-  message.style.display = "none";
+  message.style.display = 'none';
   // go to cart screen
   localStorage.clear();
 
-  window.location.href = "../opening_screen/opening-screen.html";
+  window.location.href = '../opening_screen/opening-screen.html';
 }
 
 module.exports = { shakeCookie, skipVideo, openFortune, restartGame };

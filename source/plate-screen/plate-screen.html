@@ -29,7 +29,7 @@
 
 <body>
     <div id="header"></div>
-    <h1>Please choose a Main:</h1>
+    <h1 class='headers'>Please choose a Main:</h1>
     <form>
         <div onclick="selectImageMain(this)" class="menu-card">
             <div class="image-option">
@@ -64,7 +64,7 @@
             </div>
         </div>
 
-        <h1>Please choose two Entree:</h1>
+        <h1 class='headers'>Please choose two Entree:</h1>
         <div onclick="selectImage(this)" class="menu-card">
             <img src="../assets/Orange-Chicken.jpg" alt="Orange Chicken">
             <div class="menu-details">
@@ -116,10 +116,22 @@
     <div class="popup-modal">
         <div class="popup-content">
             <h2>Items Added to Cart</h2>
-            <p>Your selected items have been successfully added to the cart.</p>
+            <p>Your selected items have been successfully added to the cart. Please feel free to add another Plate
+            or navigate back to the cart screen!
+            </p>
             <button onclick="closePopup();" class="popup-button">Close</button>
+            <button onclick="goToCart();" class="popup-button">Go To Cart</button>
         </div>
     </div>
+
+    <div class="popup-modal" id='fullPlate'>
+        <div class="popup-content">
+            <h2>WARNING!</h2>
+            <p>You cannot select more items in this section! (Please re-click a selected item to unselect it)</p>
+            <button onclick="closeWarningPopup();" class="popup-button">Close</button>
+        </div>
+    </div>
+
     <button onclick="goToCart();" class="buttons">Cart</button>
     <script src="../plate-screen/plate-screen.js"></script>
 </body>

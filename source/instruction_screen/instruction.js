@@ -4,7 +4,7 @@
  */
 function goBack() {
   // Go back to page it came from
-  window.location.href = '../opening_screen/opening-screen.html';
+  window.location.href = 'https://cse110-sp23-group30.github.io/cse110-sp23-group30/source/opening_screen/opening-screen.html';
 }
 
 const keyframesAnimation = `
@@ -30,8 +30,8 @@ const keyframesAnimation = `
   }
 `;
 
-const styleElement = document.createElement("style");
-styleElement.type = "text/css";
+const styleElement = document.createElement('style');
+styleElement.type = 'text/css';
 styleElement.innerHTML = keyframesAnimation;
 document.head.appendChild(styleElement);
 

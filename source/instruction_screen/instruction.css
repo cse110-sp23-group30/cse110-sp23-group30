@@ -1,3 +1,8 @@
+@import url('https://fonts.cdnfonts.com/css/frutiger');
+html {
+  font-family: 'Frutiger', sans-serif;
+}
+
 body {
   background: url('../centralized\ css/background.jpg') no-repeat center fixed;
   background-size: contain;

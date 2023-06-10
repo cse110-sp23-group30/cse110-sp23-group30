@@ -1,26 +1,31 @@
-const jsdom = require('jsdom');
-const { JSDOM } = jsdom;
-const dom = new JSDOM(' <!DOCTYPE html><body></body></html> ');
-global.window = dom.window;
-global.document = dom.window.document;
+const puppeteer = require('puppeteer');
+let browser;
+let page;
+jest.setTimeout(10000);
 
-// Import the function to be tested
-const { goBack } = require('../instruction_screen/instruction.js');
+beforeAll(async () => {
+  browser = await puppeteer.launch({ headless: 'new' });
+  page = await browser.newPage();
+});
 
-console.log(goBack);
+afterAll(async () => {
+  await browser.close();
+});
 
 describe('goBack', () => {
-  it('should set window.location.href to the correct URL', () => {
-    
-    const originalLocation = window.location;
-    delete window.location;
-    window.location = { href: jest.fn() };
-  
-    goBack();
-  
-    expect(window.location.href).toBe('../opening_screen/opening-screen.html');
-  
-    window.location = originalLocation;
-  }
-  );
+
+  beforeAll(async () => {
+    await page.goto('https://cse110-sp23-group30.github.io/cse110-sp23-group30/source/instruction_screen/instruction.html');
+  });
+
+  test('should go back to opening screen', async () => {
+    page.waitForNavigation();
+    //click Go Back button
+    await page.click('button');
+    // get the current url
+    const url = await page.url();
+    // check the url contains 'cart.html'
+    expect(url).toContain('opening-screen.html');
+  });
+
 });
