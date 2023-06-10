@@ -75,3 +75,7 @@ html {
   border-radius: 5px;
   text-align: center;
 }
+
+.popup-button {
+  margin-bottom: 0.83em;
+}

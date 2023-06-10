@@ -6,12 +6,15 @@ let selectedCountEntree = 0;
  * @param {*} element The main dish to be added to the bowl.
  */
 function selectImage(element) {
-  if (element.classList.contains("selected")) {
-    element.classList.remove("selected");
+  if (element.classList.contains('selected')) {
+    element.classList.remove('selected');
     selectedCount--;
   } else if (selectedCount < 1) {
-    element.classList.add("selected");
+    element.classList.add('selected');
     selectedCount++;
+  } else if (selectedCount == 1){
+    const fullPlateModal = document.getElementById("fullPlate");
+    fullPlateModal.style.display = "none" ? "block" : "none";
   }
 }
 
@@ -20,12 +23,15 @@ function selectImage(element) {
  * @param {*} element The entree dish to be added to the bowl.
  */
 function selectImageEntree(element) {
-  if (element.classList.contains("selectedEntree")) {
-    element.classList.remove("selectedEntree");
+  if (element.classList.contains('selectedEntree')) {
+    element.classList.remove('selectedEntree');
     selectedCountEntree--;
   } else if (selectedCountEntree < 1) {
-    element.classList.add("selectedEntree");
+    element.classList.add('selectedEntree');
     selectedCountEntree++;
+  }  else if (selectedCountEntree == 1){
+    const fullPlateModal = document.getElementById("fullPlate");
+    fullPlateModal.style.display = "none" ? "block" : "none";
   }
 }
 
@@ -33,8 +39,8 @@ function selectImageEntree(element) {
  * Routes the page to the cart screen.
  */
 function goToCart() {
-  location.href = "../cart_screen/cart.html";
-  console.log("Function Called!");
+  location.href = '../cart_screen/cart.html';
+  console.log('Function Called!');
 }
 
 /**
@@ -44,20 +50,20 @@ function goToCart() {
 function saveSelectedItems() {
   // Create a either a new list or a list with everything in local storage
   let dishes;
-  if (localStorage.getItem("dishes") === null) {
+  if (localStorage.getItem('dishes') === null) {
     dishes = [];
   } else {
-    dishes = JSON.parse(localStorage.getItem("dishes"));
+    dishes = JSON.parse(localStorage.getItem('dishes'));
   }
 
   const selectedItems = {
-    main: getSelectedItems(".menu-card.selected"),
-    entree: getSelectedItems(".menu-card.selectedEntree"),
+    main: getSelectedItems('.menu-card.selected'),
+    entree: getSelectedItems('.menu-card.selectedEntree'),
   };
 
   // Check if user got one main and one entree
   if (selectedItems.main.length < 1 || selectedItems.entree.length < 1) {
-    alert("Bowl is not full");
+    alert('Bowl is not full');
     return;
   }
 
@@ -65,10 +71,12 @@ function saveSelectedItems() {
   dishes.push(selectedItems);
 
   // Store list in LocalStorage as JSON
-  localStorage.setItem("dishes", JSON.stringify(dishes));
+  localStorage.setItem('dishes', JSON.stringify(dishes));
 
   const popupModal = document.querySelector(".popup-modal");
   popupModal.style.display = "none" ? "block" : "none";
+
+  clearSelectedOptions();
 }
 
 /**
@@ -82,9 +90,9 @@ function getSelectedItems(selector) {
   const selectedElements = document.querySelectorAll(selector);
   selectedElements.forEach((element) => {
     const itemDetails = {
-      src: element.querySelector("img").getAttribute("src"),
-      name: element.querySelector("h3").innerText,
-      price: element.querySelector("p:nth-child(3)").innerText,
+      src: element.querySelector('img').getAttribute('src'),
+      name: element.querySelector('h3').innerText,
+      price: element.querySelector('p:nth-child(3)').innerText,
     };
     selectedItems.push(itemDetails);
   });
@@ -96,6 +104,20 @@ function getSelectedItems(selector) {
  * Closes the settings popup from the header.
  */
 function closePopup() {
-  const popupModal = document.querySelector(".popup-modal");
-  popupModal.style.display = "none";
+  const popupModal = document.querySelector('.popup-modal');
+  popupModal.style.display = 'none';
+}
+
+function closeWarningPopup() {
+  const fullPlateModal = document.getElementById("fullPlate");
+  fullPlateModal.style.display = "none";
+}
+
+function clearSelectedOptions() {
+  const selectedElements = document.querySelectorAll(".selected, .selectedEntree");
+  selectedElements.forEach((element) => {
+    element.classList.remove("selected", "selectedEntree");
+  });
+  selectedCount = 0;
+  selectedCountEntree = 0;
 }

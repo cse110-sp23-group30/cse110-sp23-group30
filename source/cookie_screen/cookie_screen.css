@@ -9,14 +9,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('../centralized\ css/background.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
-.tapWrap{
+.tapWrap {
   width: 15rem;
-  height: 34.6rem;
+  height: 34.3rem;
   position: absolute;
   background: url('media/tap_wrap.png') no-repeat;
   -webkit-background-size: contain;
@@ -24,18 +21,17 @@ body {
   background-size: contain;
   background-position: center;
   margin-right: 85%;
-  padding-top: 2.85rem;
   z-index: 1;
   display: inline;
   justify-content: center;
 }
 
-.credit{
+.credit {
   height: 3rem;
   width: 12rem;
   -webkit-border-radius: 0.65rem;
   border-radius: 2rem;
-  background-color: rgba(0,0,0,.4);
+  background-color: rgba(0, 0, 0, 0.4);
   position: absolute;
   right: 5rem;
   top: 8rem;
@@ -52,7 +48,7 @@ body {
   padding: 0 0.1rem;
 }
 
-.right_box{
+.right_box {
   padding-left: 10rem;
 }
 
@@ -65,15 +61,15 @@ body {
 }
 
 .buttons_container button:nth-child(1) {
-  margin-right: 8rem; 
+  margin-right: 8rem;
 }
 
 .buttons_container button {
   width: 220px;
   height: 60px;
-  font-size: 18px; 
-  margin-right: 4%; 
-  margin-top: 50%; 
+  font-size: 18px;
+  margin-right: 4%;
+  margin-top: 50%;
   border: 0.075rem solid #ddcb9d;
   border-radius: 0.95rem;
   color: #2591ac;
@@ -96,7 +92,6 @@ body {
   height: 100%;
   object-fit: cover;
 }
-
 
 #fortune-cookie {
   position: absolute;
@@ -131,8 +126,8 @@ body {
   background-color: white;
   border: 1px solid black;
   text-align: center;
-  margin-top: 12.2rem;
-  margin-left: 19.2rem;
+  margin-top: 11rem;
+  margin-left: 17.1rem;
   font-weight: bold;
   font-size: 77%;
   border: none;
@@ -142,17 +137,39 @@ body {
 
 /* CSS for the shake animation */
 @keyframes shake {
-  0% { transform: rotate(-5deg) translateX(0); }
-  10% { transform: rotate(5deg) translateX(5px); }
-  20% { transform: rotate(-5deg) translateX(-5px); }
-  30% { transform: rotate(5deg) translateX(5px); }
-  40% { transform: rotate(-5deg) translateX(-5px); }
-  50% { transform: rotate(5deg) translateX(5px); }
-  60% { transform: rotate(-5deg) translateX(-5px); }
-  70% { transform: rotate(5deg) translateX(5px); }
-  80% { transform: rotate(-5deg) translateX(-5px); }
-  90% { transform: rotate(5deg) translateX(5px); }
-  100% { transform: rotate(-5deg) translateX(0); }
+  0% {
+    transform: rotate(-5deg) translateX(0);
+  }
+  10% {
+    transform: rotate(5deg) translateX(5px);
+  }
+  20% {
+    transform: rotate(-5deg) translateX(-5px);
+  }
+  30% {
+    transform: rotate(5deg) translateX(5px);
+  }
+  40% {
+    transform: rotate(-5deg) translateX(-5px);
+  }
+  50% {
+    transform: rotate(5deg) translateX(5px);
+  }
+  60% {
+    transform: rotate(-5deg) translateX(-5px);
+  }
+  70% {
+    transform: rotate(5deg) translateX(5px);
+  }
+  80% {
+    transform: rotate(-5deg) translateX(-5px);
+  }
+  90% {
+    transform: rotate(5deg) translateX(5px);
+  }
+  100% {
+    transform: rotate(-5deg) translateX(0);
+  }
 }
 
 .shake-animation {
@@ -166,7 +183,13 @@ body {
   border: none;
   outline: none;
   color: #fff;
-  background-image: linear-gradient(to right,hsl(134, 75%, 72%), hsl(184, 75%, 72%), hsl(154, 75%, 72%) , #80ED99);
+  background-image: linear-gradient(
+    to right,
+    hsl(134, 75%, 72%),
+    hsl(184, 75%, 72%),
+    hsl(154, 75%, 72%),
+    #80ed99
+  );
   cursor: pointer;
   position: relative;
   z-index: 0;
@@ -175,10 +198,21 @@ body {
 
 .glow-on-hover:before {
   content: '';
-  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
   position: absolute;
   top: -2px;
-  left:-2px;
+  left: -2px;
   background-size: 400%;
   z-index: -1;
   filter: blur(5px);
@@ -186,12 +220,12 @@ body {
   height: calc(100% + 4px);
   animation: glowing 20s linear infinite;
   opacity: 0;
-  transition: opacity .3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
   border-radius: 10px;
 }
 
 .glow-on-hover:active {
-  color:#000
+  color: #000;
 }
 
 .glow-on-hover:active:after {
@@ -216,19 +250,25 @@ body {
 }
 
 @keyframes glowing {
-  0% { background-position: 0 0; }
-  50% { background-position: 400% 0; }
-  100% { background-position: 0 0; }
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
 
 /* Add CSS for the volume icon */
 .volume_icon {
-  width: 50px ;
-  height: 50px ;
+  width: 50px;
+  height: 50px;
   padding-left: 100px;
   margin-top: 1rem;
 }
-  
+
 /* Add CSS for the vertical slider */
 .vertical-slider {
   writing-mode: bt-lr; /* Set the slider orientation to vertical */
@@ -238,7 +278,7 @@ body {
   margin-top: 1rem;
 }
 
-.setting_icon{
+.setting_icon {
   padding-left: 95px;
   margin-top: 4rem;
 }

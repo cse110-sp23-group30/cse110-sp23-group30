@@ -3,7 +3,7 @@
  */
 function goBack() {
   // Go back to page it came from
-  let orgLink = JSON.parse(localStorage.getItem("orglink"));
+  let orgLink = JSON.parse(localStorage.getItem('orglink'));
   window.location.href = orgLink;
 }
 
@@ -30,7 +30,7 @@ const keyframesAnimation = `
   }
 `;
 
-const styleElement = document.createElement("style");
-styleElement.type = "text/css";
+const styleElement = document.createElement('style');
+styleElement.type = 'text/css';
 styleElement.innerHTML = keyframesAnimation;
 document.head.appendChild(styleElement);
