@@ -7,8 +7,6 @@ beforeAll(async () => {
   page = await browser.newPage();
 });
 
-const functions = require('../cart_screen/cart.js');
-
 afterAll(() => {
   browser.close();
 });
