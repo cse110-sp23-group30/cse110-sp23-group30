@@ -11,6 +11,10 @@ body {
   background-color: white;
 }
 
+.headers {
+  color: white;
+}
+
 .menu-card {
   padding: 1%;
   margin: 2%;
