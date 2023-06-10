@@ -1,4 +1,4 @@
-# Roadmap explanation
+# Roadmap
 
 The project has three phases in general. The first two phases should be completed in May and the third phase should be completed in early June. We first have a planning phase. In this phase, we start with a kickoff meeting talking about meeting logistics and getting to know each other. We then have two brainstorming sessions figuring out which topic to use and what features to include in our project. Next one is the development phase. In this phase, we start with building the prototype of the entire project and building different screens(6 screens) in the project. After that, when we have some basic codes, we begin to build a CI/CD pipeline with testing and linting. And when prototype building is done, we perform some initial testing to find out obvious bugs. At last, we have the testing/revise phase. At this phase, we design more unit tests and E2E tests to test our project and revise our code accordingly. After tests are done, we can finalize the project.
 
