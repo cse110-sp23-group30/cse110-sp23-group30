@@ -1,6 +1,10 @@
 let selectedCount = 0;
 let selectedCountEntree = 0;
 
+/**
+ * Selects an image (main dish) to be added to the bowl.
+ * @param {*} element The main dish to be added to the bowl.
+ */
 function selectImage(element) {
   if (element.classList.contains("selected")) {
     element.classList.remove("selected");
@@ -11,6 +15,10 @@ function selectImage(element) {
   }
 }
 
+/**
+ * Selects an image (entree dish) to be added to the bowl.
+ * @param {*} element The entree dish to be added to the bowl.
+ */
 function selectImageEntree(element) {
   if (element.classList.contains("selectedEntree")) {
     element.classList.remove("selectedEntree");
@@ -21,11 +29,18 @@ function selectImageEntree(element) {
   }
 }
 
+/**
+ * Routes the page to the cart screen.
+ */
 function goToCart() {
   location.href = "../cart_screen/cart.html";
   console.log("Function Called!");
 }
 
+/**
+ * Gets the items that have been selected and stores them in local storage to be used later.
+ * @returns null if not all items are selected, 
+ */
 function saveSelectedItems() {
   // Create a either a new list or a list with everything in local storage
   let dishes;
@@ -56,6 +71,11 @@ function saveSelectedItems() {
   popupModal.style.display = "none" ? "block" : "none";
 }
 
+/**
+ * Retrieves the selected items in the bowl
+ * @param {} selector the elements that have been selected by the user
+ * @returns the items that have been selected by the user
+ */
 function getSelectedItems(selector) {
   const selectedItems = [];
 
@@ -72,6 +92,9 @@ function getSelectedItems(selector) {
   return selectedItems;
 }
 
+/**
+ * Closes the settings popup from the header.
+ */
 function closePopup() {
   const popupModal = document.querySelector(".popup-modal");
   popupModal.style.display = "none";

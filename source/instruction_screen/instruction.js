@@ -1,3 +1,6 @@
+/**
+ * Returns the instructions screen to its original page.
+ */
 function goBack() {
   // Go back to page it came from
   let orgLink = JSON.parse(localStorage.getItem("orglink"));

@@ -22,4 +22,18 @@ test('home screen behavior', async () => {
 
   // Test the instructions and play buttons
   // This is more complex as it would involve navigation which is not covered in this example
+  
+})
+
+test('play button behavior', async () => {
+  const filePath = path.resolve(
+    __dirname,
+    '../opening_screen/opening-screen.html'
+  )
+  await page.goto('file://' + filePath)
+  // Don't test the settings popup
+
+  // Test the instructions and play buttons
+  // This is more complex as it would involve navigation which is not covered in this example
+  
 })
