@@ -2,13 +2,13 @@ body {
   margin: 0;
   padding: 0;
 }
-  
+
 header {
   background-color: rgba(0, 0, 0, 0.5); /* Adjust the transparency as needed */
   color: #fff; /* Set the text color to white */
-  padding: 10px
+  padding: 10px;
 }
-  
+
 .container {
   display: flex;
   justify-content: space-between;
@@ -16,7 +16,7 @@ header {
   max-width: 960px;
   margin: 0 auto;
 }
-  
+
 button {
   padding: 10px 20px;
   background-color: #2591ac;
@@ -25,7 +25,7 @@ button {
   font-size: 16px;
   cursor: pointer;
 }
-  
+
 button:hover {
   background-color: #035266;
 }
@@ -90,31 +90,31 @@ h2 {
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
-  animation-duration: 0.4s
+  animation-duration: 0.4s;
 }
 
 /* Popup Animation */
 @-webkit-keyframes animatetop {
   from {
     top: -300px;
-    opacity: 0
+    opacity: 0;
   }
 
   to {
     top: 0;
-    opacity: 1
+    opacity: 1;
   }
 }
 
 @keyframes animatetop {
   from {
     top: -300px;
-    opacity: 0
+    opacity: 0;
   }
 
   to {
     top: 0;
-    opacity: 1
+    opacity: 1;
   }
 }
 
@@ -141,4 +141,3 @@ h2 {
 .popup-body {
   padding: 2px 16px;
 }
-  
