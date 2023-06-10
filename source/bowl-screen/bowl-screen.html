@@ -2,12 +2,11 @@
 <html>
 
 <head>
-    <base href="/">
-    <script src="source/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script>
         $(function () {
             // Load index.html
-            $("#header").load("source/header/index.html", function () {
+            $("#header").load("../header/index.html", function () {
                 // Callback function after loading index.html
                 // Load JavaScript file
                 //$.getScript("source/header/header-component.js");
@@ -16,15 +15,15 @@
                 $("<link>", {
                     rel: "stylesheet",
                     type: "text/css",
-                    href: "source/header/styles.css"
+                    href: "../header/styles.css"
                 }).appendTo("head");
             });
         }); 
     </script>
     <meta charset="UTF-8">
     <title>Bowl Screen</title>
-    <link rel="shortcut icon" href="source/centralized css/team-logo-transparent.png">
-    <link rel="stylesheet" href="source/bowl-screen/bowl-screen.css">
+    <link rel="stylesheet" type="text/css" href="../centralized css/centralized.css">
+    <link rel="stylesheet" href="../bowl-screen/bowl-screen.css">
 </head>
 
 <body>
@@ -33,7 +32,7 @@
     <form>
         <div onclick="selectImage(this)" class="menu-card">
             <div class="image-option">
-                <img src="source/assets/Chow-Mein.jpg" alt="Image 1">
+                <img src="../assets/Chow-Mein.jpg" alt="Image 1">
             </div>
             <div class="menu-details">
                 <h3>Chow Mein</h3>
@@ -44,7 +43,7 @@
 
         <div onclick="selectImage(this)" class="menu-card">
             <div class="image-option">
-                <img src="source/assets/Fried-Rice.jpg" alt="Image 2">
+                <img src="../assets/Fried-Rice.jpg" alt="Image 2">
             </div>
             <div class="menu-details">
                 <h3>Fried Rice</h3>
@@ -55,7 +54,7 @@
 
         <div onclick="selectImage(this)" class="menu-card">
             <div class="image-option">
-                <img src="source/assets/Veggies.jpg" alt="Image 3">
+                <img src="../assets/Veggies.jpg" alt="Image 3">
             </div>
             <div class="menu-details">
                 <h3>Veggies</h3>
@@ -66,7 +65,7 @@
 
         <h1 class="headers">Please choose an Entree:</h1>
         <div onclick="selectImageEntree(this)" class="menu-card">
-            <img src="source/assets/Orange-Chicken.jpg" alt="Orange Chicken">
+            <img src="../assets/Orange-Chicken.jpg" alt="Orange Chicken">
             <div class="menu-details">
                 <h3>Orange Chicken</h3>
                 <p>Description: Our signature dish. Crispy chicken wok-tossed in a sweet and spicy orange sauce.</p>
@@ -75,7 +74,7 @@
         </div>
 
         <div onclick="selectImageEntree(this)" class="menu-card">
-            <img src="source/assets/Beijing-Beef.jpg" alt="Beijing Beef">
+            <img src="../assets/Beijing-Beef.jpg" alt="Beijing Beef">
             <div class="menu-details">
                 <h3>Beijing Beef</h3>
                 <p>Description: Crispy beef, bell peppers and onions in a sweet-tangy sauce.</p>
@@ -84,7 +83,7 @@
         </div>
 
         <div onclick="selectImageEntree(this)" class="menu-card">
-            <img src="source/assets/Honey-Walnut-Shrimp.jpg" alt="Honey Walnut Shrimp">
+            <img src="../assets/Honey-Walnut-Shrimp.jpg" alt="Honey Walnut Shrimp">
             <div class="menu-details">
                 <h3>Honey Walnut Shrimp</h3>
                 <p>Description: Large tempura-battered shrimp, wok-tossed in a honey sauce and topped with glazed
@@ -95,7 +94,7 @@
         </div>
 
         <div onclick="selectImageEntree(this)" class="menu-card">
-            <img src="source/assets/Broccoli-Beef.jpg" alt="Beef and Broccoli">
+            <img src="../assets/Broccoli-Beef.jpg" alt="Beef and Broccoli">
             <div class="menu-details">
                 <h3>Beef and Broccoli</h3>
                 <p>Description: A classic favorite. Tender beef and fresh broccoli in a ginger soy sauce.</p>
@@ -104,7 +103,7 @@
         </div>
 
         <div onclick="selectImageEntree(this)" class="menu-card">
-            <img src="source/assets/Kung-Pao-Chicken.jpg" alt="Kung Pao Chicken">
+            <img src="../assets/Kung-Pao-Chicken.jpg" alt="Kung Pao Chicken">
             <div class="menu-details">
                 <h3>Kung Pao Chicken</h3>
                 <p>Description: A Szechwan-inspired dish with chicken, peanuts and vegetables, finished with chili
@@ -114,8 +113,16 @@
         </div>
     </form>
     <button onclick="saveSelectedItems();" class="buttons">Submit</button>
+    <div class="popup-modal">
+        <div class="popup-content">
+            <h2>Items Added to Cart</h2>
+            <p>Your selected items have been successfully added to the cart.</p>
+            <button onclick="closePopup();" class="popup-button">Close</button>
+        </div>
+    </div>
+
     <button onclick="goToCart();" class="buttons">Cart</button>
-    <script src="source/bowl-screen/bowl-screen.js"></script>
+    <script src="../bowl-screen/bowl-screen.js"></script>
 </body>
 
 </html>

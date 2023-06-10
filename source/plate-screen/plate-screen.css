@@ -6,8 +6,8 @@
 }
 
 body {
-  background: url('/source/centralized\ css/background.jpg') no-repeat center fixed;
-  background-size: contain;
+  background: url('../centralized\ css/background.jpg') no-repeat center fixed;
+  background-size: cover;
   background-color: white;
 }
 
@@ -60,4 +60,26 @@ body {
   color: #fff;
   cursor: pointer;
   font-size: 20px;
+}
+
+.popup-modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 5px;
+  z-index: 9999;
+}
+
+.popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
 }

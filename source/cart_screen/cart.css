@@ -10,16 +10,10 @@ body {
   width: 100%;
 }
 
-body {
-  background: url('/source/centralized\ css/background.jpg') no-repeat center fixed;
-  background-size: contain;
-  background-color: #ebccab;
-}
-
 #cart-title {
   padding-left: 10%;
   padding-top: 3%;
-  color: #2591ac;
+  color: #f3f5f6;
 }
 
 #items {
@@ -108,6 +102,18 @@ h4 {
   bottom: 5%;
   right: 7%;
   display: flex;
+}
+
+section button {
+  border-style: solid;
+  border-color: black;
+  border-radius: 10px;
+  margin: 3px;
+  background-color: #2591ac;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 7px;
 }
 
 /*

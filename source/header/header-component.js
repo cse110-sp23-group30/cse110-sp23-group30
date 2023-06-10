@@ -1,9 +1,9 @@
 class HeaderComponent extends HTMLElement {
-  connectedCallback () {
+  connectedCallback() {
     this.innerHTML = `
       <header>
         <div class="container">
-          <img src="source/assets/BlueMoon.png" alt="Logo" class="logo">
+          <img src="../assets/BlueMoon.png" alt="Logo" class="logo">
           <h1 class="header-title">The Blue Moon Express</h1>
           <div class="button-group">
             <button id="homeBtn">Home</button>
@@ -12,51 +12,64 @@ class HeaderComponent extends HTMLElement {
           </div>
         </div>
       </header>
-    `
+    `;
 
-    // Add event listeners for the buttons
-    this.querySelector('#homeBtn').addEventListener('click', () => {
-      // Handle home button click
-      window.location.href = 'source/opening_screen/opening-screen.html'
-    })
+    this.initEventListeners();
+  }
 
-    this.querySelector('#instructionsBtn').addEventListener('click', () => {
-      // Handle instructions button click
-      window.location.href = 'source/instruction_screen/instruction.html'
-    })
+  initEventListeners() {
+    const homeButton = this.querySelector("#homeBtn");
+    homeButton.addEventListener("click", () => {
+      this.homeNavigation();
+    });
 
-    // Get a reference to the settings button
-    const settingsBtn = this.querySelector('#settingsBtn')
+    const instructionsButton = this.querySelector("#instructionsBtn");
+    instructionsButton.addEventListener("click", () => {
+      this.instructionsNavigation();
+    });
 
-    // Add event listener to the settings button
-    settingsBtn.addEventListener('click', () => {
-      // Check if the settings panel already exists
-      document.getElementById('settings-popup').style.display = 'block'
+    const settingsButton = this.querySelector("#settingsBtn");
+    settingsButton.addEventListener("click", () => {
+      this.openSettings();
+    });
+  }
 
-      const volumeSlider = document.getElementById('musicVolume')
-      volumeSlider.addEventListener('input', () => {
-        // Get a reference to the audio element
-        const audioPlayer = document.getElementById('audioPlayer')
-        // Adjust the music volume based on the slider value
-        const musicVolume = volumeSlider.value / 100
-        audioPlayer.volume = musicVolume
-        audioPlayer.play()
-      })
-    })
+  homeNavigation() {
+    window.location.href = "../opening_screen/opening-screen.html";
+  }
 
-    const closeSettings = document.getElementsByClassName('close')[0]
+  instructionsNavigation() {
+    // Make sure instructions returns back to screen it was on
+    let orgLink = window.location.href;
+    localStorage.setItem("orglink", JSON.stringify(orgLink));
 
-    closeSettings.addEventListener('click', () => {
-      document.getElementById('settings-popup').style.display = 'none'
-    })
+    // Handle instructions button click
+    window.location.href = "../instruction_screen/instruction.html";
+  }
+
+  openSettings() {
+    document.getElementById("settings-popup").style.display = "block";
+
+    const volumeSlider = document.getElementById("musicVolume");
+    volumeSlider.addEventListener("input", () => {
+      const audioPlayer = document.getElementById("audioPlayer");
+      const musicVolume = volumeSlider.value / 100;
+      audioPlayer.volume = musicVolume;
+      audioPlayer.play();
+    });
   }
 }
 
-customElements.define('header-component', HeaderComponent)
+customElements.define("header-component", HeaderComponent);
 
-// // Dynamically insert the header into each page
-// window.addEventListener('DOMContentLoaded', () => {
-//   const headerContainer = document.getElementById('headerContainer');
-//   const headerComponent = document.createElement('header-component');
-//   headerContainer.appendChild(headerComponent);
-// });
+function init() {}
+
+// Close button functionality
+const closeButton = document.getElementsByClassName("close")[0];
+closeButton.addEventListener("click", () => {
+  closeSettings();
+});
+
+function closeSettings() {
+  document.getElementById("settings-popup").style.display = "none";
+}
