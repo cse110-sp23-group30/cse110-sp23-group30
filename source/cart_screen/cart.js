@@ -1,3 +1,14 @@
+module.exports = {
+  addPlate,
+  addBowl,
+  purchase,
+  deleteItem,
+  confirmDelete,
+  popUp,
+  confirmClear,
+  loadCart,
+};
+
 /**
  * Redirects to the plate screen.
  */
