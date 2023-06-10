@@ -17,6 +17,8 @@ function addBowl() {
  */
 function purchase() {
   if (localStorage.getItem('dishes') === null) {
+    console.log('hi');
+    location.href = '../cart_screen/cart.html';
     return;
   }
   location.href = '../cookie_screen/cookie_screen.html';
@@ -88,6 +90,7 @@ function loadCart() {
     const confirmPurchase = document.getElementById('confirm');
     confirmPurchase.style.backgroundColor = '#808080';
     confirmPurchase.style.cursor = 'not-allowed';
+    confirmPurchase.style.display = 'none';
 
     const newSection = document.createElement('section');
     newSection.innerHTML = `
