@@ -18,18 +18,26 @@ describe('Plate Screen functions', () => {
     await browser.close();
   });
 
-  //test if main food image can be selected
-  test('Main can be selected', async () => {
-    await page.evaluate(() => selectImageMain(document.querySelector('.menu-card')));
-    const isSelected = await page.evaluate(() => document.querySelector('.menu-card').classList.contains('selected'));
-    expect(isSelected).toBe(true);
+  test('User can select a Main', async () => {
+    // Select the first menu-card under mains
+    await page.click('form .menu-card:nth-child(1)');
+
+    const selectedImage = await page.$eval(
+      'form .menu-card:nth-child(1)',
+      (el) => el.classList.contains('selected')
+    );
+    expect(selectedImage).toBe(true);
   });
 
-  //test if entree food image can be selected
-  test('Entree can be selected', async () => {
-    await page.evaluate(() => selectImage(document.querySelector('.menu-card')));
-    const isSelectedEntree = await page.evaluate(() => document.querySelector('.menu-card').classList.contains('selectedEntree'));
-    expect(isSelectedEntree).toBe(true);
+  test('User can select an Entree', async () => {
+    // Select the fifth menu-card under entrees
+    await page.click('form .menu-card:nth-child(5)');
+
+    const selectedImageEntree = await page.$eval(
+      'form .menu-card:nth-child(5)',
+      (el) => el.classList.contains('selectedEntree')
+    );
+    expect(selectedImageEntree).toBe(true);
   });
 
   test('User can deselect an Entree', async () => {
