@@ -76,3 +76,5 @@ function closePopup() {
   const popupModal = document.querySelector(".popup-modal");
   popupModal.style.display = "none";
 }
+
+module.exports = { selectImage, selectImageEntree, goToCart, saveSelectedItems, getSelectedItems };
