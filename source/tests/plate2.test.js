@@ -10,7 +10,7 @@ describe('Plate Screen functions', () => {
     // Create new page
     page = await browser.newPage();
     // Navigate to the plate screen
-    await page.goto('http://localhost:3000/plate-screen.html');
+    await page.goto('http://localhost:4444/source/plate-screen/plate-screen.html');
   });
 
   afterAll(async () => {
