@@ -1,3 +1,16 @@
+const puppeteer = require('puppeteer');
+let browser;
+let page;
+
+beforeAll(async () => {
+  browser = await puppeteer.launch({ headless: 'new' });
+  page = await browser.newPage();
+});
+
+afterAll(() => {
+  browser.close();
+});
+
 describe('Bowl Screen Tests', () => {
   beforeAll(async () => {
     await page.goto(
