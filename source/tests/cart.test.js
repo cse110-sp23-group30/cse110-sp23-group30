@@ -105,4 +105,16 @@ describe('Cart Page', () => {
     );
     expect(paddingBottom).toBe('5px');
   });
+
+  test('Clear Cart Clears The Screen and Local Storage', async () => {
+    await page.reload();
+    await page.waitForSelector('#clear');
+    await page.click('#clear');
+    await page.waitForSelector('#cleared');
+    await page.click('#cleared');
+
+    const dishes = await page.evaluate(() => localStorage.getItem('dishes'));
+
+    expect(dishes).toBe(null);
+  });
 });
