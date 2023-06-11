@@ -1,23 +1,22 @@
 const puppeteer = require('puppeteer');
+let browser;
+let page;
 
-describe('Plate Screen functions', () => {
-  let browser;
-  let page;
+beforeAll(async () => {
+  browser = await puppeteer.launch({ headless: 'new' });
+  page = await browser.newPage();
+});
 
+afterAll(() => {
+  browser.close();
+});
+
+describe('Plate Screen Tests', () => {
   beforeAll(async () => {
-    // Launch browser
-    browser = await puppeteer.launch();
-    // Create new page
-    page = await browser.newPage();
-    // Navigate to the plate screen
-    await page.goto('http://localhost:4444/source/plate-screen/plate-screen.html');
+    await page.goto(
+      'http://localhost:4444/source/plate-screen/plate-screen.html'
+    );
   });
-
-  afterAll(async () => {
-    // Close browser
-    await browser.close();
-  });
-
   test('User can select a Main', async () => {
     // Select the first menu-card under mains
     await page.click('form .menu-card:nth-child(1)');
@@ -76,5 +75,5 @@ describe('Plate Screen functions', () => {
     expect(url).toContain('cart.html');
   });
 
-
+  
 });
