@@ -20,7 +20,7 @@ afterAll(() => {
 
 describe('SkipVideo Test', () => {
   beforeEach(async () => {
-    await page.goto('http://localhost:5503/source/cookie_screen/cookie_screen.html');
+    await page.goto('http://localhost:4444/source/cookie_screen/cookie_screen.html');
     await page.evaluate(() => {
       // Reset the fortune cookie and message elements
       document.getElementById('fortune-cookie').innerHTML = '';
@@ -65,7 +65,7 @@ describe('SkipVideo Test', () => {
 describe('OpenFortune Test', () => {
   beforeEach(async () => {
     await page.goto(
-      'http://localhost:5503/source/cookie_screen/cookie_screen.html'
+      'http://localhost:4444/source/cookie_screen/cookie_screen.html'
     );
     // Reset the fortune cookie and message elements
     await page.evaluate(() => {
@@ -108,7 +108,7 @@ describe('OpenFortune Test', () => {
 describe('Shake Cookie Tests', () => {
   beforeAll(async () => {
     await page.goto(
-      'http://localhost:5503/source/cookie_screen/cookie_screen.html'
+      'http://localhost:4444/source/cookie_screen/cookie_screen.html'
     );
   });
 
@@ -192,7 +192,7 @@ describe('Shake Cookie Tests', () => {
 describe('Restart Game Test', () => {
   beforeEach(async () => {
     await page.goto(
-      'http://localhost:5503/source/cookie_screen/cookie_screen.html'
+      'http://localhost:4444/source/cookie_screen/cookie_screen.html'
     );
   });
 
