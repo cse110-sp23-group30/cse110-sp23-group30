@@ -10,4 +10,4 @@ Through interactive interface, personalized messages, and captivating animations
 
 [Team Page](admin/team.md)
 
-https://cse110-sp23-group30.github.io/cse110-sp23-group30/source/opening_screen/opening-screen.html
+Visit our website [here](https://cse110-sp23-group30.github.io/cse110-sp23-group30/).
