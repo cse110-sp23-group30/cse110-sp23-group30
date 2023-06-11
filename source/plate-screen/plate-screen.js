@@ -1,15 +1,15 @@
 let selectedCount = 0;
-let selectedCountMain = 0;
+let selectedCountEntree = 0;
 
 function selectImageMain(element) {
-  console.log(selectedCountMain)
+  console.log(selectedCount)
   if (element.classList.contains("selected")) {
     element.classList.remove("selected");
-    selectedCountMain--;
-  } else if (selectedCountMain < 1) {
+    selectedCount--;
+  } else if (selectedCount < 1) {
     element.classList.add('selected');
-    selectedCountMain++;
-  } else if (selectedCountMain == 1){
+    selectedCount++;
+  } else if (selectedCount == 1){
     const fullPlateModal = document.getElementById("fullPlate");
     fullPlateModal.style.display = "none" ? "block" : "none";
   }
@@ -18,11 +18,11 @@ function selectImageMain(element) {
 function selectImage(element) {
   if (element.classList.contains('selectedEntree')) {
     element.classList.remove('selectedEntree');
-    selectedCount--;
-  } else if (selectedCount < 2) {
+    selectedCountEntree--;
+  } else if (selectedCountEntree < 2) {
     element.classList.add('selectedEntree');
-    selectedCount++;
-  } else if (selectedCount == 2){
+    selectedCountEntree++;
+  } else if (selectedCountEntree == 2){
     const fullPlateModal = document.getElementById("fullPlate");
     fullPlateModal.style.display = "none" ? "block" : "none";
   }
