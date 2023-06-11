@@ -9,3 +9,5 @@ To enhance the user experience, the project incorporates a unique feature—a co
 Through interactive interface, personalized messages, and captivating animations, our website offers users a delightful and entertaining experience that brings a touch of magic and fortune telling to their day.
 
 [Team Page](admin/team.md)
+
+https://cse110-sp23-group30.github.io/cse110-sp23-group30/source/opening_screen/opening-screen.html
