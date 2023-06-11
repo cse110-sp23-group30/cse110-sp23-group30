@@ -1,52 +1,37 @@
 let selectedCount = 0;
-let selectedCountMain = 0;
+let selectedCountEntree = 0;
 
-/**
- * Selects an image (entree dish) to be added to the plate.
- * @param {*} element The entree dish to be added to the plate.
- */
 function selectImageMain(element) {
-  console.log(selectedCountMain)
+  console.log(selectedCount)
   if (element.classList.contains("selected")) {
     element.classList.remove("selected");
-    selectedCountMain--;
-  } else if (selectedCountMain < 1) {
+    selectedCount--;
+  } else if (selectedCount < 1) {
     element.classList.add('selected');
-    selectedCountMain++;
-  } else if (selectedCountMain == 1){
+    selectedCount++;
+  } else if (selectedCount == 1){
     const fullPlateModal = document.getElementById("fullPlate");
     fullPlateModal.style.display = "none" ? "block" : "none";
   }
 }
 
-/**
- * Selects an image (main dish) to be added to the plate.
- * @param {*} element The main dish to be added to the plate.
- */
 function selectImage(element) {
   if (element.classList.contains('selectedEntree')) {
     element.classList.remove('selectedEntree');
-    selectedCount--;
-  } else if (selectedCount < 2) {
+    selectedCountEntree--;
+  } else if (selectedCountEntree < 2) {
     element.classList.add('selectedEntree');
-    selectedCount++;
-  } else if (selectedCount == 2){
+    selectedCountEntree++;
+  } else if (selectedCountEntree == 2){
     const fullPlateModal = document.getElementById("fullPlate");
     fullPlateModal.style.display = "none" ? "block" : "none";
   }
 }
 
-/**
- * Routes the page to the cart screen.
- */
 function goToCart() {
   location.href = '../cart_screen/cart.html';
 }
 
-/**
- * Gets the items that have been selected and stores them in local storage to be used later.
- * @returns null if not all items are selected, 
- */
 function saveSelectedItems() {
   // Create a either a new list or a list with everything in local storage
   let dishes;
@@ -81,11 +66,6 @@ function saveSelectedItems() {
   clearSelectedOptions();
 }
 
-/**
- * Retrieves the selected items in the plate
- * @param {} selector the elements that have been selected by the user
- * @returns the items that have been selected by the user
- */
 function getSelectedItems(selector) {
   const selectedItems = [];
 
@@ -102,9 +82,6 @@ function getSelectedItems(selector) {
   return selectedItems;
 }
 
-/**
- * Closes the settings popup from the header.
- */
 function closePopup() {
   const popupModal = document.querySelector('.popup-modal');
   popupModal.style.display = 'none';
