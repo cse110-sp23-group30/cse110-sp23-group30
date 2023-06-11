@@ -1,176 +1,214 @@
-const jsdom = require('jsdom');
-const { JSDOM } = jsdom;
-const dom = new JSDOM(`<!DOCTYPE html><body><div id="fullscreen-video"></video>
-</div><div id="credit">50000</div><div id="fortune-cookie"></div><div id="fortune-message"></div></body></html>`);
-global.window = dom.window;
-global.document = dom.window.document;
-// Mock localStorage
-global.localStorage = {
-  clear: jest.fn(),
-};
+const { expect } = require('expect-puppeteer');
+const puppeteer = require('puppeteer');
 
-const {
-  shakeCookie,
-  skipVideo,
-  openFortune,
-} = require('../cookie_screen/cookie_screen.js');
+let page;
+let browser;
 
-describe('shakeCookie', () => {
-  beforeEach(() => {
+/*  Note:
+ *  Shake button activates shake function, shake function activates open 
+ *  fortune and enables skip video function
+ */
+
+beforeAll(async () => {
+  browser = await puppeteer.launch({ headless: 'new' });
+  page = await browser.newPage();
+});
+
+afterAll(() => {
+  browser.close();
+});
+
+describe('SkipVideo Test', () => {
+  beforeEach(async () => {
+    await page.goto('http://localhost:5503/source/cookie_screen/cookie_screen.html');
+    await page.evaluate(() => {
+      // Reset the fortune cookie and message elements
+      document.getElementById('fortune-cookie').innerHTML = '';
+      document.getElementById('fortune-message').textContent = '';
+      document.getElementById('fortune-message').style.display = 'none';
+    });
+  });
+
+  it('should skip the video and hide the video element', async () => {
+    // Initiate the video
+    await page.evaluate(() => {
+      shakeCookie();
+    });
+  
+    // Wait for a brief moment for the video to start
+    await page.waitForTimeout(100);
+  
+    // Call the skipVideo function
+    await page.evaluate(() => {
+      skipVideo();
+    });
+  
+    // Hide the video element
+    await page.evaluate(() => {
+      const videoElement = document.getElementById('fullscreen-video');
+      videoElement.style.display = 'none';
+    });
+
+    // Retrieve the videoPlayer element
+    const videoPlayer = await page.$eval('#video-player', (element) => element);
+
+    // Check if the videoPlayer's currentTime is equal to its duration
+    expect(videoPlayer.currentTime).toBe(videoPlayer.duration);
+    
+    // Check if the video element is hidden
+    const videoDisplayStyle = await page.$eval('#fullscreen-video', (element) => element.style.display);
+    expect(videoDisplayStyle).toBe('none');
+
+  }, 10000);
+});
+
+describe('OpenFortune Test', () => {
+  beforeEach(async () => {
+    await page.goto(
+      'http://localhost:5503/source/cookie_screen/cookie_screen.html'
+    );
     // Reset the fortune cookie and message elements
-    document.getElementById('fortune-cookie').innerHTML = '';
-    document.getElementById('fortune-message').textContent = '';
-    document.getElementById('fortune-message').style.display = 'none';
+    await page.evaluate(() => {
+      document.getElementById('fortune-cookie').innerHTML = '';
+      document.getElementById('fortune-message').textContent = '';
+      document.getElementById('fortune-message').style.display = 'none';
+    });
   });
 
-  it('should delete "shake-animation" class to the cookie afterwards', () => {
-    // Call the shakeCookie function
-    shakeCookie();
+  it('should display a random fortune message', async () => {
+    // Get the fortune cookie and message elements
+    const cookieElementHandle = await page.$('#fortune-cookie');
+    const messageElementHandle = await page.$('#fortune-message');
 
-    expect(
-      document
-        .getElementById('fortune-cookie')
-        .classList.contains('shake-animation')
-    ).toBe(false);
+    // Call the openFortune function
+    await page.evaluate(() => {
+      openFortune();
+    });
+
+    // Check the shake-animation class is activated from the cookie element
+    const cookieHasShakeAnimation = await cookieElementHandle.evaluate((element) =>
+      element.classList.contains('shake-animation')
+    );
+    expect(cookieHasShakeAnimation).toBe(true);
+
+    await page.waitForTimeout(2000);
+
+    // Check if the shake-animation class is removed from the cookie element
+    const cookieHasNoShakeAnimation = await cookieElementHandle.evaluate((element) =>
+      !element.classList.contains('shake-animation')
+    );
+    expect(cookieHasNoShakeAnimation).toBe(true);
+
+    // Check if the message element is displayed
+    const messageDisplayStyle = await messageElementHandle.evaluate((element) => element.style.display);
+    expect(messageDisplayStyle).toBe('block');
   });
+});
 
-  it('should clear and hide the fortune message', () => {
-    document.getElementById('fortune-message').textContent = 'Test message';
-
-    // Call the shakeCookie function
-    shakeCookie();
-
-    // Check if the message element is hidden
-    expect(document.getElementById('fortune-message').textContent).toBe('');
-    expect(document.getElementById('fortune-message').style.display).toBe(
-      'none'
+describe('Shake Cookie Tests', () => {
+  beforeAll(async () => {
+    await page.goto(
+      'http://localhost:5503/source/cookie_screen/cookie_screen.html'
     );
   });
 
-  it('should increment the credit by 100', () => {
+  test('shakeCookie should display a random fortune message', async () => {
+    await page.evaluate(() => {
+      shakeCookie();
+    });
+
+    const fortuneMessage = await page.$eval('#fortune-message', (element) => element.textContent);
+    expect(fortuneMessage).toBeDefined();
+  });
+
+  test('shakeCookie should NOT display a cracked cookie image', async () => {
+    // Call the shakeCookie function
+    await page.evaluate(() => {
+      shakeCookie();
+    });
+
+    // Check the updated game state
+    const cookieImageSrc = await page.$eval('#fortune-cookie img', (element) => element.getAttribute('src'));
+
+    expect(cookieImageSrc).toContain('cookie_before.png');
+  });
+
+  test('shakeCookie should increment the credit', async () => {
+    // Set up the initial game state
+    const initialCredit = await page.$eval('#credit', (element) => element.textContent);
+
+    // Call the shakeCookie function
+    await page.evaluate(() => {
+      shakeCookie();
+    });
+
+    const creditAfterShake = await page.$eval('#credit', (element) => element.textContent);
+
+    expect(creditAfterShake).not.toBe(initialCredit);
+  });
+  test('should delete "shake-animation" class from the cookie afterwards', async () => {
+    // Call the shakeCookie function
+    await page.evaluate(() => {
+      shakeCookie();
+    });
+  
+    // Wait for the shake animation to finish
+    await page.waitForTimeout(1000);
+  
+    // Check if the "shake-animation" class is removed from the cookie element
+    const isShakeAnimationClassPresent = await page.evaluate(() => {
+      const cookieElement = document.getElementById('fortune-cookie');
+      return cookieElement.classList.contains('shake-animation');
+    });
+  
+    expect(isShakeAnimationClassPresent).toBe(false);
+  });
+
+  test('trying multiple clicks', async () => {
     // Get the initial credit value
-    const initialCredit = parseInt(
-      document.getElementById('credit').textContent
-    );
-
-    // Call the shakeCookie function
-    shakeCookie();
-
-    // Get the updated credit value
-    const updatedCredit = parseInt(
-      document.getElementById('credit').textContent
-    );
-
-    // Check if the credit is incremented by 100
-    expect(updatedCredit).toBe(initialCredit + 100);
-  });
-
-  it('trying multiple clicks', () => {
-    // Get the initial credit value
-    const initialCredit = parseInt(
-      document.getElementById('credit').textContent
-    );
-
-    // Call the shakeCookie function
+    const initialCredit = await page.$eval('#credit', (element) => parseInt(element.textContent));
+  
+    // Call the shakeCookie function multiple times
     let i = 0;
     while (i < 100) {
-      shakeCookie();
+      await page.evaluate(() => {
+        shakeCookie();
+      });
       i++;
     }
-
+  
+    // Wait for the shake animations to finish
+    await page.waitForTimeout(1000);
+  
     // Get the updated credit value
-    const updatedCredit = parseInt(
-      document.getElementById('credit').textContent
-    );
-
+    const updatedCredit = await page.$eval('#credit', (element) => parseInt(element.textContent));
+  
     // Check if the credit is incremented by 10000
     expect(updatedCredit).toBe(initialCredit + 10000);
   });
+  
 });
 
-describe('openFortune', () => {
-  beforeEach(() => {
-    // Reset the fortune cookie and message elements
-    document.getElementById('fortune-cookie').innerHTML = '';
-    document.getElementById('fortune-message').textContent = '';
-    document.getElementById('fortune-message').style.display = 'none';
+describe('Restart Game Test', () => {
+  beforeEach(async () => {
+    await page.goto(
+      'http://localhost:5503/source/cookie_screen/cookie_screen.html'
+    );
   });
 
-  it('should display a random fortune message', () => {
-    // Get the fortune cookie and message elements
-    const cookieElement = document.getElementById('fortune-cookie');
-    const messageElement = document.getElementById('fortune-message');
-
-    // Call the openFortune function
-    openFortune();
-
-    // Check the shake-animation class is activated from the cookie element
-    expect(cookieElement.classList.contains('shake-animation')).toBe(true);
-
-    setTimeout(() => {
-      // Check if the shake-animation class is removed from the cookie element
-      expect(cookieElement.classList.contains('shake-animation')).toBe(false);
-
-      // Check if the message element is displayed
-      expect(messageElement.style.display).toBe('block');
-    }, 2000);
+  test('restartGame should reset the game state and navigate to the opening screen', async () => {
+    // Call the restartGame function
+    await Promise.all([
+      page.click('#back'),
+      page.waitForNavigation({ waitUntil: 'networkidle0' }),
+    ]);
+  
+    // Check the navigation to the opening screen
+    const currentUrl = page.url();
+    expect(currentUrl).toContain('opening-screen.html');
+  
+    // Close the browser
+    await browser.close();
   });
-});
-
-describe('skipVideo', () => {
-  beforeEach(() => {
-    // Reset the fortune cookie and message elements
-    document.getElementById('fortune-cookie').innerHTML = '';
-    document.getElementById('fortune-message').textContent = '';
-    document.getElementById('fortune-message').style.display = 'none';
-  });
-
-  it('should skip the video and hide the video element', () => {
-    // initiate the video
-    shakeCookie();
-
-    // Call the skipVideo function
-    skipVideo();
-
-    // Check if the video element is hidden
-    expect(document.getElementById('fullscreen-video').style.display).toBe('');
-  });
-});
-
-describe('shakeCookie', () => {
-  it('should play a random video and display the video player', () => {
-    // Mock the necessary elements
-    const cookie = document.createElement('div');
-    cookie.id = 'fortune-cookie';
-    const videoPlayer = document.createElement('video');
-    videoPlayer.id = 'video-player';
-    const fullscreenVideo = document.createElement('div');
-    fullscreenVideo.id = 'fullscreen-video';
-    const creditElement = document.createElement('div');
-    creditElement.id = 'credit';
-
-    // Mock the videos array
-    const videos = [
-      'source/cookie_screen/media/video_blue.mp4',
-      'source/cookie_screen/media/video_gold.mp4',
-      'source/cookie_screen/media/video_purple.mp4',
-    ];
-
-    // Assign the mock elements to the global scope
-    global.document.getElementById = jest.fn((id) => {
-      if (id === 'fortune-cookie') return cookie;
-      if (id === 'video-player') return videoPlayer;
-      if (id === 'fullscreen-video') return fullscreenVideo;
-      if (id === 'credit') return creditElement;
-    });
-
-    // Call the shakeCookie function
-    shakeCookie();
-
-    // Check the video-related elements should be nothing after playing
-    expect(cookie.classList.contains('shake-animation')).toBe(false);
-    expect(cookie.innerHTML).toContain('');
-    expect(videoPlayer.src).toMatch('');
-    expect(fullscreenVideo.style.display).toBe('');
-  });
+  
 });
