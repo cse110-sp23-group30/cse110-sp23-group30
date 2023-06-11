@@ -111,9 +111,8 @@ describe('Cart Page', () => {
     await page.waitForSelector('#clear');
     await page.click('#clear');
     await page.waitForSelector('#cleared');
-    console.log('here');
     await page.click('#cleared');
-    console.log('here');
+
     const dishes = await page.evaluate(() => localStorage.getItem('dishes'));
 
     expect(dishes).toBe(null);
