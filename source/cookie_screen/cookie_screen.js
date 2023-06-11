@@ -126,6 +126,11 @@ function openFortune() {
     const randomIndex = Math.floor(Math.random() * messages.length);
     message.textContent = messages[randomIndex];
     message.style.display = 'block';
+
+    const crackSound = document.getElementById('crackSound');
+    if (crackSound) {
+      crackSound.play();
+    }
   }, 1000);
 }
 
