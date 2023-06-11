@@ -14,7 +14,7 @@ afterAll(async () => {
 
 describe('goBack', () => {
   beforeAll(async () => {
-    await page.goto('http://localhost:5500/cse110-sp23-group30/source/instruction_screen/instruction.html');
+    await page.goto('https://cse110-sp23-group30.github.io/cse110-sp23-group30/source/instruction_screen/instruction.html');
   });
 
   test('should go back to opening screen', async () => {
