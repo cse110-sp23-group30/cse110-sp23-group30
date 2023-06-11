@@ -147,4 +147,3 @@ function restartGame() {
   window.location.href = '../opening_screen/opening-screen.html';
 }
 
-module.exports = { shakeCookie, skipVideo, openFortune, restartGame };
