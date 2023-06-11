@@ -13,19 +13,13 @@ afterAll(async () => {
 });
 
 describe('goBack', () => {
-
   beforeAll(async () => {
-    await page.goto('https://cse110-sp23-group30.github.io/cse110-sp23-group30/source/instruction_screen/instruction.html');
+    await page.goto('http://127.0.0.1:5500/cse110-sp23-group30/source/instruction_screen/instruction.html');
   });
 
   test('should go back to opening screen', async () => {
-    page.waitForNavigation();
-    //click Go Back button
     await page.click('button');
-    // get the current url
-    const url = await page.url();
-    // check the url contains 'cart.html'
-    expect(url).toContain('opening-screen.html');
+    expect(await page.url()).toContain('opening-screen.html');
   });
 
 });
