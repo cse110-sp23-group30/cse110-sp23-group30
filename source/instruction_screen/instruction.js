@@ -1,5 +1,6 @@
+
 /**
- * Returns the instructions screen to its original page.
+ * Redirects to the opening screen.
  */
 function goBack() {
   // Go back to page it came from
@@ -33,3 +34,7 @@ const styleElement = document.createElement('style');
 styleElement.type = 'text/css';
 styleElement.innerHTML = keyframesAnimation;
 document.head.appendChild(styleElement);
+
+module.exports = {
+  goBack: goBack
+};
